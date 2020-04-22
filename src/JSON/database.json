@@ -1,0 +1,135 @@
+{
+    "news": [
+        {
+            "id": 1,
+            "title": "Creative Art",
+            "content": "Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum has been he text ever since."
+        },
+        {
+            "id": 2,
+            "title": "Hardware Training",
+            "content": "Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum has been he text ever since."
+        },
+        {
+            "id": 3,
+            "title": "Communication",
+            "content": "Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum has been he text ever since."
+        },
+        {
+            "id": 4,
+            "title": "Computer Technology",
+            "content": "Lorem Ipsum is simply dummy text of the printing industry. Lorem Ipsum has been he text ever since."
+        }
+    ],
+    "trustsite": [
+        {
+            "id": "trust101",
+            "image": "./img/fujitsu.png",
+            "detail": "fujitsu"
+        },
+        {
+            "id": "trust101",
+            "image": "./img/nasdag.png",
+            "detail": "nasdag"
+        },
+        {
+            "id": "trust101",
+            "image": "./img/saleforces.png",
+            "detail": "saleforces"
+        },
+        {
+            "id": "trust101",
+            "image": "./img/t-mobile.png",
+            "detail": "t-mobile"
+        },
+        {
+            "id": "trust101",
+            "image": "./img/thehomedepot.png",
+            "detail": "thehomedepot"
+        },
+        {
+            "id": "trust101",
+            "image": "./img/vmware.png",
+            "detail": "vmware"
+        }
+    ],
+    "upskill": [
+        {
+            "text": "Learn from expert authors with real-world experience in pen testing, malware analysis, security auditing, digital forensics and more"
+        },
+        {
+            "text": "Accelerate skill development with personalized course recommendations that help employees skip over what they already know and focus on what they don’t"
+        },
+        {
+            "text": "Align skill development to your most important objectives like automating threat responses or complying to regulatory standards"
+        }
+    ],
+    "categories": [
+        {
+            "id": "cate101",
+            "title": "Design",
+            "image": "/img/lohp-category-design.jpg"
+        },
+        {
+            "id": "cate102",
+            "title": "Development",
+            "image": "/img/lohp-category-development.jpg"
+        },
+        {
+            "id": "cate103",
+            "title": "Marketing",
+            "image": "/img/lohp-category-marketing.jpg"
+        },
+        {
+            "id": "cate104",
+            "title": "IT and Software",
+            "image": "/img/lohp-category-it-and-software.jpg"
+        },
+        {
+            "id": "cate105",
+            "title": "Personal Development",
+            "image": "/img/lohp-category-personal-development.jpg"
+        },
+        {
+            "id": "cate106",
+            "title": "Business",
+            "image": "/img/lohp-category-business.jpg"
+        },
+        {
+            "id": "cate107",
+            "title": "Photography",
+            "image": "/img/lohp-category-photography.jpg"
+        },
+        {
+            "id": "cate108",
+            "title": "Music",
+            "image": "/img/lohp-category-music.jpg"
+        }
+    ],
+    "university": [
+        {
+            "id": "uni001",
+            "image": "./img/clients-1.jpg",
+            "link" : "https://www.yorku.ca/index.html",
+            "name":"yorku"
+        },
+        {
+            "id": "uni002",
+            "image": "./img/clients-2.jpg",
+            "link": "https://www.maryville.edu/",
+            "name":"mary-ville"
+        },
+        {
+            "id": "uni003",
+            "image": "./img/clients-3.jpg",
+            "link": "https://www.brunel.ac.uk/",
+            "name":"burnel-ac"
+        },
+        {
+            "id": "uni004",
+            "image": "./img/clients-4.jpg",
+            "link": "https://www.mtroyal.ca/",
+            "name":"mount-royal"
+        }
+    ]
+}

@@ -1,0 +1,37 @@
+@import '../../Scss/Variables.scss';
+@import '../../Scss/Mixin.scss';
+.information {
+    padding: $pd-3 + $pd-3 0;
+    margin-bottom: 50px;
+    .top__info {
+        margin: auto;
+        padding: $pd-2;
+        h2{
+            @include text($fs-3, $fw-2,$pink);
+            margin-bottom: $mg-2;
+        }
+        p{
+            @include text($fs-1, $fw-2, $grey);
+        }
+    }
+    .bot__info {
+        .card{
+            border: none;
+            .title{
+                @include text($fs-1 + 5,$fw-2, $black);
+                margin-bottom: 0;
+                i{
+                    margin-right: $mg-1;
+                    font-size: $fs-2 + 5;
+                    color: $pink;
+                }
+            }
+            .card-body{
+                .card-text{
+                    line-height: 25px;
+                    @include text($fs-1 - 1, $fw-2, $grey);
+                }
+            }
+        }
+    }
+}

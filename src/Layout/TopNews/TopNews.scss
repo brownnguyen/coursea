@@ -1,0 +1,70 @@
+@import '../../Scss/Variables.scss';
+@import '../../Scss/Mixin.scss';
+
+.topnews{
+    background-image: url('../../img/bg-office.jpg');
+    background-attachment: fixed;
+    height: 750px;
+    position: relative;
+    .layer{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.7);
+    }
+    .topnews-info{
+        position: absolute;
+        top: 35%;
+        left: 20%;
+        h2{
+            @include text($fs-5,$fw-3,$pink);
+            margin-bottom: $mg-3;
+        };
+        p{
+            @include text ($fs-1 + 5, $fw-1, $white);
+            line-height: 30px;
+        };
+        .input{
+            .form-control-input{
+                padding: 0 $pd-1 + 5;
+                height: 50px;
+                background-color: transparent;
+                border-radius: 0;
+                width: 60%;
+                display: inline-block;
+                border: 1px solid white;
+                border-right: transparent;
+                margin-bottom: $mg-2;
+                color:$white;
+                &:focus{
+                    border: 1px solid $pink;
+                    border-right: transparent;
+                    & + button {
+                        border: 1px solid $pink;
+                        border-left: transparent;
+                            &:hover{
+                                color: $pink;
+                                transition: all .5s;
+                            }
+                    }
+                }
+            }
+            button{
+                color: $white;
+                background-color: transparent;
+                height: 50px;
+                padding: 0 $pd-2;
+                border: 1px solid white;
+                border-left: transparent;
+                &:hover{
+                    i{
+                        color: $pink;
+                    }
+                }
+            }
+        }
+        
+    }
+}
