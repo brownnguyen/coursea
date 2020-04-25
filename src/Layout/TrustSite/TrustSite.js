@@ -20,7 +20,7 @@ class TrustSite extends Component {
                     <div className="row d-flex justify-content-between trust__img">
                         {this.renderTrustSite()}
                     </div>
-                    <a href="google.com" className="trustSiteStory">View our customer stories <i class="fa fa-angle-double-right"></i></a>
+                    <a href="google.com" className="trustSiteStory">View our customer stories <i className="fa fa-angle-double-right"></i></a>
                 </div>
                 <div className="layer"></div>
             </div>

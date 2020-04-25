@@ -6,6 +6,7 @@ import Categories from '../Layout/Categories/Categories.js';
 import TrustSite from '../Layout/TrustSite/TrustSite.js';
 import UpSkill from '../Layout/UpSkill/UpSkill.js';
 import University from '../Layout/University/University.js';
+import Footer from '../Layout/Footer/Footer.js';
 class Home extends Component {
     render() {
         return (
@@ -17,6 +18,7 @@ class Home extends Component {
             <TrustSite/>
             <UpSkill/>
             <University/>
+            <Footer/>
             </>
         );
     }

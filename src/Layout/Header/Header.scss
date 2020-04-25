@@ -1,41 +1,49 @@
 @import '../../Scss/Variables.scss';
 @import '../../Scss/Mixin.scss';
-.navbar{
+.header{
     position: fixed;
-    padding: 0;
     z-index: 999;
-    width: 70%;
-    .navbar-brand{
-        background-color: $black;
-            color: white;
-            @include text ($fs-2 + 5px,$fw-3, $white);
-        padding: $pd-1;
-        text-transform: uppercase;
-        span{
-            font-weight: $fw-1;
+    .navbar{
+        margin: auto;
+        padding: 0;
+        width: 70%;
+        .navbar-brand{
+            background-color: $black;
+                color: white;
+                @include text ($fs-2 + 5px,$fw-3, $white);
+            padding: $pd-1;
+            text-transform: uppercase;
+            span{
+                font-weight: $fw-1;
+            }
+            &:hover{
+                color: $pink;
+                transition: all .5s;
+            }
         }
-        &:hover{
-            color: $pink;
-            transition: all .5s;
-        }
-    }
-    .navbar-nav{
-        .nav-item{
-            .nav-link{
-                margin: $mg-1 $mg-2 0;
-                @include text($fs-1, $fw-2, $white);
-                text-transform: uppercase;
-                &:hover{
-                    color: $pink;
-                    transition: all .5s;
+        .navbar-nav{
+            .nav-item{
+                margin: auto $mg-2;
+                .nav-link{
+                    @include text($fs-1, $fw-2, $white);
+                    text-transform: uppercase;
+                    &:hover{
+                        color: $pink;
+                        transition: all .5s;
+                    }
                 }
             }
         }
-    }
-    .navbar-toggler{
-        border: 1px solid $white;
-        .navbar-toggler-icon{
-            color: $white;
+        .navbar-toggler{
+            border: 1px solid $white;
+            .navbar-toggler-icon{
+                color: $white;
+            }
         }
     }
+}
+
+.sticky{
+    background-color: $black;
+    transition: all .5s;
 }

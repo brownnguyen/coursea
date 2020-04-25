@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import './Header.scss';
 class Header extends Component {
+
     render() {
         return (
             <>
-                <div className="container">
+                <div className="container-fluid header">
                     <nav className="navbar navbar-expand-lg navbar-dark">
                         <a className="navbar-brand" href="www.google.com">Cour<span className="brand">sea</span></a>
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

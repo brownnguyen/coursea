@@ -7,7 +7,11 @@ class Categories extends Component {
             return (
                 <a href="google.com" className="col-3 categories__content" key={index}>
                     <div className="card">
+                        <div className="card__img">
                         <img className="card-img-top" src={item.image} width={270} height={312} alt={item.title} />
+                        <div className="card__categories"></div>
+                        </div>
+                        
                         <div className="card-body">
                             <h4 className="card-title">{item.title}</h4>
                         </div>

@@ -13,8 +13,19 @@
         text-decoration: none;
         padding: $pd-1 - 4;
         .card{
-            border-radius: 3px;
+            border-radius: 20px;
             border: 1px solid #dcdacb;
+            overflow: hidden;
+            .card__img{
+                position: relative;
+            }
+            .card__categories{
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
             .card-body{
                 position: relative;
                 &::before{
@@ -44,6 +55,10 @@
                         background: linear-gradient(to right, $pink, $pink , $white);
                         transition: all .5s;
                     }
+                }
+                .card__categories{
+                    transition: all .5s;
+                    background-color: rgba(0,0,0,0.5);
                 }
             }
         }
