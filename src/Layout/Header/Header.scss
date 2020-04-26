@@ -17,8 +17,8 @@
                 font-weight: $fw-1;
             }
             &:hover{
-                color: $pink;
-                transition: all .5s;
+                color: $pink!important;
+                transition: all .5s!important;
             }
         }
         .navbar-nav{
@@ -27,6 +27,7 @@
                 .nav-link{
                     @include text($fs-1, $fw-2, $white);
                     text-transform: uppercase;
+                    text-decoration: none;
                     &:hover{
                         color: $pink;
                         transition: all .5s;
@@ -40,10 +41,29 @@
                 color: $white;
             }
         }
+        .shop__cart{
+            margin-left: 20%;
+            color: $white;
+            width: 46px;
+            height: 46px;
+            line-height: 46px;
+            text-align: center;
+            border: 1px solid transparent;
+            border-radius: 50%;
+            &:hover{
+                background-color: $pink;
+                border:1px solid $pink;
+                transition: all .5s;
+                color: black;
+            }
+        }
     }
 }
 
 .sticky{
     background-color: $black;
     transition: all .5s;
+}
+.activeClass{
+    color: $pink!important;
 }
