@@ -20,14 +20,16 @@ export const CourseReducer = (state = initialState, action) => {
             }
         case KIND:
             {
-                state.kind = action.payload;
-                if(state.kind === "all"){
+                let updateKind = {...state.kind};
+                updateKind = action.payload;
+                if(updateKind === "all"){
                     state.totalItem = state.course.length;
                 }
                 else{
                     let length = state.course.filter(item => item.kind === payload).length;
                     state.totalItem = length;
                 }
+                state.kind = updateKind;
                 return {...state}
             }
         default:

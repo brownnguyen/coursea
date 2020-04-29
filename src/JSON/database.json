@@ -66,42 +66,42 @@
     ],
     "categories": [
         {
-            "id": "cate101",
+            "id": "design",
             "title": "Design",
             "image": "/img/lohp-category-design.jpg"
         },
         {
-            "id": "cate102",
+            "id": "development",
             "title": "Development",
             "image": "/img/lohp-category-development.jpg"
         },
         {
-            "id": "cate103",
+            "id": "marketing",
             "title": "Marketing",
             "image": "/img/lohp-category-marketing.jpg"
         },
         {
-            "id": "cate104",
+            "id": "software",
             "title": "IT and Software",
             "image": "/img/lohp-category-it-and-software.jpg"
         },
         {
-            "id": "cate105",
+            "id": "Personal",
             "title": "Personal Development",
             "image": "/img/lohp-category-personal-development.jpg"
         },
         {
-            "id": "cate106",
+            "id": "Business",
             "title": "Business",
             "image": "/img/lohp-category-business.jpg"
         },
         {
-            "id": "cate107",
+            "id": "Photography",
             "title": "Photography",
             "image": "/img/lohp-category-photography.jpg"
         },
         {
-            "id": "cate108",
+            "id": "Music",
             "title": "Music",
             "image": "/img/lohp-category-music.jpg"
         }

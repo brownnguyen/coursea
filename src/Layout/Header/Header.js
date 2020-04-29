@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './Header.scss';
 import { NavLink } from 'react-router-dom';
+import {connect} from 'react-redux';
 class Header extends Component {
-
     render() {
         return (
             <div className="container-fluid header">
@@ -21,7 +21,7 @@ class Header extends Component {
                                 <NavLink to="/" exact activeClassName="activeClass" className="nav-link">Home</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to="/course" exact activeClassName="activeClass" className="nav-link">Course</NavLink>
+                                <NavLink to={`/course/${this.props.kind}`} exact activeClassName="activeClass" className="nav-link">Course</NavLink>
                             </li>
                             <li className="nav-item">
                                 <a className="nav-link" href="www.google.com">About</a>
@@ -40,4 +40,7 @@ class Header extends Component {
     }
 }
 
-export default Header;
+const mapStateToProps = (state) => ({
+    kind : state.CourseReducer.kind
+})
+export default connect(mapStateToProps)(Header);

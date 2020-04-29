@@ -11,7 +11,7 @@ function App() {
       <BrowserRouter>
         <Header />
         <Switch>
-          <Route path="/course" component={Course} />
+          <Route path="/course/:courseid" component={Course} />
           <Route path="/" component={Home} />
         </Switch>
         <Footer />

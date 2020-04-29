@@ -1,30 +1,29 @@
 import React, { Component } from 'react';
 import './CourseList.scss';
 import data from '../../JSON/course.json';
+import database from '../../JSON/database.json';
 import CourseDetail from './CourseDetail';
 import { connect } from 'react-redux';
 import { FETCH_COURSEDETAIL, TOTAL_ITEM, KIND } from '../../Action/Type.js';
 import { createAction } from '../../Action/createAction.js';
 import Pagination from 'react-js-pagination';
+import {Link} from 'react-router-dom';
 class CourseList extends Component {
     constructor(props) {
         super(props);
         this.state = {
             activePage: 1,
-            // kind: 'all',
-            // totalItem: 0,
         }
         this.getKind = this.getKind.bind(this)
     }
     getKind = (e) => {
-        let value = e.target.id;
+        let value = e
         this.props.dispatch(createAction(KIND, value))
-        console.log(value)
+        console.log(e)
     }
     renderCategories = () => {
         let { course } = this.props;
         let { kind } = this.props;
-        console.log(kind)
         if (kind === "all") {
             let { activePage } = this.state;
             let start = (activePage - 1) * 28;
@@ -48,6 +47,13 @@ class CourseList extends Component {
             })
         }
     }
+    renderTitleCategories = () => {
+        return database.categories.map((item,index)=>{
+            return (
+                <Link className="course__categories" to={`/course/${item.id}`} onClick={()=>this.getKind(`${item.id}`)} key={index}>{item.title}</Link>
+            )
+        })
+    }
     handlePageChange(pageNumber) {
         this.setState({ activePage: pageNumber });
     }
@@ -60,20 +66,21 @@ class CourseList extends Component {
                         <h3>Cour<span>sea</span></h3>
                         <p>Academy</p>
                     </div>
-                </div>
+                </div>  
                 <div className="courseDetail">
                     <div className="title">
                         <h4 id="all" onClick={this.getKind}>All Categories</h4>
                     </div>
                     <ul className="list__course">
-                        <li id="design" onClick={this.getKind}>Design</li>
-                        <li id="development" onClick={this.getKind}>Development</li>
-                        <li id="marketing" onClick={this.getKind}>Marketing</li>
-                        <li id="software" onClick={this.getKind} >IT & software</li>
-                        <li id="Personal" onClick={this.getKind}>Personal Development</li>
-                        <li id="Business" onClick={this.getKind}>Business</li>
-                        <li id="Photography" onClick={this.getKind}>Photography</li>
-                        <li id="Music" onClick={this.getKind}>Music</li>
+                        {this.renderTitleCategories()}
+                        {/* <Link className="course__categories" to ={`/course/${this.props.kind}`} id="design" onClick={this.getKind}>Design</Link>
+                        <Link className="course__categories" to ={`/course/${this.props.kind}`} id="development" onClick={this.getKind}>Development</Link>
+                        <Link className="course__categories" to ={`/course/${this.props.kind}`} id="marketing" onClick={this.getKind}>Marketing</Link>
+                        <Link className="course__categories" to ={`/course/${this.props.kind}`} id="software" onClick={this.getKind} >IT & software</Link>
+                        <Link className="course__categories" to ={`/course/${this.props.kind}`} id="Personal" onClick={this.getKind}>Personal Development</Link>
+                        <Link className="course__categories" to ={`/course/${this.props.kind}`} id="Business" onClick={this.getKind}>Business</Link>
+                        <Link className="course__categories" to ={`/course/${this.props.kind}`} id="Photography" onClick={this.getKind}>Photography</Link>
+                        <Link className="course__categories" to ={`/course/${this.props.kind}`} id="Music" onClick={this.getKind}>Music</Link> */}
                     </ul>
                     <div className="container">
                         <div className="row">
