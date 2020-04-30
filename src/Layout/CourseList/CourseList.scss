@@ -6,7 +6,7 @@
     .top{
         background-image: url(../../img/cabin_demo_74.jpg);
         position: relative;
-        height: 800px;
+        height: 300px;
         .layer{
             position: absolute;
             z-index:0;
@@ -19,7 +19,7 @@
         .content{
             position: absolute;
             z-index: 2;
-            top: 35%;
+            top: 15%;
             transform: translateX(-50%);
             left: 50%;
             h3{
@@ -41,23 +41,22 @@
         }
     }
     .courseDetail{
-        .title{
+        .link__courseDetail{
+            text-decoration: none;
             cursor: pointer;
             margin: $mg-3 $mg-3 * 8;
             padding: $pd-1;
             text-align: left;
-            @include text($fs-4, $fw-3, $white);
+            @include text($fs-2, $fw-3, $white);
             text-transform: uppercase;
             background-color: $pink;
             display: inline-block;
             border-radius: 10px;
-            h4{
-                margin-bottom: 0;
-            }
             &:hover{
                 background-color: $black;
                 transition: all .5s;
             }
+            
         }
         .list__course{
             display: flex;
@@ -81,13 +80,18 @@
                     transition: all .5s;
                 }
             }
-            .link__categories {
-                background-color: $pink;
-            }
         }
         .itemCourse{
             padding: $pd-1;
         }
+        .title{
+            margin: $mg-3 $mg-3 * 6 $mg-1 ;
+            .title__categories{
+                text-decoration: none;
+                @include text($fs-3, $fw-2, $black-1);
+            }
+        }
+        
     }
     .pagination__course{
         display: flex;

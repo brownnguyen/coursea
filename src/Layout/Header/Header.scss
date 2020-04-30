@@ -63,6 +63,12 @@
 .sticky{
     background-color: $black;
     transition: all .5s;
+    .navbar{
+        .navbar-brand{
+            color: $pink;
+            transition: all .5s;
+        }
+    }
 }
 .activeClass{
     color: $pink!important;

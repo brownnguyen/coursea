@@ -1,0 +1,39 @@
+@import '../../Scss/Variables.scss';
+@import '../../Scss/Mixin.scss';
+
+.topContentAbout{
+    height: 800px;
+    background-image: url('../../img/background-img-about.jpg');
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    .layer{
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba( 0,0,0,0.4);
+    }
+    .aboutTop{
+        position: absolute;
+        top: 25%;
+        left: 45%;
+        transform: translate(-50%);
+        z-index: 1;
+        .content{
+            .title{
+                @include text($fs-6 + $fs-2, $fw-3, $white);
+                text-transform: uppercase;
+                span{
+                    color: $pink;
+                }
+            }
+            .details__content{
+                @include text($fs-2, $fw-2, $grey-1);
+            }
+        }
+    }
+    
+}

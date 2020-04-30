@@ -66,6 +66,11 @@
     ],
     "categories": [
         {
+            "id": "all",
+            "title": "All Categories",
+            "image": "./img/clients-1.jpg"
+        },
+        {
             "id": "design",
             "title": "Design",
             "image": "/img/lohp-category-design.jpg"
@@ -110,26 +115,84 @@
         {
             "id": "uni001",
             "image": "./img/clients-1.jpg",
-            "link" : "https://www.yorku.ca/index.html",
-            "name":"yorku"
+            "link": "https://www.yorku.ca/index.html",
+            "name": "yorku"
         },
         {
             "id": "uni002",
             "image": "./img/clients-2.jpg",
             "link": "https://www.maryville.edu/",
-            "name":"mary-ville"
+            "name": "mary-ville"
         },
         {
             "id": "uni003",
             "image": "./img/clients-3.jpg",
             "link": "https://www.brunel.ac.uk/",
-            "name":"burnel-ac"
+            "name": "burnel-ac"
         },
         {
             "id": "uni004",
             "image": "./img/clients-4.jpg",
             "link": "https://www.mtroyal.ca/",
-            "name":"mount-royal"
+            "name": "mount-royal"
+        }
+    ],
+    "organizations": [
+        {
+            "id": "organ__1",
+            "image": "./img/Organization/image-res.img1.png"
+        },
+        {
+            "id": "organ__2",
+            "image": "./img/Organization/image-res.img2.png"
+        },
+        {
+            "id": "organ__3",
+            "image": "./img/Organization/image-res.img3.png"
+        },
+        {
+            "id": "organ__4",
+            "image": "./img/Organization/image-res.img4.png"
+        },
+        {
+            "id": "organ__5",
+            "image": "./img/Organization/image-res.img5.png"
+        },
+        {
+            "id": "organ__6",
+            "image": "./img/Organization/image-res.img6.png"
+        }
+    ],
+    "organizationComment": [
+        {
+            "id": "cm1",
+            "author": "- Martin Schoenmakers",
+            "position": "COO at Atos",
+            "content": "“We need partners like Pluralsight to make sure that we can adapt quickly to new technologies, understanding the needs of our people and to pick the right topic at the right time.“"
+        },
+        {
+            "id": "cm2",
+            "author": "- Justin Burger",
+            "position": "Senior Director of Engineering, CDK Global",
+            "content": "“We wouldn’t have been able to do what we did...without having tools like Pluralsight available to us. It’s been critical to the success of the company.“"
+        },
+        {
+            "id": "cm3",
+            "author": "- Heather Abbot",
+            "position": "SVP of Corporate Solutions Technology, Nasdaq",
+            "content": "“The biggest part of the digital transformation to me is acceleration. Pluralsight is a key part of how Nasdaq is trying to keep up and be ahead. We’re only as good as our teams are.”"
+        },
+        {
+            "id": "cm4",
+            "author": "- Bron McCall",
+            "position": "CTO of Extra Space Storage",
+            "content": "“Pluralsight has given us a way to quickly provide very specific training to our team members. We can ensure that person is at the same level of knowledge for a specific technology.”"
+        },
+        {
+            "id": "cm5",
+            "author": "- Paul Smalera",
+            "position": "Ideas Editor, Quartz",
+            "content": "“For the first time, you have total visibility into the strengths and weaknesses of your technical team, combined with the ability to do something about it.”"
         }
     ]
 }

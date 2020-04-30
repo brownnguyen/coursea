@@ -1,0 +1,58 @@
+@import '../../Scss/Variables.scss';
+@import '../../scss/Mixin.scss';
+
+.organization{
+    margin: $mg-3 * 5 auto;
+    position: relative;
+    .organization__content{
+        .title{
+            margin-bottom: $mg-3 + $mg-1;
+            @include text($fs-2 + 5, $fw-2, $pink);
+        }
+        .organization__details{
+            border: 5px solid $grey-1;
+            width: 700px;
+        }
+    }
+    .organization__comment{
+        max-width: 120% ;
+        .organization__carousel{
+            position: absolute;
+            bottom: -20px;
+            left: 112%;
+            width: 120%;
+            .card{
+                background: linear-gradient(110deg, #F15B2A , #EC008C);
+                text-align: left;
+                padding: $pd-3;
+                border: none;
+                border-radius: 0;
+                .card-title, .card-author, .card-position{
+                    @include text($fs-1 + 3, $fw-2, $white);
+                    line-height: 40px;
+                }
+                .card-author{
+                    font-weight: $fw-3;
+                }
+            }
+        }
+    }
+}
+.carousel{
+    .control-arrow{
+        &:hover{
+            background: transparent!important;
+        }
+    }
+    .control-dots{
+        .dot{
+            box-shadow: none;
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+    .carousel-status{
+        display: none;
+    }
+}
