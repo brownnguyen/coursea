@@ -1,63 +1,85 @@
 @import '../../Scss/Variables.scss';
 @import '../../Scss/Mixin.scss';
 .trustSite{
-    background-image: url('../../img/bg__pattern--topo-white.png');
-    background-attachment: fixed;
+    padding: 0;
     height: 530px;
-    width: 100%;
-    background-color: $black;
-    position: relative;
-    .layer{
-        position: absolute;
-        top: 0;
-        left: 0;
+    .trustSite__details{
+        background-image: url('../../img/bg__pattern--topo-white.png');
+        background-attachment: fixed;
         width: 100%;
         height: 100%;
-        background-color: rgba(0,0,0,0.88);
-    }
-    .trustSite__content{
-        text-align: center;
-        position: absolute;
-        z-index: 1;
-        transform: translateX(-50%);
-        top: 20%;
-        left: 50%;
-        width: 70%;
-        margin: auto 0;
-        p{
-            @include text($fs-1, $fw-2, $pink);
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        background-color: $black;
+        position: relative;
+        .layer{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.88);
         }
-        h2{
-            @include text($fs-4, $fw-3, $white);
-            text-transform: uppercase;
-            width: 80%;
-            margin: $mg-3 auto $mg-3 * 2;
-        }
-    }
-    .trust__img{
-        .img__trust{
-            margin: auto 0;
-        }
-    }
-    .trustSiteStory {
-        margin-top: $mg-3 + 10;
-        text-align: center;
-        display: block;
-        @include text($fs-1, $fw-2, $white);
-        letter-spacing: 1px;
-        text-decoration: none;
-        i{
-            color: $pink;
-        }
-        &:hover{
-            color: $pink;
-            transition: all .5s;
-            i{
-                margin-left: $mg-1;
-                transition: all .5s;
+        .trustSite__bot__details{
+            width: 100%;
+            height: 100%;
+            .trustSite__content{
+                text-align: center;
+                position: absolute;
+                z-index: 1;
+                top: 10%;
+                left: 50%;
+                width: 80%;
+                transform: translateX(-50%);
+                margin: auto;
+                p{
+                    @include text($fs-1, $fw-2, $pink);
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                }
+                h2{
+                    @include text($fs-4, $fw-3, $white);
+                    text-transform: uppercase;
+                    width: 80%;
+                    margin: $mg-3 auto $mg-3 * 2;
+                }
+                .trust__img{
+                    width: 90%;
+                    margin: auto;
+                    .img__trust{
+                        margin: auto 0;
+                    }
+                }
+                .trustSiteStory {
+                    margin-top: $mg-3 + 10;
+                    text-align: center;
+                    display: block;
+                    @include text($fs-1, $fw-2, $white);
+                    letter-spacing: 1px;
+                    text-decoration: none;
+                    i{
+                        color: $pink;
+                    }
+                    &:hover{
+                        color: $pink;
+                        transition: all .5s;
+                        i{
+                            margin-left: $mg-1;
+                            transition: all .5s;
+                        }
+                    }
+                }  
             }
+        }
+    }
+}
+@media screen and (max-width: 1200px){
+    .trust__img{
+        width: 100%!important;
+    }
+}
+@media screen and(max-width: 992px){
+    .trustSite__content{
+        h2{
+            display: none;
         }
     }
 }

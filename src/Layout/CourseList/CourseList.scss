@@ -62,7 +62,7 @@
             display: flex;
             justify-content: center;
             padding-left: 0;
-            .course__categories{
+            .course__categories, .mediumScreenCourse{
                 cursor: pointer;
                 list-style: none;
                 display: inline-block;
@@ -79,6 +79,15 @@
                     background-color: $pink;
                     transition: all .5s;
                 }
+            }
+            .mediumScreenCourse{
+                padding: $pd-1 + 5;
+            }
+            .course__categories__screen{
+                margin: 0 auto;
+            }
+            .mediumCategories{
+                display: none;
             }
         }
         .itemCourse{
@@ -111,6 +120,28 @@
                 background-color: $pink;
                 border-color: $pink;
                 
+            }
+        }
+    }
+}
+@media only screen and (max-width: 1200px){
+    .course__categories{
+        padding: 10px!important;
+    }
+}
+@media screen and (max-width: 992px) and (min-width: 0px){
+    .course__categories__screen{
+        display: none;
+    }
+        .mediumCategories{
+            margin: 0 auto;
+            width: 90%;
+            display: block!important;
+            .medium__content__categories{
+                margin: auto;
+                .medium__course{
+                    margin: $mg-1;
+                    display: inline-block!important;
             }
         }
     }

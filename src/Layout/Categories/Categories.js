@@ -12,8 +12,8 @@ class Categories extends Component {
     renderCategories = () => {
         return data.categories.map((item, index) => {
             return (
-                <Link to={`/course/${item.id}`} exact href="google.com" onClick={()=> this.getKind(item.id)} id={item.id}
-                 className="col-3 categories__content" key={index}>
+                <Link to={`/course/${item.id}`} href="google.com" onClick={()=> this.getKind(item.id)} id={item.id}
+                 className="col-lg-3 col-md-4 col-sm-6 categories__content" key={index}>
                     <div className="card">
                         <div className="card__img">
                         <img className="card-img-top" src={item.image} width={270} height={312} alt={item.title} />

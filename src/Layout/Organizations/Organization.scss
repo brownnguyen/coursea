@@ -2,7 +2,7 @@
 @import '../../scss/Mixin.scss';
 
 .organization{
-    margin: $mg-3 * 5 auto;
+    margin: $mg-3 * 2 auto;
     position: relative;
     .organization__content{
         .title{
@@ -10,17 +10,14 @@
             @include text($fs-2 + 5, $fw-2, $pink);
         }
         .organization__details{
+            margin: $mg-2 auto;
             border: 5px solid $grey-1;
-            width: 700px;
+            width: 100%;
         }
     }
     .organization__comment{
-        max-width: 120% ;
         .organization__carousel{
-            position: absolute;
-            bottom: -20px;
-            left: 112%;
-            width: 120%;
+            width: 100%;
             .card{
                 background: linear-gradient(110deg, #F15B2A , #EC008C);
                 text-align: left;

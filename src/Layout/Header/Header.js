@@ -19,8 +19,8 @@ class Header extends Component {
     render() {
         return (
             <div className={this.state.scrolled ? "container-fluid header sticky " : "container-fluid header"}>
-                <nav className="navbar navbar-expand-md navbar-dark">
-                    <NavLink to="/" exact className="navbar-brand" onClick={this.changeKind} href="#">Cour<span className="brand">sea</span></NavLink>
+                <nav className="navbar navbar-expand-lg  navbar-dark">
+                    <NavLink to="/" exact className="navbar-brand">Cour<span className="brand">sea</span></NavLink>
                     <div className="shop__cart">
                         <span><i className="fa fa-shopping-cart"></i></span>
                         <span></span>
@@ -66,9 +66,6 @@ class Header extends Component {
     }
     componentDidMount() {
         window.addEventListener('scroll', () => this.scroll())
-    }
-    componentWillMount() {
-        window.removeEventListener('scroll', () => this.scroll());
     }
 }
 

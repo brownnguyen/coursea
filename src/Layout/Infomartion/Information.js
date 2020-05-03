@@ -21,14 +21,14 @@ class Information extends Component {
             <div>
                 <div className='container information'>
                     <div className="row">
-                        <div className="col-5 top__info">
+                        <div className="col-lg-5 col-md-12 top__info">
                             <h2>
                                 We build awesome course
                                 and university sites!
                             </h2>
                             <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged.</p>
                         </div>
-                        <div className="col-7 bot__info">
+                        <div className="col-lg-7 col-md-12 bot__info">
                             <div className="row">
                                 {this.renderInfo()}
                             </div>

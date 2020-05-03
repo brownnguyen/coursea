@@ -194,5 +194,89 @@
             "position": "Ideas Editor, Quartz",
             "content": "“For the first time, you have total visibility into the strengths and weaknesses of your technical team, combined with the ability to do something about it.”"
         }
+    ],
+    "glance": [
+        {
+            "id": "gl1",
+            "content": "1,500+ expert authors"
+        },
+        {
+            "id": "gl2",
+            "content": "Trusted by 70% of the Fortune 500 companies; more than 17,700 business accounts."
+        },
+        {
+            "id": "gl3",
+            "content": "1,700+ employees"
+        },
+        {
+            "id": "gl4",
+            "content": "Headquartered in Utah"
+        }
+    ],
+    "leadership": [
+        {
+            "id": "leader1",
+            "name": "Aaron Skonnard",
+            "position": "CEO",
+            "modalImage": "./img/leader/modalimage-res1.jpg",
+            "image": "./img/leader/gridimage-res.img.0eb7333c-1c6f-4a3e-bd6b-41b30c20c4d4.jpg",
+            "about": "Aaron Skonnard is the CEO of Pluralsight (NASDAQ: PS), a fast-growing enterprise technology skills platform. Aaron cofounded Pluralsight in 2004 and has since grown the company to more than 1,000 employees and 1,500 expert authors. As CEO, Aaron focuses on business strategy, future direction, product development and strategic partnerships. On a day-to-day basis, he works closely with the entire executive team in different capacities, including recruiting, brand management, marketing, sales, feature planning and content acquisition."
+        },
+        {
+            "id": "leader2",
+            "name": "Nate Walkingshaw",
+            "position": "CXO",
+            "modalImage": "./img/leader/modalimage-res22.png",
+            "image": "./img/leader/gridimage-res.img.5c07850f-4678-44d4-bdbf-86b03d9966d0.png",
+            "about": "Most widely known for his keen product development methodologies, Nate is obsessed with how products are built and the teamwork it takes to build them. As CXO, Nate has crafted an organization that is centered on user experience, and also created collaborative teams including: product managers, UX designers, analysts, and persona researchers."
+        },
+        {
+            "id": "leader3",
+            "name": "Heather Zynczak",
+            "position": "CMO",
+            "modalImage": "./img/leader/modalimage-res2.jpg",
+            "image": "./img/leader/gridimage-res.img.54f2f441-c5d3-4f6d-a03e-9ea13a350a6e.jpg",
+            "about": "A champion for data-driven marketing throughout her 20-year career, Heather has held executive marketing and product management positions at some of the world's largest enterprise technology companies. She most recently served as CMO of one of tech's fastest growing enterprise SaaS companies."
+        },
+        {
+            "id": "leader4",
+            "name": "Anita Grantham",
+            "position": "CPO",
+            "modalImage": "./img/leader/modalimage-res3.jpg",
+            "image": "./img/leader/gridimage-res.img.109f5833-53d2-4d39-99d7-d58b2efd008c.jpg",
+            "about": "Anita oversees the entire employee journey, from recruiting and acquisition to employee growth and retention. Whether she’s negotiating better benefits or helping design workspaces to better serve Pluralsight’s teams, Anita loves creating an environment where people can do their best work."
+        },
+        {
+            "id": "leader5",
+            "name": "James Budge",
+            "position": "CFO",
+            "modalImage": "./img/leader/modalimage-res4.jpg",
+            "image": "./img/leader/gridimage-res.img.282dbd8c-ebd4-4f1d-a34c-40efe0d652b8.jpg",
+            "about": "Drawing on his more than 20 years of financial leadership experience, James acts as the financial and operational advisor to the Pluralsight executive team. In his role, he is responsible for the company’s financial, data and information technology teams. His expertise, knowledge and skills play a critical role as Pluralsight accelerates its growth."
+        },
+        {
+            "id": "leader6",
+            "name": "Ross Meyercord",
+            "position": "CRO",
+            "modalImage": "./img/leader/modalimage-res5.jpg",
+            "image": "./img/leader/gridimage-res.img.66426a4b-428d-460b-bc29-8683af092a2d.jpg",
+            "about": "Ross is Chief Revenue Officer for Pluralsight (NASDAQ: PS), the technology skills platform. Ross joined Pluralsight in October 2019 excited by Pluralsight’s mission to democratize technology skills and the opportunity to support companies around the world who are embracing technology to support their goals and build new ways of doing business. As CRO, Ross is responsible for leading all elements of customer success, including the direct and indirect sales teams, pre-sales, and professional services serving customers in more than 150 countries. Meyercord brings nearly 30 years of experience to Pluralsight, including enterprise SaaS sales, partnerships, sales operations, and technology leadership. Most recently, as EVP on the North American sales team at Salesforce, and previously as Chief Information Officer, Meyercord was a key member of the leadership team that helped grow Salesforce from $2.5B to more than $16B in annual revenue. Meyercord began his career at Accenture, where he was a senior partner in the Communications and High-Tech practice and left after 22 years to join Salesforce."
+        },
+        {
+            "id": "leader7",
+            "name": "Brandon Peay",
+            "position": "Chief Strategy and Operations Officer",
+            "modalImage": "./img/leader/modalimage-res6.jpg",
+            "image": "./img/leader/gridimage-res.img.ac4dd012-5f58-45f3-a571-89950117f65b.jpg",
+            "about": "Brandon Peay believes strongly in being a life-long learner. As an avid reader, he is always on the lookout for new ideas and thought pieces on leadership development, technology and business strategy. So he is a natural fit on Pluralsight’s executive team where he shoulders the responsibility for strategy, business operations, partnerships and M&A. Brandon is passionate about Pluralsight’s mission of creating progress through technology that lifts the human condition."
+        },
+        {
+            "id": "leader8",
+            "name": "Matthew Forkner",
+            "position": "Chief Legal Officer",
+            "modalImage": "./img/leader/modalimage-res.img8.jpg",
+            "image": "./img/leader/gridimage-res.img.f2cd3d21-1cbf-4635-ae81-1febd72c24aa.jpg",
+            "about": "Matthew Forkner is Chief Legal Officer at Pluralsight, a fast-growing enterprise technology learning platform. In this role Forkner is responsible for Pluralsight's global legal activities and policies, as well as risk management, corporate ethics and social responsibility, compliance and regulatory affairs. Forkner joined Pluralsight in March 2018 from GoDaddy, where he served as Vice President, Deputy General Counsel. Prior to GoDaddy, he practiced law at Silicon Valley law firms Wilson Sonsini Goodrich & Rosati and Fenwick & West, where he advised and represented financial institutions and corporations worldwide on issues including corporate governance, complex corporate transactions, and capital markets offerings."
+        }
     ]
 }

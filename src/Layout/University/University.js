@@ -5,9 +5,9 @@ class University extends Component {
     renderUni = () => {
         return data.university.map((item,index)=>{
             return (
-                <div className="col-3 uni__item" key={index}>
+                <div className="col-lg-3 col-md-6 text-center uni__item" key={index}>
                     <a href={item.link}>
-                        <img src={item.image} width={250} alt={item.name}/>
+                        <img src={item.image} width={220} alt={item.name}/>
                     </a>
                 </div>
             )

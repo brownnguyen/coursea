@@ -15,7 +15,7 @@ class Organizations extends Component {
     }
     renderCarousel = () => {
         return database.organizationComment.map((item, index) => {
-            let {content, author, position} = item;
+            let { content, author, position } = item;
             return (
                 <div key={index}>
                     <div className="card">
@@ -34,16 +34,16 @@ class Organizations extends Component {
         return (
             <div className="container organization">
                 <div className="row">
-                    <div className="col-6 organization__content">
+                    <div className="col-xl-6 col-lg-12 text-center organization__content">
                         <h3 className="title">Helping thousands of organizations transform at scale</h3>
                         <div className="row organization__details">
                             {this.renderOrganization()}
                         </div>
-                        <div className="col-6 organization__comment">
-                            <Carousel className="organization__carousel" onChange={this.onChange} onClickItem={this.onClickItem}>
-                                {this.renderCarousel()}
-                            </Carousel>
-                        </div>
+                    </div>
+                    <div className="col-xl-6 col-lg-12 organization__comment">
+                        <Carousel className="organization__carousel" onChange={this.onChange} onClickItem={this.onClickItem}>
+                            {this.renderCarousel()}
+                        </Carousel>
                     </div>
                 </div>
             </div>

@@ -4,7 +4,7 @@ import data from '../../JSON/course.json';
 import database from '../../JSON/database.json';
 import CourseDetail from './CourseDetail';
 import { connect } from 'react-redux';
-import { KIND, ACTIVE_PAGE} from '../../Action/Type.js';
+import { KIND, ACTIVE_PAGE } from '../../Action/Type.js';
 import { createAction } from '../../Action/createAction.js';
 import Pagination from 'react-js-pagination';
 import { Link } from 'react-router-dom';
@@ -20,7 +20,7 @@ class CourseList extends Component {
         if (kind === "all") {
             return data.course.map((item, index) => {
                 return (
-                    <div className="col-3 itemCourse" key={index}>
+                    <div className="col-lg-3 col-md-4 col-sm-6 itemCourse" key={index}>
                         <CourseDetail course={item} />
                     </div>
                 )
@@ -30,17 +30,26 @@ class CourseList extends Component {
             let newarray = course.filter(item => item.kind === kind);
             return newarray.map((item, index) => {
                 return (
-                    <div className="col-3 itemCourse" key={index}>
+                    <div className="col-lg-3 col-md-4 col-sm-6 itemCourse" key={index}>
                         <CourseDetail course={item} />
                     </div>
                 )
-            }).slice(start,end);
+            }).slice(start, end);
         }
+    }
+    renderTitleCategoriesDiv = () => {
+        return database.categories.map((item, index) => {
+            return (
+                <div className="medium__course" key={index}>
+                    <Link className="mediumScreenCourse" id={item.id} to={`/course/${item.id}`} onClick={() => this.getKind(`${item.id}`)} key={index}>{item.title}</Link>
+                </div>
+            )
+        })
     }
     renderTitleCategories = () => {
         return database.categories.map((item, index) => {
             return (
-                <Link className="course__categories" id={item.id} exact to={`/course/${item.id}`} onClick={() => this.getKind(`${item.id}`)} key={index}>{item.title}</Link>
+                <Link className="course__categories" id={item.id} to={`/course/${item.id}`} onClick={() => this.getKind(`${item.id}`)} key={index}>{item.title}</Link>
             )
         })
     }
@@ -63,10 +72,18 @@ class CourseList extends Component {
                 </div>
                 <div className="courseDetail">
                     <div className="title">
-                    <h2 className="title__categories">All categories</h2>
+                        <h2 className="title__categories">All categories</h2>
                     </div>
                     <div className="list__course">
-                        {this.renderTitleCategories().slice(1,9)}
+                        <div className="course__categories__screen row">
+                            {this.renderTitleCategories().slice(1, 9)}
+                        </div>
+                        <div className="row mediumCategories">
+                            <div className="medium__content__categories">
+                            {this.renderTitleCategoriesDiv().slice(1, 9)}
+                            </div>
+                            
+                        </div>
                     </div>
                     <div className="container">
                         <div className="row">
@@ -91,7 +108,7 @@ const mapStateToProp = (state) => ({
     course: state.CourseReducer.course,
     totalItem: state.CourseReducer.totalItem,
     kind: state.CourseReducer.kind,
-    activePage : state.CourseReducer.activePage
+    activePage: state.CourseReducer.activePage
 })
 
 export default connect(mapStateToProp)(CourseList);
