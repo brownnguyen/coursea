@@ -7,7 +7,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import ScrollToTop from 'react-router-scroll-top';
 import {connect} from 'react-redux';
 import { createAction } from './Action/createAction.js';
-import { STATE } from './Action/Type.js';
+import { STATE, CART } from './Action/Type.js';
 import About from './Pages/About.js';
 class App extends Component {
   render(){
@@ -25,14 +25,23 @@ class App extends Component {
       </div>
     );
   }
+  getCart = () => {
+    const cartStr = localStorage.getItem('cart');
+    if(cartStr){
+      this.props.dispatch(createAction(CART,JSON.parse(cartStr)))
+    }
+  }
   getState = () => {
     const stateStr = localStorage.getItem('state');
+    
     if(stateStr){
-      this.props.dispatch(createAction(STATE,JSON.parse(stateStr)))
+      this.props.dispatch(createAction(STATE,JSON.parse(stateStr)));
+     
     }
   }
   componentDidMount(){
-    this.getState()
+    this.getState();
+    this.getCart()
   }
 }
 

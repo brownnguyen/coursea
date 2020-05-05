@@ -8,8 +8,7 @@ class Header extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            scrolled: true,
-            kindAll : "all"
+            scrolled: true
         }
     }
     changeKind = (e) => {
@@ -17,13 +16,14 @@ class Header extends Component {
         this.props.dispatch(createAction(KIND, value))
     }
     render() {
+        let {cart} = this.props;
         return (
             <div className={this.state.scrolled ? "container-fluid header sticky " : "container-fluid header"}>
                 <nav className="navbar navbar-expand-lg  navbar-dark">
                     <NavLink to="/" exact className="navbar-brand">Cour<span className="brand">sea</span></NavLink>
                     <div className="shop__cart">
                         <span><i className="fa fa-shopping-cart"></i></span>
-                        <span></span>
+                        {cart.length > 0 ? <span className="quantity">{cart.length}</span> : <span></span>}
                     </div>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon" />
@@ -34,7 +34,7 @@ class Header extends Component {
                                 <NavLink to="/" exact activeClassName="activeClass" onClick={this.changeKind} className="nav-link">Home</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to="/course/all" exact activeClassName="activeClass" id="all" onClick={this.changeKind}  className="nav-link">Course</NavLink>
+                                <NavLink to={`/course/${this.props.kind}`} exact activeClassName="activeClass" id="all" onClick={this.changeKind} className="nav-link">Course</NavLink>
                             </li>
                             <li className="nav-item">
                                 <NavLink to="/about" exact activeClassName="activeClass" className="nav-link" >About</NavLink>
@@ -52,7 +52,7 @@ class Header extends Component {
         );
     }
     scroll = () => {
-        const isTop = window.scrollY < 100;
+        const isTop = window.scrollY < 50;
         if (isTop) {
             this.setState({
                 scrolled: false
@@ -70,6 +70,7 @@ class Header extends Component {
 }
 
 const mapStateToProps = (state) => ({
-    kind: state.CourseReducer.kind
+    kind: state.CourseReducer.kind,
+    cart: state.CartReducer.cart
 })
 export default connect(mapStateToProps)(Header);

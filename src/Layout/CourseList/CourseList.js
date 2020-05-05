@@ -20,9 +20,9 @@ class CourseList extends Component {
         if (kind === "all") {
             return data.course.map((item, index) => {
                 return (
-                    <div className="col-lg-3 col-md-4 col-sm-6 itemCourse" key={index}>
-                        <CourseDetail course={item} />
-                    </div>
+                        <div className="col-lg-3 col-md-4 col-sm-6 itemCourse" key={index}>
+                            <CourseDetail course={item} />
+                        </div>
                 )
             }).slice(start, end);
         }
@@ -80,9 +80,9 @@ class CourseList extends Component {
                         </div>
                         <div className="row mediumCategories">
                             <div className="medium__content__categories">
-                            {this.renderTitleCategoriesDiv().slice(1, 9)}
+                                {this.renderTitleCategoriesDiv().slice(1, 9)}
                             </div>
-                            
+
                         </div>
                     </div>
                     <div className="container">

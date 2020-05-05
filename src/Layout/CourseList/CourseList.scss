@@ -68,8 +68,7 @@
                 display: inline-block;
                 text-decoration: none;
                 @include text($fs-1, $fw-2, $white);
-                text-transform: uppercase;
-                padding: $pd-3;
+                padding: $pd-3 - 5;
                 background-color: purple;
                 display: flex;
                 justify-content: center;
@@ -97,7 +96,7 @@
             margin: $mg-3 $mg-3 * 6 $mg-1 ;
             .title__categories{
                 text-decoration: none;
-                @include text($fs-3, $fw-2, $black-1);
+                @include text($fs-3, $fw-2, $pink);
             }
         }
         
@@ -126,7 +125,7 @@
 }
 @media only screen and (max-width: 1200px){
     .course__categories{
-        padding: 10px!important;
+        padding: $pd-1 + 3.5!important;
     }
 }
 @media screen and (max-width: 992px) and (min-width: 0px){
@@ -135,7 +134,7 @@
     }
         .mediumCategories{
             margin: 0 auto;
-            width: 90%;
+            width: 75%;
             display: block!important;
             .medium__content__categories{
                 margin: auto;

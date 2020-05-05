@@ -1,0 +1,25 @@
+@import '../../scss/Variables.scss';
+@import '../../scss/Mixin.scss';
+.showCourse{
+    position: absolute;
+    z-index: 10;
+    width: 400px;
+    display: none;
+    .showCourse__content{
+        display: flex;
+        .showCourse__img{
+            width: 400px;
+        }
+        .showCourse__body{
+            padding: $pd-2;
+            .showCourse__button{
+                padding: $pd-1;
+                background-color: $pink;
+                font-size: $fs-1;
+                text-transform: uppercase;
+                color: $white;
+            }
+        }
+    }
+    
+}

@@ -22,12 +22,20 @@
                 text-transform: uppercase;
             }
             .card-text{
-                @include text($fs-1, $fw-1, $grey);
+                @include text($fs-1 - 2, $fw-2, $grey);
                 margin-bottom: 0
             }
             .price{
                 @include text($fs-1, $fs-3, $grey);
                 margin-bottom: 0;
+            }
+            .add__course{
+                border-radius: 0;
+                background-color: $pink;
+                color: $white;
+                &:hover{
+                    color: $pink;
+                }
             }
         }
         &:hover{
@@ -37,6 +45,9 @@
             }
             .card-title, .card-text, .price{
                 color: $pink;
+            }
+            .add__course{
+                background-color: $black;
             }
             box-shadow: 1px 2px 4px 3px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 3px 12px 10px 3px rgba(0, 0, 0, 0.12);
             transition: all .3s;

@@ -23,7 +23,7 @@
             margin-bottom: $mg-3;
         };
         p{
-            @include text ($fs-1 + 5, $fw-1, $white);
+            @include text ($fs-1 + 3, $fw-2, $white);
             line-height: 30px;
         };
         .input{

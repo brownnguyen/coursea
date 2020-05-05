@@ -42,7 +42,6 @@ export const CourseReducer = (state = initialState, action) => {
                 else{
                     let length = state.course.filter(item => item.kind === payload).length;
                     state.totalItem = length;
-                    console.log(length)
                 }
                 state.kind = updateKind;
                 localStorage.setItem('state',JSON.stringify(state))
