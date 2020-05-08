@@ -1,6 +1,7 @@
 @import '../../Scss/Variables.scss';
 @import '../../Scss/Mixin.scss';
 .footer{
+    width: 100%;
     background-color: $black;
     padding: $pd-3 0;
     .footer__content{

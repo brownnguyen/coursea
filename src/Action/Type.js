@@ -5,3 +5,6 @@ export const ACTIVE_PAGE = "ACTIVE_PAGE";
 export const STATE = "STATE";
 export const ADD_CART = "ADD_CART"
 export const CART = "CART";
+export const DETAIL = "DETAIL";
+export const REMOVE__COURSE = "REMOVE__COURSE";
+export const COURSE__DETAIL = "COURSE__DETAIL";

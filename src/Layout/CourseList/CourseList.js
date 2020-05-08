@@ -79,7 +79,7 @@ class CourseList extends Component {
                             {this.renderTitleCategories().slice(1, 9)}
                         </div>
                         <div className="row mediumCategories">
-                            <div className="medium__content__categories">
+                            <div className="medium__content__categories ">
                                 {this.renderTitleCategoriesDiv().slice(1, 9)}
                             </div>
 

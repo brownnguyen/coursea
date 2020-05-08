@@ -1,0 +1,119 @@
+@import '../../scss/Variables.scss';
+@import '../../Scss/Mixin.scss';
+.courseDetailPage{
+    .layer__detail{
+        padding: $pd-3 * 2 0;
+        width: 100%;
+        background-color: $black;
+    }
+    .layer__detail2{
+        padding: $pd-3 0;
+        width: 100%;
+        background-color: $white;
+    }
+    background-color: $black-1;
+    .content__courseDetail{
+        position: relative;
+        width: 80%;
+        margin: 0 auto;
+        padding: $pd-3 * 1 0;
+        .courseDetailPage__title{
+            max-width: 56%;
+            margin-left: 5%;
+            h4{
+                @include text($fs-3, $fw-2, $white);
+            }
+            p{
+                @include text($fs-2, $fw-2, $white);
+                margin-bottom: 0;
+            }
+            span{
+                text-align: right;
+                display: block;
+                @include text($fs-1, $fw-2, $white);
+            }
+        }
+    }
+    .courseDetail__img{
+        border: 1px solid #dcd7d7;
+        position: absolute;
+        top: $pd-3 * 2;
+        right: 0;
+        background-color: $white;
+        padding: $pd-1;
+        .img__details{
+            img{
+                width: 100%;
+            }
+        }
+        .LinkToCart{
+            text-decoration: none;
+            width: 100%;
+            padding: $pd-1 0;
+            background-color: $white;
+            border: 1px solid rgb(0, 155, 121);
+            color: rgb(0, 155, 121);
+            border-radius: 0;
+            &:hover{
+                background-color: #006151;
+                color: $white;
+            }
+        }
+        .add__course{
+            text-decoration: none;
+            width: 100%;
+            padding: $pd-1 0;
+            background-color: $pink;
+            color: $white;
+            border-radius: 0;
+            &:hover{
+                background-color: #a71647;
+            }
+        }
+        .price__details{
+            margin: $mg-2;
+            .price{
+                @include text($fs-2, $fw-2, $black-1);
+            }
+        }
+        h5{
+            margin: $mg-1;
+            @include text($fs-2, $fw-2, $black-1);
+        }
+        .courseDetail__info{
+            list-style: none;
+            i{
+                padding-right: $pd-1;
+                color: $pink;
+            }
+        }
+    }
+}
+.course__reach{
+    margin: $mg-3 0;
+    .content__details__reach{
+        border: 1px solid #dcd7d7;
+        background-color: #f9f9f9;
+        h5{
+            margin: $mg-3 0 $mg-1 $mg-3;
+            @include text($fs-2, $fw-2, $pink);
+        }
+        .content__reach{
+            padding: $pd-3;
+            padding-top: 0;
+            .ul__reach{
+                padding: 0;
+                padding-right: $pd-2;
+                li{
+                    padding-bottom: $pd-1;
+                    list-style: none;
+                    i{
+                        padding-right: $pd-1;
+                        color: $pink;
+                    }
+                }
+            }
+        }
+    }
+    
+}

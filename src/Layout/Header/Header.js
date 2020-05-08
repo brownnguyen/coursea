@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
 import './Header.scss';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createAction } from '../../Action/createAction';
 import { KIND } from '../../Action/Type';
+import { withRouter} from 'react-router';
 class Header extends Component {
     constructor(props) {
         super(props);
@@ -13,7 +14,7 @@ class Header extends Component {
     }
     changeKind = (e) => {
         let value = e.target.id
-        this.props.dispatch(createAction(KIND, value))
+        this.props.dispatch(createAction(KIND, value));
     }
     render() {
         let {cart} = this.props;
@@ -21,10 +22,10 @@ class Header extends Component {
             <div className={this.state.scrolled ? "container-fluid header sticky " : "container-fluid header"}>
                 <nav className="navbar navbar-expand-lg  navbar-dark">
                     <NavLink to="/" exact className="navbar-brand">Cour<span className="brand">sea</span></NavLink>
-                    <div className="shop__cart">
+                    <Link to="/shoppingCart" className="shop__cart">
                         <span><i className="fa fa-shopping-cart"></i></span>
                         {cart.length > 0 ? <span className="quantity">{cart.length}</span> : <span></span>}
-                    </div>
+                    </Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon" />
                     </button>
@@ -73,4 +74,4 @@ const mapStateToProps = (state) => ({
     kind: state.CourseReducer.kind,
     cart: state.CartReducer.cart
 })
-export default connect(mapStateToProps)(Header);
+export default withRouter(connect(mapStateToProps)(Header));

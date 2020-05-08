@@ -7,8 +7,10 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import ScrollToTop from 'react-router-scroll-top';
 import {connect} from 'react-redux';
 import { createAction } from './Action/createAction.js';
-import { STATE, CART } from './Action/Type.js';
+import { STATE, CART, DETAIL } from './Action/Type.js';
 import About from './Pages/About.js';
+import ShoppingCart from './Pages/ShoppingCart/ShoppingCart.js';
+import CourseDetailPage from './Pages/CourseDetailPage/CourseDetailPage.js';
 class App extends Component {
   render(){
     return (
@@ -20,6 +22,8 @@ class App extends Component {
           </ScrollToTop>
           <Route path="/" exact component={Home} />
           <Route path="/about" exact component={About}/>
+          <Route path="/shoppingCart" exact component={ShoppingCart}/>
+          <Route path="/detailPage/:detailId" exact component={CourseDetailPage}/>
           <Footer />
         </BrowserRouter>
       </div>
@@ -39,9 +43,16 @@ class App extends Component {
      
     }
   }
+  getCourseDetail = () => {
+    const detailStr = localStorage.getItem('detail');
+    if(detailStr){
+      this.props.dispatch(createAction(DETAIL, JSON.parse(detailStr)));
+    }
+  }
   componentDidMount(){
     this.getState();
-    this.getCart()
+    this.getCart();
+    this.getCourseDetail();
   }
 }
 
