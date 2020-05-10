@@ -28,8 +28,10 @@
                     border: 1px solid transparent;
                     border-radius: 0;
                     background-color: $black;
-                    .card-img-top{
-                        width: 100%;
+                    .card__img{
+                        .card-img-top{
+                            width: 100%;
+                        }
                     }
                     .card-body{
                         padding: $pd-2 $pd-1;
@@ -52,7 +54,7 @@
 }
 .contentBottomModal{
     position: relative;
-    min-width: 550px;
+    min-width: 400px;
     height: 350px;
     .close{
         cursor: pointer;

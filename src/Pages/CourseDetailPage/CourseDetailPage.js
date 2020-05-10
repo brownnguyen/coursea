@@ -42,12 +42,12 @@ class CourseDetailPage extends Component {
                             {this.renderButton()}
                             <h5>This course include: </h5>
                             <ul className="courseDetail__info">
-                                <li><i class="fab fa-airbnb"></i>9 hours on-demand video</li>
-                                <li><i class="fab fa-airbnb"></i>15 articles</li>
-                                <li><i class="fab fa-airbnb"></i>6 downloadable resources</li>
-                                <li><i class="fab fa-airbnb"></i>Full lifetime access</li>
-                                <li><i class="fab fa-airbnb"></i>Access on mobile and TV</li>
-                                <li><i class="fab fa-airbnb"></i>Certificate of Completion</li>
+                                <li><i className="fab fa-airbnb"></i>9 hours on-demand video</li>
+                                <li><i className="fab fa-airbnb"></i>15 articles</li>
+                                <li><i className="fab fa-airbnb"></i>6 downloadable resources</li>
+                                <li><i className="fab fa-airbnb"></i>Full lifetime access</li>
+                                <li><i className="fab fa-airbnb"></i>Access on mobile and TV</li>
+                                <li><i className="fab fa-airbnb"></i>Certificate of Completion</li>
                             </ul>
                         </div>
                     </div>
@@ -59,15 +59,15 @@ class CourseDetailPage extends Component {
                             <div className="content__reach row">
                                 <div className="col-6 p-0">
                                     <ul className="ul__reach">
-                                        <li><i class="fa fa-anchor"></i>
+                                        <li><i className="fa fa-anchor"></i>
                                         Become a Master in Leadership</li>
-                                        <li><i class="fa fa-anchor"></i>
+                                        <li><i className="fa fa-anchor"></i>
                                         Delegate effectively to empower their team</li>
-                                        <li><i class="fa fa-anchor"></i>
+                                        <li><i className="fa fa-anchor"></i>
                                         Understand academic theories surrounding leadership styles and techniques</li>
-                                        <li><i class="fa fa-anchor"></i>
+                                        <li><i className="fa fa-anchor"></i>
                                         Know the difference between delegating styles and which one is appropriate for each situation</li>
-                                        <li><i class="fa fa-anchor"></i>
+                                        <li><i className="fa fa-anchor"></i>
                                         Spend more time developing plans and ideas for the future</li>
                                     </ul>
                                 </div>

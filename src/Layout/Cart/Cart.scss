@@ -1,0 +1,82 @@
+@import '../../Scss/Variables.scss';
+@import '../../Scss/Mixin.scss';
+.shopCart{
+    position: relative;
+    background-color: $white;
+    margin: 0 auto;
+    width: 300px;
+    height: 400px;
+    box-shadow: 1px 2px 4px 3px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14), 3px 12px 10px 3px rgba(0, 0, 0, 0.12);
+    &:before{
+        position: absolute;
+        content: '';
+        top: -5px;
+        left: 93px;
+        display: block;
+        width: 15px;
+        height: 15px;
+        background-color: $white;
+        transform: rotate(45deg);
+    }
+    .shopCart__content{
+        height: 70%;
+        overflow-y: auto;
+        .shopCart__details{
+            margin: $mg-2;
+            width: 100%;
+            .img__shopCart{
+                img{
+                    width: 100%;
+                }
+            }
+            h5{
+                margin-bottom: 0;
+                @include text($fw-1, $fw-2, $black-1)
+            }
+            p{
+                margin-bottom: 0;
+                @include text($fw-1, $fw-2, $black-1)
+            }
+        }
+    }
+    .shopCart__total{
+        height: 30%;
+        position: absolute;
+        bottom: 0;
+        background-color: #eaeaea;
+        width: 100%;
+        padding: $pd-1 $pd-2;
+        .priceItemDiv{
+            height: 55px;
+            display: flex;
+            padding-bottom: $pd-1 - 5;
+            justify-content: space-between;
+            .price, .item{
+                p, h6{
+                    @include text($fw-1, $fw-2, $black-1);
+                    margin-bottom: 0;
+                 }
+                 p{
+                     color: $pink;
+                 }
+            }
+        }
+        .goToCartDiv{
+            display: block;
+            .button__goToCart{
+                width: 100%;
+                border-radius: 0;
+                border: 1px solid transparent;
+                &:focus{
+                    box-shadow: none;
+                    background-color: #b11d4f!important;
+                }
+                background-color: $black-1;
+                &:hover{
+                    background-color: $pink;
+                }
+            }
+        }
+        
+    }
+}

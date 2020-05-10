@@ -6,22 +6,24 @@ class LeaderShip extends Component {
     renderLeaderCard = () => {
         return database.leadership.map((item, index) => {
             return (
-                <Popup padding={0} modal trigger={
-                    <div className="col-lg-3 col-md-4 col-sm-6 content" key={index}>
+                <Popup key={index} padding={0} modal trigger={
+                    <div className="col-lg-3 col-md-4 col-sm-6 content">
                         <div className="card">
+                            <div className="card__img">
                             <img className="card-img-top" src={item.image} alt={item.id} />
+                            </div>
                             <div className="card-body">
                                 <h4 className="card-title">{item.name}</h4>
                                 <p className="card-text">{item.position}</p>
                             </div>
                         </div>
-                    </div>}>
+                    </div>} className="mx-auto">
                     {close => (<div className="contentBottomModal">
                         <span className="close" onClick={close}>&times;</span>
-                        <div className="modalImgLeaderShip col-sm-4">
+                        <div className="modalImgLeaderShip col-md-4 col-sm-5">
                             <img src={item.modalImage} alt={item.id} />
                         </div>
-                        <div className="content__modalImageLeaderShip col-sm-8">
+                        <div className="content__modalImageLeaderShip col-md-8 col-sm-7">
                             <div className="content__modalLeaderShip">
                                 <h3 className="title__LeaderShip">{item.name}</h3>
                                 <p className="position__LeaderShip">{item.position}</p>

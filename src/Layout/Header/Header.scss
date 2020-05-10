@@ -34,6 +34,15 @@
                     }
                 }
             }
+            button.nav-link{
+                background-color:transparent;
+                border: none;
+            }
+            .popup-overlay{
+                .popup-content{
+                    width: 20%!important;
+                }
+            }
         }
         .navbar-toggler{
             border: 1px solid $white;
@@ -41,14 +50,14 @@
                 color: $white;
             }
         }
-        .shop__cart{
-            position: relative;
-            margin-left: 20%;
-            color: $white;
+        .cartDiv{
+            margin-left: 18%;
             width: 46px;
             height: 46px;
             line-height: 46px;
             text-align: center;
+            position: relative;
+            color: $white;
             border: 1px solid transparent;
             border-radius: 50%;
             cursor: pointer;
@@ -61,6 +70,18 @@
                     background-color: $white;
                     color: $black;
                 }
+                .shop__cart{
+                    color: $black;
+                }
+            }
+            .cartContent{
+                position: absolute;
+                top: 43px;
+                left: -80px;
+            }
+            .shop__cart{
+                text-decoration: none;
+                color: $white; 
             }
             .quantity{
                 display: inline-block;

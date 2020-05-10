@@ -69,7 +69,7 @@
                 text-decoration: none;
                 @include text($fs-1, $fw-2, $white);
                 padding: $pd-3 - 5;
-                background-color: purple;
+                background-color: $black-1;
                 display: flex;
                 justify-content: center;
                 align-items: center;
