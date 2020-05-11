@@ -4,9 +4,9 @@
     text-decoration: none!important;
     cursor: pointer;
     .courseDetail{
-        position: relative;
         border-radius: 0;
         .card__img{
+            position: relative;
             .layer{
                 position: absolute;
                 top: 0;
@@ -34,10 +34,11 @@
         }
         &:hover{
             .layer{
-                background-color: rgba(0,0,0,0.5);
+                background-color: rgba(0,0,0,0.7);
                 transition: all .5s;
             }
-            .card-title, .card-text, .price{
+            .card-title, .card-text, .price
+            {
                 color: $pink;
             }
 
@@ -73,15 +74,15 @@
         color: $white;
         &:hover{
             color: $pink;
-            background-color: $black-1;
+            background-color: black;
         }
     }
     .goToCart{
         width: 100%;
-        border: 1px solid rgb(0, 155, 121);
+        border: 1px solid rgb(0, 115, 119);
         border-radius: 0;
         background-color: $white;
-        color: rgb(0, 155, 121);
+        color: rgb(0, 115, 119);
         &:hover{
             color: $white;
             background-color: #006151;

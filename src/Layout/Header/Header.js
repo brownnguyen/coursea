@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Header.scss';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createAction } from '../../Action/createAction';
 import { KIND } from '../../Action/Type';
@@ -13,14 +13,46 @@ class Header extends Component {
         this.handleMouse = this.handleMouse.bind(this);
         this.state = {
             scrolled: true,
-            kind: "all",
             hover: false,
             setTime: null
         }
     }
-    handleMouse = () => {
+    renderLink = () => {
+        return (
+            <Route path="/course/all" exact children={(match) => {
+                let courseList = ['all', "design", "development", "marketing", "software", "Personal", "Business", "Photography", "Music"];
+                var curKind = match.location.pathname.split('/')[2];
+                var active = courseList.includes(curKind) ? 'activeClass' : '';
+                return <NavLink className={`${active} nav-link`} id="all" exact to='/course/all'>Course</NavLink>
+            }} />
+        )
+    }
+    renderBottomCart = () => {
+        return (
+            <div className="shopCart__total">
+                <div className="priceItemDiv">
+                    <div className="price">
+                        <h6>Total $</h6>
+                        <p> ${this.props.cart.reduce((price, item) => {
+                            return price += item.price
+                        }, 0)}</p>
+                    </div>
+                    <div className="item">
+                        <h6>Items </h6>
+                        <p className="total__item">
+                            {this.props.cart.length} in Cart
+                        </p>
+                    </div>
+                </div>
+                <div className="goToCartDiv">
+                    <Link onClick={()=>this.handleMouse(false)} className="btn btn-primary button__goToCart" to="/shoppingCart" >Go to Cart</Link>
+                </div>
+            </div>
+        )
+    }
+    handleMouse = (bool) => {
         this.setState({
-            hover: !this.state.hover
+            hover: bool
         })
     }
     getAll = () => {
@@ -38,10 +70,10 @@ class Header extends Component {
             <div className={this.state.scrolled ? "container-fluid header sticky " : "container-fluid header"}>
                 <nav className="navbar navbar-expand-lg  navbar-dark">
                     <NavLink to="/" exact className="navbar-brand">Cour<span className="brand">sea</span></NavLink>
-                    <div className="cartDiv" onMouseEnter={()=>this.handleMouse()}
-                        onMouseLeave={()=>this.handleMouse()}
+                    <div className="cartDiv" onClick={()=>this.handleMouse(false)} onMouseEnter={() => this.handleMouse(true)}
+                        onMouseLeave={() => this.handleMouse(false)}
                     >
-                        <Link type="button" to="/shoppingCart" className="shop__cart">
+                        <Link to="/shoppingCart" className="shop__cart">
                             <span><i className="fa fa-shopping-cart"></i></span>
                             {cart.length > 0 ? <span className="quantity">{cart.length}</span> : <span></span>}
                         </Link>
@@ -49,6 +81,7 @@ class Header extends Component {
                             this.state.hover &&
                             <div className="cartContent">
                                 <Cart />
+                                {this.renderBottomCart()}
                             </div>
                         }
                     </div>
@@ -61,16 +94,16 @@ class Header extends Component {
                                 <NavLink to="/" exact activeClassName="activeClass" className="nav-link">Home</NavLink>
                             </li>
                             <li className="nav-item">
-                                <NavLink to="/course/all" exact activeClassName="activeClass" id="all" onClick={this.changeKind} className="nav-link">Course</NavLink>
+                                {this.renderLink()}
                             </li>
                             <li className="nav-item">
                                 <NavLink to="/about" exact activeClassName="activeClass" className="nav-link" >About</NavLink>
                             </li>
-                            <Popup className="mx-auto" style={{width:"300px"}} modal trigger={
+                            <Popup className="mx-auto" style={{ width: "300px" }} modal trigger={
                                 <li className="nav-item">
-                                <button className="nav-link">Login</button>
-                            </li>}>
-                                <Login/>
+                                    <button className="nav-link">Login</button>
+                                </li>}>
+                                <Login />
                             </Popup>
                             <li className="nav-item">
                                 <a className="nav-link" href="www.google.com">SignUp</a>
@@ -97,6 +130,7 @@ class Header extends Component {
     componentDidMount() {
         window.addEventListener('scroll', () => this.scroll())
     }
+
 }
 
 const mapStateToProps = (state) => ({

@@ -6,9 +6,8 @@ export const login = (user) => {
         userServices.Login(user).then(res => {
             dispatch(createAction(USER__LOGIN, res));
             alert("Success");
-            console.log(res)
         }).catch(err => {
-            console.log(err)
+            alert("Username or password incorrect!")
         })
     }
 }

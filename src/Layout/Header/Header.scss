@@ -78,6 +78,45 @@
                 position: absolute;
                 top: 43px;
                 left: -80px;
+                .shopCart__total{
+                    height: 30%;
+                    position: absolute;
+                    bottom: 0;
+                    background-color: #eaeaea;
+                    width: 100%;
+                    padding: $pd-1 $pd-2;
+                    .priceItemDiv{
+                        height: 55px;
+                        display: flex;
+                        padding-bottom: $pd-1 - 5;
+                        justify-content: space-between;
+                        .price, .item{
+                            p, h6{
+                                @include text($fw-1, $fw-2, $black-1);
+                                margin-bottom: 0;
+                             }
+                             p{
+                                 color: $pink;
+                             }
+                        }
+                    }
+                    .goToCartDiv{
+                        display: block;
+                        .button__goToCart{
+                            width: 100%;
+                            border-radius: 0;
+                            border: 1px solid transparent;
+                            &:focus{
+                                box-shadow: none;
+                                background-color: #b11d4f!important;
+                            }
+                            background-color: $black-1;
+                            &:hover{
+                                background-color: $pink;
+                            }
+                        }
+                    }
+                }
             }
             .shop__cart{
                 text-decoration: none;
