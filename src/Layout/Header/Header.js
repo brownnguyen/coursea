@@ -95,7 +95,7 @@ class Header extends Component {
         return (
             <div className={this.state.scrolled ? "container-fluid header sticky " : "container-fluid header"}>
                 <nav className="navbar navbar-expand-lg  navbar-dark">
-                    <NavLink to="/" exact className="navbar-brand">Cour<span className="brand">sea</span></NavLink>
+                    <NavLink to="/home" exact className="navbar-brand">Cour<span className="brand">sea</span></NavLink>
                     <div className="cartDiv" onClick={() => this.handleMouse(false)} onMouseEnter={() => this.handleMouse(true)}
                         onMouseLeave={() => this.handleMouse(false)}
                     >
