@@ -27,7 +27,7 @@ export default class Instructor extends Component {
                             <img src={img} width={400} alt="instructor " />
                         </div>
                         <div className="col-lg-6 col-md-12 my-auto text-center instructor__content pl-4">
-                            <h3>Become an instructor</h3>
+                            <h3>Discover a universal</h3>
                             <p>Top instructors from around the world teach millions of students on Udemy. We provide the tools and skills to teach what you love.</p>
                             <div className="button__instructor py-auto">
                                 {this.renderSignUp()}
