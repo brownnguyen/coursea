@@ -29,11 +29,11 @@
     "yup": "^0.28.5"
   },
   "scripts": {
-    "dev": "Reac-scripts start",
-    "start": "Serv -s build",
-    "build": "Reac-scripts build",
-    "test": "Reac-scripts test --env = jsdom ",
-    " eject ":" Reac -scripts eject ",
+    "dev": "React-scripts start",
+    "start": "Serve -s build",
+    "build": "React-scripts build",
+    "test": "React-scripts test --env = jsdom ",
+    " eject ":" React -scripts eject ",
     " heroku-postbuild ":" npm run build "
     },
   "eslintConfig": {
