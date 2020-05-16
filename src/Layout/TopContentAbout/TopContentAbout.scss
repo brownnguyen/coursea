@@ -41,3 +41,16 @@
         display: none;
     }
 }
+@media screen and (max-width: 992px){
+    .topContentAbout{
+        height: 500px;
+        .aboutTop{
+            top: 20%;
+            .content{
+                .title{
+                    font-size: 70px;
+                }
+            }
+        }
+    }
+}

@@ -31,7 +31,7 @@ class Categories extends Component {
         return (
             <div className="container categories">
                 <h3>Top categories</h3>
-                <div className="row">
+                <div className="row categoriesRow">
                     {this.renderCategories()}
                 </div>
             </div>

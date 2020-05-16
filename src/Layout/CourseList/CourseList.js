@@ -70,7 +70,7 @@ class CourseList extends Component {
                     params={{
                         "particles": {
                             "number": {
-                                "value": 50
+                                "value": 30
                             },
                             "size": {
                                 "value": 1

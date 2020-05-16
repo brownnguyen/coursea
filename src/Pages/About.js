@@ -10,7 +10,6 @@ class About extends Component {
         return (
             <div>
                 <Particles style={{ position: "absolute", zIndex: 1}}
-                height={900}
                     params={{
                         "particles": {
                             "number": {

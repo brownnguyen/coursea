@@ -20,7 +20,7 @@ class Information extends Component {
         return (
             <div>
                 <div className='container information'>
-                    <div className="row">
+                    <div className="row m-0">
                         <div className="col-lg-5 col-md-12 top__info">
                             <h2>
                                 We build awesome course

@@ -65,6 +65,24 @@
                 }
             }
         }
-        
+    }
+}
+@media screen and (max-width: 540px){
+    .topnews {
+        height: 500px;
+        .topnews-info{
+            text-align: center;
+            top: 15%;
+            left: 0
+        }
+    }
+}
+@media screen and (max-width: 992px){
+    .topnews{
+        height: 550px;
+        .topnews-info{
+            top: 20%;
+            left: 10%
+        }
     }
 }

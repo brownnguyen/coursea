@@ -169,6 +169,27 @@
 }
 @media screen and (max-width: 992px){
     .header{
+        padding: 0;
         background-color: $black;
+        .navbar{    
+            width: 80%;   
+            .navbar-brand{
+                margin-right: 0;
+            }     
+            .cartDiv{
+                margin-left: 0;
+            }
+            .navbar-nav{
+                text-align: center!important;
+                .userOption{
+                    display: block;
+                    .nav-item{
+                        .nav-link{
+                            margin: 0 auto;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
