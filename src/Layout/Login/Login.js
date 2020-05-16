@@ -12,7 +12,7 @@ class Login extends Component {
             }}
             onSubmit={(value)=>{
                 this.props.dispatch(login(value))
-            }} >{({handleChange, handleSubmit}) => (
+            }} >{({handleChange}) => (
                 <Form className="row mx-auto login__form" style={{width: "300px"}}>
                 <h4 className="login mx-auto">Login</h4>
                 <div className="form-group col-12">

@@ -8,4 +8,11 @@ export default class UserServices {
             data
         })
     }
+    SignUp (data) {
+        return Axios({
+            url:"http://elearning0706.cybersoft.edu.vn/api/QuanLyNguoiDung/DangKy",
+            method: "POST",
+            data
+        })
+    }
 }

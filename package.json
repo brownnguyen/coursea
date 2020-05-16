@@ -25,7 +25,8 @@
     "react-timeout": "^1.2.0",
     "reactjs-popup": "^1.5.0",
     "redux": "^4.0.5",
-    "redux-thunk": "^2.3.0"
+    "redux-thunk": "^2.3.0",
+    "yup": "^0.28.5"
   },
   "scripts": {
     "start": "react-scripts start",

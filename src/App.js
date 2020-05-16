@@ -12,6 +12,7 @@ import About from './Pages/About.js';
 import ShoppingCart from './Pages/ShoppingCart/ShoppingCart.js';
 import CourseDetailPage from './Pages/CourseDetailPage/CourseDetailPage.js';
 import Login from './Layout/Login/Login.js';
+import SignUp from './Layout/SignUp/SignUp.js';
 class App extends Component {
   render(){
     return (
@@ -26,6 +27,7 @@ class App extends Component {
           <Route path="/shoppingCart" exact component={ShoppingCart}/>
           <Route path="/detailPage/:detailId" exact component={CourseDetailPage}/>
           <Route path="/login" exact component={Login}/>
+          <Route path="/signup" exact component={SignUp}/>
           <Footer />
         </BrowserRouter>
       </div>

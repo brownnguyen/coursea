@@ -10,8 +10,7 @@ export const CourseReducer = (state = initialState, action) => {
     switch (action.type) {
         case STATE:
             {
-                state = payload;
-                return {...state}
+                return {...state, state: payload}
             }
         case ACTIVE_PAGE:
             {
@@ -45,7 +44,6 @@ export const CourseReducer = (state = initialState, action) => {
                 }
                 state.kind = updateKind;
                 localStorage.setItem('state',JSON.stringify(state))
-                console.log(state.kind)
                 return {...state}
             }
         default:

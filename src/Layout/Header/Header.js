@@ -7,6 +7,7 @@ import { KIND } from '../../Action/Type';
 import Cart from '../Cart/Cart.js';
 import Popup from 'reactjs-popup';
 import Login from '../Login/Login.js';
+import SignUp from '../SignUp/SignUp';
 class Header extends Component {
     constructor(props) {
         super(props);
@@ -14,7 +15,7 @@ class Header extends Component {
         this.state = {
             scrolled: true,
             hover: false,
-            setTime: null
+            setTime: null,
         }
     }
     renderLink = () => {
@@ -23,7 +24,7 @@ class Header extends Component {
                 let courseList = ['all', "design", "development", "marketing", "software", "Personal", "Business", "Photography", "Music"];
                 var curKind = match.location.pathname.split('/')[2];
                 var active = courseList.includes(curKind) ? 'activeClass' : '';
-                return <NavLink className={`${active} nav-link`} id="all" exact to='/course/all'>Course</NavLink>
+                return <NavLink className={`${active} nav-link`} id="all" onClick={this.changeKind} exact to='/course/all'>Course</NavLink>
             }} />
         )
     }
@@ -45,7 +46,7 @@ class Header extends Component {
                     </div>
                 </div>
                 <div className="goToCartDiv">
-                    <Link onClick={()=>this.handleMouse(false)} className="btn btn-primary button__goToCart" to="/shoppingCart" >Go to Cart</Link>
+                    <Link onClick={() => this.handleMouse(false)} className="btn btn-primary button__goToCart" to="/shoppingCart" >Go to Cart</Link>
                 </div>
             </div>
         )
@@ -64,13 +65,38 @@ class Header extends Component {
         let value = e.target.id
         this.props.dispatch(createAction(KIND, value));
     }
+    renderSignIn = () => {
+        return (
+            <Popup className="mx-auto" style={{ width: "300px" }} modal trigger={
+                <li className="nav-item">
+                    <button className="nav-link">Login</button>
+                </li>}>
+                <Login />
+            </Popup>
+        )
+    }
+    renderSignUp = () => {
+        return (
+            <Popup className="mx-auto signUp__Form" modal trigger={
+                <li className="nav-item">
+                    <button className="nav-link">SignUp</button>
+                </li>
+            }>{close => (
+                <>
+                    <SignUp />
+                    <p className="text-center">Already have account? <span onClick={() => this.renderSignIn()} className="SignInSignUp" style={{ cursor: "pointer" }}>Sign In</span></p>
+                </>
+            )}
+            </Popup>
+        )
+    }
     render() {
-        let { cart } = this.props;
+        let { cart, user } = this.props;
         return (
             <div className={this.state.scrolled ? "container-fluid header sticky " : "container-fluid header"}>
                 <nav className="navbar navbar-expand-lg  navbar-dark">
                     <NavLink to="/" exact className="navbar-brand">Cour<span className="brand">sea</span></NavLink>
-                    <div className="cartDiv" onClick={()=>this.handleMouse(false)} onMouseEnter={() => this.handleMouse(true)}
+                    <div className="cartDiv" onClick={() => this.handleMouse(false)} onMouseEnter={() => this.handleMouse(true)}
                         onMouseLeave={() => this.handleMouse(false)}
                     >
                         <Link to="/shoppingCart" className="shop__cart">
@@ -99,15 +125,12 @@ class Header extends Component {
                             <li className="nav-item">
                                 <NavLink to="/about" exact activeClassName="activeClass" className="nav-link" >About</NavLink>
                             </li>
-                            <Popup className="mx-auto" style={{ width: "300px" }} modal trigger={
-                                <li className="nav-item">
-                                    <button className="nav-link">Login</button>
-                                </li>}>
-                                <Login />
-                            </Popup>
-                            <li className="nav-item">
-                                <a className="nav-link" href="www.google.com">SignUp</a>
-                            </li>
+                            {user ? <li className="nav-item userInfo">Hello {user.hoTen} !</li> : (
+                                <div className="userOption">
+                                    {this.renderSignIn()}
+                                    {this.renderSignUp()}
+                                </div>
+                            )}
                         </ul>
                     </div>
                 </nav>
@@ -135,6 +158,7 @@ class Header extends Component {
 
 const mapStateToProps = (state) => ({
     kind: state.CourseReducer.kind,
-    cart: state.CartReducer.cart
+    cart: state.CartReducer.cart,
+    user: state.UserReducer.user
 })
 export default connect(mapStateToProps)(Header);

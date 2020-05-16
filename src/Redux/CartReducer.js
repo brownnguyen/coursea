@@ -2,15 +2,14 @@ import { ADD_CART, CART, REMOVE__COURSE, COURSE__DETAIL, DETAIL } from "../Actio
 
 const initialState = {
     cart: [],
-    courseDetail : {}
+    courseDetail: {}
 }
 export const CartReducer = (state = initialState, action) => {
     const { type, payload } = action;
     switch (type) {
         case CART:
             {
-                state.cart = payload;
-                return { ...state }
+                return {...state, cart: payload}
             }
         case ADD_CART:
             {
@@ -20,8 +19,7 @@ export const CartReducer = (state = initialState, action) => {
                     return { ...state };
                 }
                 else {
-                    let cartUpdate = [...state.cart, payload];
-                    state.cart = cartUpdate;
+                    state.cart = [...state.cart, payload];
                     localStorage.setItem('cart', JSON.stringify(state.cart))
                     return { ...state }
                 }
@@ -39,20 +37,17 @@ export const CartReducer = (state = initialState, action) => {
                 localStorage.setItem('cart', JSON.stringify(state.cart))
                 return { ...state }
             }
-            case COURSE__DETAIL:
-                {
-                    let detail = {...state.courseDetail};
-                    detail = payload;
-                    state.courseDetail = detail;
-                    localStorage.setItem('detail', JSON.stringify(state.courseDetail))
-                    return {...state}
-                }
-            case DETAIL:
-                {
-                    state.courseDetail = payload;
-                    return {...state}
-                }
+        case COURSE__DETAIL:
+            {
+                state.courseDetail = payload;
+                localStorage.setItem('detail', JSON.stringify(state.courseDetail))
+                return { ...state }
+            }
+        case DETAIL:
+            {
+                return { ...state, courseDetail: payload }
+            }
         default:
-            return { ...state }
+            return state;
     }
 }

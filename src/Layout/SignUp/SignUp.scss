@@ -1,0 +1,24 @@
+ @import '../../Scss/Variables.scss';
+@import '../../scss/Mixin.scss';
+.signUpForm {
+    h4{
+        margin-top: $mg-1;
+    }
+    .signUpForm__content{
+        margin-top: $mg-2;
+        input{
+            border-radius: 0;
+            &:focus{
+                border: 1px solid $black-1;
+            }
+        }
+        .signUp__Button{
+            button{
+                border-radius: 0;
+                background-color: $black-1;
+                border: 1px solid transparent;
+                color: $white;
+            }
+        }
+    }
+}

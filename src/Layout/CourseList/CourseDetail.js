@@ -71,7 +71,6 @@ const mapDispatchToProps = (dispatch) => {
         },
         addCourseDetail: item => {
             dispatch(createAction(COURSE__DETAIL, item));
-            console.log(item)
         }
     }
 }

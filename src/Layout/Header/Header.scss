@@ -34,6 +34,9 @@
                     }
                 }
             }
+            .userInfo{
+                @include text($fs-1, $fw-2, $white);
+            }
             button.nav-link{
                 background-color:transparent;
                 border: none;
@@ -42,6 +45,10 @@
                 .popup-content{
                     width: 20%!important;
                 }
+            }
+            .userOption {
+                display: flex;
+                justify-content: space-around;
             }
         }
         .navbar-toggler{
@@ -133,6 +140,15 @@
                 width: 17px;
                 border-radius: 50%;
                 line-height: 17px;
+            }
+        }
+    }
+}
+.userOption{
+    .signUp__Form-content{
+        P{
+            span.SignInSignUp{
+                color: $pink;
             }
         }
     }
