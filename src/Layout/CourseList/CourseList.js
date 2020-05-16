@@ -8,6 +8,7 @@ import { KIND, ACTIVE_PAGE } from '../../Action/Type.js';
 import { createAction } from '../../Action/createAction.js';
 import Pagination from 'react-js-pagination';
 import { Link } from 'react-router-dom';
+import Particles from 'react-particles-js';
 class CourseList extends Component {
     getKind = (e) => {
         let value = e
@@ -20,9 +21,9 @@ class CourseList extends Component {
         if (kind === "all") {
             return data.course.map((item, index) => {
                 return (
-                        <div className="col-lg-3 col-md-4 col-sm-6 itemCourse" key={index}>
-                            <CourseDetail course={item} />
-                        </div>
+                    <div className="col-lg-3 col-md-4 col-sm-6 itemCourse" key={index}>
+                        <CourseDetail course={item} />
+                    </div>
                 )
             }).slice(start, end);
         }
@@ -64,6 +65,18 @@ class CourseList extends Component {
         return (
             <div className="container-fluid courseList">
                 <div className="top">
+                <Particles style={{ position: "absolute", zIndex: 1}}
+                height={350}
+                    params={{
+                        "particles": {
+                            "number": {
+                                "value": 50
+                            },
+                            "size": {
+                                "value": 1
+                            }
+                        }
+                    }} />
                     <div className="layer"></div>
                     <div className="content">
                         <h3>Cour<span>sea</span></h3>
