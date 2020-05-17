@@ -1,4 +1,4 @@
-import { FETCH_COURSEDETAIL, TOTAL_ITEM, KIND, ACTIVE_PAGE, STATE } from "../Action/Type";
+import { FETCH_COURSEDETAIL, TOTAL_ITEM, KIND, ACTIVE_PAGE, STATE, TOTAL } from "../Action/Type";
 const initialState = {
     course: [],
     totalItem : 0,
@@ -10,7 +10,8 @@ export const CourseReducer = (state = initialState, action) => {
     switch (action.type) {
         case STATE:
             {
-                return {...state, state: payload}
+                state = payload;
+                return {...state}
             }
         case ACTIVE_PAGE:
             {
@@ -29,6 +30,10 @@ export const CourseReducer = (state = initialState, action) => {
                 state.totalItem = payload.length;
                 localStorage.setItem('state',JSON.stringify(state))
                 return {...state}
+            }
+        case TOTAL:
+            {
+                return {...state, totalItem: payload}
             }
         case KIND:
             {

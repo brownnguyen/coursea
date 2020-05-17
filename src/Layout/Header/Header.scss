@@ -128,12 +128,13 @@
             .shop__cart{
                 text-decoration: none;
                 color: $white; 
+                position: relative;
             }
             .quantity{
                 display: inline-block;
                 position: absolute;
-                top: 0;
-                right: 0;
+                top: -11px;
+                right: -14px;
                 @include text($fs-1 - 5, $fw-2, $white);
                 background-color: $pink;
                 height: 17px;

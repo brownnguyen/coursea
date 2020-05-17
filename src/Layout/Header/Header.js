@@ -33,7 +33,7 @@ class Header extends Component {
                 <div className="priceItemDiv">
                     <div className="price">
                         <h6>Total $</h6>
-                        <p> ${this.props.cart.reduce((price, item) => {
+                        <p> $ {this.props.cart.reduce((price, item) => {
                             return price += item.price
                         }, 0)}</p>
                     </div>

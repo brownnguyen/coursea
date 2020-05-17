@@ -13,15 +13,25 @@ class CourseList extends Component {
     getKind = (e) => {
         let value = e
         this.props.dispatch(createAction(KIND, value))
+        console.log(e)
     }
     renderCategories = () => {
         let { course, kind, activePage } = this.props;
         let start = (activePage - 1) * 20;
         let end = (activePage - 1) * 20 + 20;
+        const keyFrame = `@keyframes aniChangeList${Date.now()}{
+            from{
+                transform : translateY(20px);
+            }
+            to{
+                transform: translateY(0px);
+            }
+        }`
         if (kind === "all") {
             return data.course.map((item, index) => {
                 return (
-                    <div className="col-lg-3 col-md-4 col-sm-6 itemCourse" key={index}>
+                    <div className="col-lg-3 col-md-4 col-sm-6 itemCourse" key={index} style={{animation: `aniChangeList${Date.now()} 1s`}}>
+                        <style>{keyFrame}</style>
                         <CourseDetail course={item} />
                     </div>
                 )
@@ -31,7 +41,8 @@ class CourseList extends Component {
             let newarray = course.filter(item => item.kind === kind);
             return newarray.map((item, index) => {
                 return (
-                    <div className="col-lg-3 col-md-4 col-sm-6 itemCourse" key={index}>
+                    <div className="col-lg-3 col-md-4 col-sm-6 itemCourse" key={index} style={{animation: `aniChangeList${Date.now()} 1s`}}>
+                        <style>{keyFrame}</style>
                         <CourseDetail course={item} />
                     </div>
                 )
@@ -99,6 +110,7 @@ class CourseList extends Component {
                         </div>
                     </div>
                     <div className="container">
+                        
                         <div className="row">
                             {this.renderCategories()}
                         </div>

@@ -7,7 +7,7 @@ import { BrowserRouter, Route } from 'react-router-dom';
 import ScrollToTop from 'react-router-scroll-top';
 import {connect} from 'react-redux';
 import { createAction } from './Action/createAction.js';
-import { STATE, CART, DETAIL } from './Action/Type.js';
+import { STATE, CART, DETAIL, TOTAL } from './Action/Type.js';
 import About from './Pages/About.js';
 import ShoppingCart from './Pages/ShoppingCart/ShoppingCart.js';
 import CourseDetailPage from './Pages/CourseDetailPage/CourseDetailPage.js';
@@ -53,10 +53,17 @@ class App extends Component {
       this.props.dispatch(createAction(DETAIL, JSON.parse(detailStr)));
     }
   }
+  getTotalItem = () =>{
+    const totalItem = localStorage.getItem('totalItem');
+    if(totalItem){
+      this.props.dispatch(createAction(TOTAL, JSON.parse(totalItem)))
+    }
+  }
   componentDidMount(){
     this.getState();
     this.getCart();
     this.getCourseDetail();
+    this.getTotalItem();
   }
 }
 

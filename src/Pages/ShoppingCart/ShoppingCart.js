@@ -31,12 +31,12 @@ class ShoppingCart extends Component {
                             </div>
                             <div className="content col-8">
                                 <h5>{item.courseName}</h5>
-                                <p>{item.id}</p>
+                                <p> <span>Id course:</span> {item.id}</p>
                             </div>
                         </div>
                     </div>
-                    <div className="col-md-3 col-2 text-center my-auto _price">{item.price} $</div>
-                    <div className="col-md-2 col-3 text-center my-auto">
+                    <div className="col-md-3 col-2 text-center pl-0 my-auto _price">{item.price} $</div>
+                    <div className="col-md-2 col-3 text-center pl-0 my-auto">
                         <button className="remove__Course btn" onClick={() => removeCourse(`${item.id}`)}>Remove</button>
                     </div>
                 </Link>
