@@ -15,7 +15,6 @@ class Header extends Component {
         this.state = {
             scrolled: true,
             hover: false,
-            setTime: null,
         }
     }
     renderLink = () => {
@@ -67,7 +66,7 @@ class Header extends Component {
     }
     renderSignIn = () => {
         return (
-            <Popup className="mx-auto" style={{ width: "300px" }} modal trigger={
+            <Popup className="mx-auto modalLogin" modal trigger={
                 <li className="nav-item">
                     <button className="nav-link">Login</button>
                 </li>}>

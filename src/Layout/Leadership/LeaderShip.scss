@@ -54,7 +54,6 @@
 }
 .contentBottomModal{
     position: relative;
-    min-width: 400px;
     height: 350px;
     .close{
         cursor: pointer;
@@ -104,6 +103,13 @@
                     margin-top: 5px;
                 }
             }
+        }
+    }
+}
+@media screen and (max-width: 768px){
+    .contentBottomModal{
+        .modalImgLeaderShip{
+            display: none;
         }
     }
 }

@@ -14,10 +14,10 @@ class Glance extends Component {
     render() {
         return (
             <div className="container-fluid p-0 glance">
-                <div className="row">
-                    <div className="col-6 glance__img">
+                <div className="row m-0">
+                    <div className="col-md-6 glance__img">
                     </div>
-                    <div className="col-6 glance__content">
+                    <div className="col-md-6 glance__content">
                         <div className="background__content">
                             <div className="content">
                                 <h2> At a glance</h2>

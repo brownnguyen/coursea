@@ -6,7 +6,7 @@ import './Instructor.scss';
 export default class Instructor extends Component {
     renderSignUp = () => {
         return (
-            <Popup className="mx-auto signUp__Form" style={{width:"300px"}} modal trigger={
+            <Popup className="mx-auto signUp__Form" width={300} modal trigger={
                     <button>Start learning</button>
             }>{() => (
                 <>

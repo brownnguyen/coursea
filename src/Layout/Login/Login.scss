@@ -4,6 +4,7 @@
     .login{
         margin-top: $mg-2;
         text-transform: uppercase;
+        color: $pink;
     }
     label{
         @include text($fs-1, $fw-2, $pink)

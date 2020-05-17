@@ -13,7 +13,7 @@ class About extends Component {
                     params={{
                         "particles": {
                             "number": {
-                                "value": 100
+                                "value": 30
                             },
                             "size": {
                                 "value": 1

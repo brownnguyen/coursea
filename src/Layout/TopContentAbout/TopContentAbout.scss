@@ -54,3 +54,15 @@
         }
     }
 }
+@media screen and (max-width: 540px){
+    .topContentAbout{
+        .aboutTop{
+            left: 55%;
+            .content{
+                .title{
+                    font-size: $fs-5;
+                }
+            }
+        }
+    }
+}

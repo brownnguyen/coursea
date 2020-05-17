@@ -16,11 +16,9 @@ class Login extends Component {
                 <Form className="row mx-auto login__form" style={{width: "300px"}}>
                 <h4 className="login mx-auto">Login</h4>
                 <div className="form-group col-12">
-                    <label>Username</label>
                     <Field type="text" name="taiKhoan" className="form-control" onChange={handleChange} placeholder="username"/>
                 </div>
                 <div className="form-group col-12">
-                    <label>Password</label>
                     <Field type="password" name="matKhau" className="form-control" onChange={handleChange} placeholder="password"/>
                 </div>
                 <div className="form-group col-12">

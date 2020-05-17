@@ -20,10 +20,10 @@ class LeaderShip extends Component {
                     </div>} className="mx-auto">
                     {close => (<div className="contentBottomModal">
                         <span className="close" onClick={close}>&times;</span>
-                        <div className="modalImgLeaderShip col-md-4 col-sm-5">
+                        <div className="modalImgLeaderShip col-md-4">
                             <img src={item.modalImage} alt={item.id} />
                         </div>
-                        <div className="content__modalImageLeaderShip col-md-8 col-sm-7">
+                        <div className="content__modalImageLeaderShip col-md-8">
                             <div className="content__modalLeaderShip">
                                 <h3 className="title__LeaderShip">{item.name}</h3>
                                 <p className="position__LeaderShip">{item.position}</p>

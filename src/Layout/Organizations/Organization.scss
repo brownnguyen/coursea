@@ -53,3 +53,10 @@
         display: none;
     }
 }
+@media screen and (max-width: 1200px){
+    .organization__details{
+        img{
+            width: 100%;
+        }
+    }
+}

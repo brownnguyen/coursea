@@ -4,6 +4,7 @@
 .topnews{
     background-image: url('../../img/bg-office.jpg');
     background-attachment: fixed;
+    background-size: cover;
     height: 750px;
     position: relative;
     .layer{
@@ -16,6 +17,7 @@
     }
     .topnews-info{
         position: absolute;
+        z-index: 2;
         top: 35%;
         left: 20%;
         h2{
@@ -69,11 +71,16 @@
 }
 @media screen and (max-width: 540px){
     .topnews {
-        height: 500px;
+        height: 450px!important;
         .topnews-info{
-            text-align: center;
-            top: 15%;
-            left: 0
+            top: 20%;
+            left: 0;
+            h2{
+                font-size: $fs-4;
+            }
+            p{
+                font-size: $fs-1;
+            }
         }
     }
 }
