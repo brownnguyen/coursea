@@ -54,7 +54,9 @@
 }
 .contentBottomModal{
     position: relative;
+    margin: auto;
     height: 350px;
+    min-width: 280px;
     .close{
         cursor: pointer;
         position: absolute;
