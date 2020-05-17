@@ -10,7 +10,7 @@ class CourseDetailPage extends Component {
         let item = cart.find(item => item.id === courseDetail.id);
         if (item) {
             return (
-                <Link to="/shoppingCart" className="btn LinkToCart" exact>Go to Cart</Link>
+                <Link to="/shoppingCart" className="btn LinkToCart">Go to Cart</Link>
             )
         }
         else {
@@ -73,14 +73,14 @@ class CourseDetailPage extends Component {
                                 </div>
                                 <div className="col-sm-6 p-0">
                                     <ul className="ul__reach">
-                                        <li><i class="fa fa-anchor"></i>
+                                        <li><i className="fa fa-anchor"></i>
                                         Be a better boss, and run a highly effective team</li>
-                                        <li><i class="fa fa-anchor"></i>
+                                        <li><i className="fa fa-anchor"></i>
 
 Have a healthy work life balance, with a happy environment</li>
-                                        <li><i class="fa fa-anchor"></i>
+                                        <li><i className="fa fa-anchor"></i>
                                         Build a vast array of practical tools to be a fantastic leader</li>
-                                        <li><i class="fa fa-anchor"></i>
+                                        <li><i className="fa fa-anchor"></i>
                                         Feel confident enough to involve employees in decision making and planning</li>
                                     </ul>
                                 </div>

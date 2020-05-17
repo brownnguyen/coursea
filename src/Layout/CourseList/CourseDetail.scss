@@ -50,11 +50,11 @@
 .content__modal{
     position: absolute;
     background-color: $black-1;
-    width: 100%;
-    top: -20%;
+    width: 60%;
+    top: 32%;
     z-index: 10;
-    left: 90%;
-    padding: $pd-2;
+    left: 46%;
+    padding: $pd-1;
     box-shadow: 0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1);
     &:before{
         content: '';
@@ -66,6 +66,13 @@
         height: 15px;
         background-color: $black-1;
         transform: rotate(45deg);
+    }
+    .modal__course{
+        .modal__content{
+            p{
+                margin-bottom: 0;
+            }
+        }
     }
     .add__course{
         width: 100%;

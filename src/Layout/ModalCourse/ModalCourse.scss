@@ -2,6 +2,9 @@
 @import '../../Scss/Mixin.scss';
 .modal__course{
     color: $white;
+    h4{
+        color: $pink;
+    }
 }
 .img__modal{
     width: 100%;
