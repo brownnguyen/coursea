@@ -115,5 +115,18 @@
             }
         }
     }
-    
+}
+@media screen and (max-width: 768px){
+    .courseDetailPage{
+        .content__courseDetail{
+            .courseDetailPage__title{
+                max-width: 100%;
+                margin-left: 0;
+                margin-bottom: $mg-2;
+            }
+        }
+        .courseDetail__img{
+            position: static;
+        }
+    }
 }

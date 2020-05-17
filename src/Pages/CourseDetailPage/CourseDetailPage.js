@@ -27,12 +27,12 @@ class CourseDetailPage extends Component {
                     <div className="layer__detail"></div>
                     <div className="layer__detail2"></div>
                     <div className="row content__courseDetail">
-                        <div className="col-8 courseDetailPage__title">
+                        <div className="col-md-8 courseDetailPage__title">
                             <h4>{courseDetail.courseName}</h4>
                             <p>{courseDetail.mentor}</p>
                             <span>Course code:  {courseDetail.id}</span>
                         </div>
-                        <div className="col-4 courseDetail__img">
+                        <div className="col-md-4 courseDetail__img">
                             <div className="img__details">
                                 <img src={courseDetail.image} alt={courseDetail.kind} />
                             </div>
@@ -54,10 +54,10 @@ class CourseDetailPage extends Component {
                 </div>
                 <div className="container mb-5">
                     <div className="row course__reach mx-auto">
-                        <div className="col-8 content__details__reach">
+                        <div className="col-md-8 content__details__reach">
                             <h5>What you'll learn</h5>
                             <div className="content__reach row">
-                                <div className="col-6 p-0">
+                                <div className="col-sm-6 p-0">
                                     <ul className="ul__reach">
                                         <li><i className="fa fa-anchor"></i>
                                         Become a Master in Leadership</li>
@@ -71,7 +71,7 @@ class CourseDetailPage extends Component {
                                         Spend more time developing plans and ideas for the future</li>
                                     </ul>
                                 </div>
-                                <div className="col-6 p-0">
+                                <div className="col-sm-6 p-0">
                                     <ul className="ul__reach">
                                         <li><i class="fa fa-anchor"></i>
                                         Be a better boss, and run a highly effective team</li>
