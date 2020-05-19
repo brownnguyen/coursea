@@ -21,25 +21,28 @@
                 margin-top: -1px;
                 border: 1px solid #dedfe0;
                 text-decoration: none;
-                .detailShop{
-                    .image{
-                        margin: auto;
-                        padding-left: 7px;
-                        img{
-                            margin: $mg-1 - 3 0;
-                            width: 100%;
+                .shopping__details{
+                    text-decoration: none;
+                    .detailShop{
+                        .image{
+                            margin: auto;
+                            padding-left: 7px;
+                            img{
+                                margin: $mg-1 - 3 0;
+                                width: 100%;
+                            }
                         }
-                    }
-                    .content{
-                        margin: $mg-1 auto;
-                        color: $black-1;
-                        h5{
-                            margin-bottom: 0;
-                        }
-                        p{
-                            margin-bottom: 0;
-                            span{
-                                color: $pink;
+                        .content{
+                            margin: $mg-1 auto;
+                            color: $black-1;
+                            h5{
+                                margin-bottom: 0;
+                            }
+                            p{
+                                margin-bottom: 0;
+                                span{
+                                    color: $pink;
+                                }
                             }
                         }
                     }
