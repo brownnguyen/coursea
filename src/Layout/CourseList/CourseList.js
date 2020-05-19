@@ -13,7 +13,6 @@ class CourseList extends Component {
     getKind = (e) => {
         let value = e
         this.props.dispatch(createAction(KIND, value))
-        console.log(e)
     }
     renderCategories = () => {
         let { course, kind, activePage } = this.props;
