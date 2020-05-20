@@ -24,8 +24,8 @@ class ShoppingCart extends Component {
         return cart.map((item, index) => {
             return (
                 <div className="row shopping__item">
-                    <Link to={`/detailPage/${item.id}`} onClick={() => this.props.addCourseDetail(item)} className="col-md-10 col-9 row shopping__details" key={index} style={{ cursor: 'pointer' }}>
-                        <div className="col-md-9 col-7">
+                    <Link to={`/detailPage/${item.id}`} onClick={() => this.props.addCourseDetail(item)} className="col-10 row shopping__details" key={index} style={{ cursor: 'pointer' }}>
+                        <div className="col-10">
                             <div className="row detailShop">
                                 <div className="image col-4">
                                     <img src={item.image} alt={item.kind} />
@@ -36,9 +36,9 @@ class ShoppingCart extends Component {
                                 </div>
                             </div>
                         </div>
-                        <div className="col-md-3 text-center pl-0 my-auto _price">{item.price} $</div>
+                        <div className="col-2 text-center pl-0 my-auto _price">{item.price} $</div>
                     </Link>
-                    <div className="col-md-2 col-3 text-center pl-0 my-auto">
+                    <div className=" col-2 text-center pl-0 my-auto">
                         <button className="remove__Course btn" onClick={() => removeCourse(`${item.id}`)}>Remove</button>
                     </div>
                 </div>
