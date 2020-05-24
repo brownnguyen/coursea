@@ -36,7 +36,7 @@ class SignUp extends Component {
                                 <ErrorMessage name="taiKhoan">{msg => <div style={{ color: "red", fontSize: "12px" }}>{msg}</div>}</ErrorMessage>
                             </div>
                             <div className="form-group col-12">
-                                <Field type="password" onChange={handleChange} name="matKhau" className="form-control" placeholder="Password" />
+                                <Field type="password" onChange={handleChange} name="matKhau" className="form-control" placeholder="Password" autoComplete="on" />
                                 <ErrorMessage name="matKhau">{msg => <div style={{ color: "red", fontSize: "12px" }}>{msg}</div>}</ErrorMessage>
                             </div>
                             <div className="form-group col-12">

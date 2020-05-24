@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './Header.scss';
-import { NavLink, Link, Route } from 'react-router-dom';
+import { NavLink, Route } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { createAction } from '../../Action/createAction';
 import { KIND } from '../../Action/Type';
@@ -15,7 +15,13 @@ class Header extends Component {
         this.state = {
             scrolled: true,
             hover: false,
+            isShowCollapseMenu: false
         }
+    }
+    showCollapse = (bool) => {
+        this.setState({
+            isShowCollapseMenu: bool
+        }, console.log(this.state.isShowCollapseMenu))
     }
     renderLink = () => {
         return (
@@ -27,29 +33,7 @@ class Header extends Component {
             }} />
         )
     }
-    renderBottomCart = () => {
-        return (
-            <div className="shopCart__total">
-                <div className="priceItemDiv">
-                    <div className="price">
-                        <h6>Total $</h6>
-                        <p> $ {this.props.cart.reduce((price, item) => {
-                            return price += item.price
-                        }, 0)}</p>
-                    </div>
-                    <div className="item">
-                        <h6>Items </h6>
-                        <p className="total__item">
-                            {this.props.cart.length} in Cart
-                        </p>
-                    </div>
-                </div>
-                <div className="goToCartDiv">
-                    <Link onClick={() => this.handleMouse(false)} className="btn btn-primary button__goToCart" to="/shoppingCart" >Go to Cart</Link>
-                </div>
-            </div>
-        )
-    }
+
     handleMouse = (bool) => {
         this.setState({
             hover: bool
@@ -98,31 +82,30 @@ class Header extends Component {
                     <div className="cartDiv" onClick={() => this.handleMouse(false)} onMouseEnter={() => this.handleMouse(true)}
                         onMouseLeave={() => this.handleMouse(false)}
                     >
-                        <Link to="/shoppingCart" className="shop__cart">
+                        <NavLink to="/shoppingCart" className="shop__cart">
                             <span><i className="fa fa-shopping-cart"></i></span>
                             {cart.length > 0 ? <span className="quantity">{cart.length}</span> : <span></span>}
-                        </Link>
+                        </NavLink>
                         {
                             this.state.hover &&
                             <div className="cartContent">
                                 <Cart />
-                                {this.renderBottomCart()}
                             </div>
                         }
                     </div>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon" />
                     </button>
-                    <div className="collapse navbar-collapse" id="navbarNav">
+                    <div className="navbar-collapse collapse" id="navbarNav" onClick={() => this.showCollapse(true)}>
                         <ul className="navbar-nav ml-auto">
                             <li className="nav-item">
-                                <NavLink to="/" exact activeClassName="activeClass" className="nav-link">Home</NavLink>
+                                <NavLink to="/" exact activeClassName="activeClass" onClick={() => this.showCollapse(false)} className="nav-link">Home</NavLink>
                             </li>
                             <li className="nav-item">
                                 {this.renderLink()}
                             </li>
                             <li className="nav-item">
-                                <NavLink to="/about" exact activeClassName="activeClass" className="nav-link" >About</NavLink>
+                                <NavLink to="/about" exact activeClassName="activeClass" className="nav-link" onClick={() => this.showCollapse(false)} >About</NavLink>
                             </li>
                             {user ? <li className="nav-item userInfo">Hello {user.hoTen} !</li> : (
                                 <div className="userOption">
@@ -150,7 +133,12 @@ class Header extends Component {
         }
     }
     componentDidMount() {
-        window.addEventListener('scroll', () => this.scroll())
+        window.addEventListener('scroll', () => this.scroll());
+        document.querySelectorAll(".nav-link").forEach(item => {
+            item.addEventListener("click", () => {
+                document.querySelector(".navbar-collapse").classList.remove("show");
+            })
+        })
     }
 
 }

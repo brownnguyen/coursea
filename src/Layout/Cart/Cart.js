@@ -22,11 +22,35 @@ class Cart extends Component {
             )
         })
     }
+    renderBottomCart = () => {
+        return (
+            <div className="shopCart__total">
+                <div className="priceItemDiv">
+                    <div className="price">
+                        <h6>Total $</h6>
+                        <p> $ {this.props.cart.reduce((price, item) => {
+                            return price += item.price
+                        }, 0)}</p>
+                    </div>
+                    <div className="item">
+                        <h6>Items </h6>
+                        <p className="total__item">
+                            {this.props.cart.length} in Cart
+                        </p>
+                    </div>
+                </div>
+                <div className="goToCartDiv">
+                    <Link onClick={() => this.handleMouse(false)} className="btn btn-primary button__goToCart" to="/shoppingCart" >Go to Cart</Link>
+                </div>
+            </div>
+        )
+    }
     render() {
         return (
             <div className="shopCart">
                 <div className="shopCart__content">
                     {this.renderCart()}
+                    {this.renderBottomCart()}
                 </div>
             </div>
         )

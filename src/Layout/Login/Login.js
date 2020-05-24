@@ -19,7 +19,7 @@ class Login extends Component {
                     <Field type="text" name="taiKhoan" className="form-control" onChange={handleChange} placeholder="username"/>
                 </div>
                 <div className="form-group col-12">
-                    <Field type="password" name="matKhau" className="form-control" onChange={handleChange} placeholder="password"/>
+                    <Field type="password" name="matKhau" className="form-control" autoComplete="on" onChange={handleChange} placeholder="password"/>
                 </div>
                 <div className="form-group col-12">
                     <button type="submit" className="form-control btn login__button">Login</button>
