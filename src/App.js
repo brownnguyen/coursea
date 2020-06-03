@@ -12,6 +12,7 @@ import CourseDetailPage from './Pages/CourseDetailPage/CourseDetailPage.js';
 import Login from './Layout/Login/Login.js';
 import SignUp from './Layout/SignUp/SignUp.js';
 import { local } from './Services/LocalStorage.js';
+import BackToTop from 'react-back-to-top-button';
 class App extends Component {
   render() {
     return (
@@ -27,16 +28,23 @@ class App extends Component {
           <Route path="/detailPage/:detailId" exact component={CourseDetailPage} />
           <Route path="/login" exact component={Login} />
           <Route path="/signup" exact component={SignUp} />
+          <BackToTop
+            showAt={100}
+            speed={3000}
+            easing="easeInOutQuint"
+          >
+            <span style={{ color: "#ef2368", fontSize: "40px" }}><i class="fa fa-feather-alt"></i></span>
+          </BackToTop>
           <Footer />
         </BrowserRouter>
       </div>
     );
   }
-    componentDidMount() {
-      this.props.dispatch(local.getState());
-      this.props.dispatch(local.getCart());
-      this.props.dispatch(local.getCourseDetail());
-    }
+  componentDidMount() {
+    this.props.dispatch(local.getState());
+    this.props.dispatch(local.getCart());
+    this.props.dispatch(local.getCourseDetail());
+  }
 }
 
 export default connect()(App);

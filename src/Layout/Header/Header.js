@@ -120,7 +120,7 @@ class Header extends Component {
         );
     }
     scroll = () => {
-        const isTop = window.scrollY < 50;
+        const isTop = window.scrollY < 100;
         if (isTop) {
             this.setState({
                 scrolled: false

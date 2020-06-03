@@ -16,6 +16,7 @@
     "particles-bg": "^2.5.0",
     "popper.js": "^1.16.1",
     "react": "^16.13.1",
+    "react-back-to-top-button": "0.0.14",
     "react-dom": "^16.13.1",
     "react-js-pagination": "^3.0.3",
     "react-particles-js": "^3.2.1",
