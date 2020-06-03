@@ -40,14 +40,17 @@ class CourseDetail extends Component {
                     <Link to={`/detailPage/${course.id}`} className="course__detail"
                         onClick={() => this.props.addCourseDetail(course)}>
                         <div className="card courseDetail">
+                            <i class="fa fa-bookmark"></i>
                             <div className="card__img">
                                 <img className="card-img-top image" src={course.image} alt={course.courseName} />
                                 <div className="layer"></div>
                             </div>
                             <div className="card-body">
+
                                 <h5 className="card-title">{course.courseName}</h5>
                                 <p className="card-text">{course.mentor}</p>
                                 <p className="price text-right">{course.price} $</p>
+                                <p className="content__course">{course.content.length > 50 ? course.content.substr(0, 50) + ". . ." : course.content}</p>
                             </div>
                         </div>
                     </Link>

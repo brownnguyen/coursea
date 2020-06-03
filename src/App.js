@@ -1,70 +1,43 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import Header from './Layout/Header/Header.js';
 import Home from './Pages/Home.js';
 import Footer from './Layout/Footer/Footer.js';
 import Course from './Pages/Course.js'
 import { BrowserRouter, Route } from 'react-router-dom';
 import ScrollToTop from 'react-router-scroll-top';
-import {connect} from 'react-redux';
-import { createAction } from './Action/createAction.js';
-import { STATE, CART, DETAIL, TOTAL } from './Action/Type.js';
+import { connect } from 'react-redux';
 import About from './Pages/About.js';
 import ShoppingCart from './Pages/ShoppingCart/ShoppingCart.js';
 import CourseDetailPage from './Pages/CourseDetailPage/CourseDetailPage.js';
 import Login from './Layout/Login/Login.js';
 import SignUp from './Layout/SignUp/SignUp.js';
+import { local } from './Services/LocalStorage.js';
 class App extends Component {
-  render(){
+  render() {
     return (
       <div>
         <BrowserRouter>
           <Header />
           <ScrollToTop>
-          <Route path="/course/:courseId" exact component={Course} />
+            <Route path="/course/:courseId" exact component={Course} />
           </ScrollToTop>
           <Route path="/" exact component={Home} />
-          <Route path="/about" exact component={About}/>
-          <Route path="/shoppingCart" exact component={ShoppingCart}/>
-          <Route path="/detailPage/:detailId" exact component={CourseDetailPage}/>
-          <Route path="/login" exact component={Login}/>
-          <Route path="/signup" exact component={SignUp}/>
+          <Route path="/about" exact component={About} />
+          <Route path="/shoppingCart" exact component={ShoppingCart} />
+          <Route path="/detailPage/:detailId" exact component={CourseDetailPage} />
+          <Route path="/login" exact component={Login} />
+          <Route path="/signup" exact component={SignUp} />
           <Footer />
         </BrowserRouter>
       </div>
     );
   }
-  getCart = () => {
-    const cartStr = localStorage.getItem('cart');
-    if(cartStr){
-      this.props.dispatch(createAction(CART,JSON.parse(cartStr)))
+    componentDidMount() {
+      this.props.dispatch(local.getState());
+      this.props.dispatch(local.getCart());
+      this.props.dispatch(local.getCourseDetail());
     }
-  }
-  getState = () => {
-    const stateStr = localStorage.getItem('state');
-    
-    if(stateStr){
-      this.props.dispatch(createAction(STATE,JSON.parse(stateStr)));
-     
-    }
-  }
-  getCourseDetail = () => {
-    const detailStr = localStorage.getItem('detail');
-    if(detailStr){
-      this.props.dispatch(createAction(DETAIL, JSON.parse(detailStr)));
-    }
-  }
-  getTotalItem = () =>{
-    const totalItem = localStorage.getItem('totalItem');
-    if(totalItem){
-      this.props.dispatch(createAction(TOTAL, JSON.parse(totalItem)))
-    }
-  }
-  componentDidMount(){
-    this.getState();
-    this.getCart();
-    this.getCourseDetail();
-    this.getTotalItem();
-  }
 }
 
 export default connect()(App);
+

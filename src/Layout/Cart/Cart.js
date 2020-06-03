@@ -40,7 +40,7 @@ class Cart extends Component {
                     </div>
                 </div>
                 <div className="goToCartDiv">
-                    <Link onClick={() => this.handleMouse(false)} className="btn btn-primary button__goToCart" to="/shoppingCart" >Go to Cart</Link>
+                    <Link onClick={() => this.props.handleMouse(false)} className="btn btn-primary button__goToCart" to="/shoppingCart" >Go to Cart</Link>
                 </div>
             </div>
         )

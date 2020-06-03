@@ -21,7 +21,7 @@
             max-width: 56%;
             margin-left: 5%;
             h4{
-                @include text($fs-3, $fw-2, $white);
+                @include text($fs-3, $fw-2, $pink);
             }
             p{
                 @include text($fs-2, $fw-2, $white);

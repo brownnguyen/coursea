@@ -89,7 +89,7 @@ class Header extends Component {
                         {
                             this.state.hover &&
                             <div className="cartContent">
-                                <Cart />
+                                <Cart handleMouse={this.handleMouse} />
                             </div>
                         }
                     </div>
