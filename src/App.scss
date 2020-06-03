@@ -1,0 +1,9 @@
+.back-to-top{
+    &:hover{
+        i{
+            transform: rotate(360deg);
+            transition: all 1s;
+        }
+        
+    }
+}

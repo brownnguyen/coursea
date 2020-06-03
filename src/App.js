@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './App.scss';
 import Header from './Layout/Header/Header.js';
 import Home from './Pages/Home.js';
 import Footer from './Layout/Footer/Footer.js';
