@@ -7,8 +7,8 @@ class ModalCourse extends Component {
             <div>
                     <div className="modal__course">
                         <div className="modal__content">
-                        <p>{course.id}</p>
-                        <p>${course.price}</p>
+                        <p>Course code: {course.id}</p>
+                        <p>Price: ${course.price}</p>
                     </div>
                 </div>
             </div>

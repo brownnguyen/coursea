@@ -40,7 +40,7 @@ class CourseDetail extends Component {
                     <Link to={`/detailPage/${course.id}`} className="course__detail"
                         onClick={() => this.props.addCourseDetail(course)}>
                         <div className="card courseDetail">
-                            <i class="fa fa-bookmark"></i>
+                            <i className="fa fa-bookmark"></i>
                             <div className="card__img">
                                 <img className="card-img-top image" src={course.image} alt={course.courseName} />
                                 <div className="layer"></div>

@@ -20,16 +20,19 @@
         .content__leaderShip{
             .content{
                 width: 310px;
+                margin: $mg-1 - 5 0;
                 padding: 0 $pd-1;
                 .card{
                     cursor: pointer;
                     width: 100%;
+                    height: 100%;
                     box-sizing: border-box;
                     border: 1px solid transparent;
                     border-radius: 0;
                     background-color: $black;
                     .card__img{
                         .card-img-top{
+                            border-radius: 0;
                             width: 100%;
                         }
                     }
@@ -41,6 +44,15 @@
                         }
                         .card-text{
                             @include text($fs-1 - 2, $fw-1,$white)
+                        }
+                    }
+                    &:hover{
+                        box-shadow: 0 1px 2px -2px rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12), 0 5px 12px 4px rgba(0, 0, 0, 0.09);
+                        .card-body{
+                            .card-title, .card-text{
+                                color: $pink;
+                                transition: all .5s;
+                            }
                         }
                     }
                 }

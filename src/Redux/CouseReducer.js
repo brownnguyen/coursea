@@ -1,5 +1,4 @@
-import { FETCH_COURSEDETAIL, TOTAL_ITEM, KIND, ACTIVE_PAGE, STATE, TOTAL } from "../Action/Type";
-import { local } from "../Services/LocalStorage";
+import { FETCH_COURSEDETAIL, TOTAL_ITEM, KIND, ACTIVE_PAGE, STATE } from "../Action/Type";
 const initialState = {
     course: [],
     totalItem: 0,

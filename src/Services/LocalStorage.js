@@ -26,7 +26,6 @@ class Local {
         return dispatch => {
             const detailStr = localStorage.getItem('detail');
             if (detailStr) {
-                console.log(detailStr)
                 return dispatch(createAction(DETAIL, JSON.parse(detailStr))
                 );
             }

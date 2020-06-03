@@ -21,7 +21,7 @@ class Header extends Component {
     showCollapse = (bool) => {
         this.setState({
             isShowCollapseMenu: bool
-        }, console.log(this.state.isShowCollapseMenu))
+        })
     }
     renderLink = () => {
         return (
