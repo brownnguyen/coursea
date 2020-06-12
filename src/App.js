@@ -21,7 +21,7 @@ class App extends Component {
         <BrowserRouter>
           <Header />
           <ScrollToTop>
-            <Route path="/course/:courseId" exact component={Course} />
+          <Route path="/course/:courseId" exact component={Course} />
           </ScrollToTop>
           <Route path="/" exact component={Home} />
           <Route path="/about" exact component={About} />

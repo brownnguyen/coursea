@@ -13,7 +13,7 @@ class Header extends Component {
         super(props);
         this.handleMouse = this.handleMouse.bind(this);
         this.state = {
-            scrolled: true,
+            scrolled: false,
             hover: false,
             isShowCollapseMenu: false
         }
@@ -120,7 +120,7 @@ class Header extends Component {
         );
     }
     scroll = () => {
-        const isTop = window.scrollY < 100;
+        const isTop = window.scrollY < 200;
         if (isTop) {
             this.setState({
                 scrolled: false
