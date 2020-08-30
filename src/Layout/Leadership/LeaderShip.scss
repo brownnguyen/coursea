@@ -114,6 +114,25 @@
         display: inline-block;
         height: 350px;
         overflow-y: auto;
+        &::-webkit-scrollbar-track
+						{
+							-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+							border-radius: 20px;
+							background-color: #F5F5F5;
+						}
+
+						&::-webkit-scrollbar
+						{
+							width: 3px;
+							background-color: #F5F5F5;
+						}
+
+						&::-webkit-scrollbar-thumb
+						{
+							border-radius: 20px;
+							-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+							background-color: #555;
+						}
         .content__modalLeaderShip {
             margin: $pd-3 $pd-2;
             .title__LeaderShip {
