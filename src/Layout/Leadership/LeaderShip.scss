@@ -1,28 +1,28 @@
-@import '../../Scss/Variables.scss';
-@import '../../Scss/Mixin.scss';
-.topLeaderShip{
+@import "../../Scss/Variables.scss";
+@import "../../Scss/Mixin.scss";
+.topLeaderShip {
     background-color: $black;
-    .leaderShip__details{
+    .leaderShip__details {
         border-bottom: 1px solid $grey;
         padding-bottom: $pd-3;
         width: 80%;
-        .topTitle{
+        .topTitle {
             padding-top: $mg-3;
-            h3{
+            h3 {
                 @include text($fs-4, $fw-3, $pink);
                 text-transform: uppercase;
             }
-            p{
+            p {
                 @include text($fs-1 + 3, $fw-2, $white);
                 padding-bottom: $pd-2;
             }
         }
-        .content__leaderShip{
-            .content{
+        .content__leaderShip {
+            .content {
                 width: 310px;
                 margin: $mg-1 - 5 0;
                 padding: 0 $pd-1;
-                .card{
+                .card {
                     cursor: pointer;
                     width: 100%;
                     height: 100%;
@@ -30,28 +30,45 @@
                     border: 1px solid transparent;
                     border-radius: 0;
                     background-color: $black;
-                    .card__img{
-                        .card-img-top{
+                    .card__img {
+                        overflow: hidden;
+                        .card-img-top {
                             border-radius: 0;
                             width: 100%;
+                            transition: all 2s;
+                            -webkit-transition: all 2s;
+                            -moz-transition: all 2s;
+                            -ms-transition: all 2s;
+                            -o-transition: all 2s;
                         }
                     }
-                    .card-body{
+                    .card-body {
                         padding: $pd-2 $pd-1;
-                        .card-title{
+                        .card-title {
                             @include text($fs-1 + 2, $fw-3, $white);
                             margin-bottom: 0;
                         }
-                        .card-text{
-                            @include text($fs-1 - 2, $fw-1,$white)
+                        .card-text {
+                            @include text($fs-1 - 2, $fw-1, $white);
                         }
                     }
-                    &:hover{
-                        box-shadow: 0 1px 2px -2px rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12), 0 5px 12px 4px rgba(0, 0, 0, 0.09);
-                        .card-body{
-                            .card-title, .card-text{
+                    &:hover {
+                        box-shadow: 0 1px 2px -2px rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12),
+                            0 5px 12px 4px rgba(0, 0, 0, 0.09);
+                        .card-body {
+                            .card-title,
+                            .card-text {
                                 color: $pink;
-                                transition: all .5s;
+                                transition: all 0.5s;
+                            }
+                        }
+                        .card__img {
+                            .card-img-top {
+                                transform: scale(1.5);
+                                -webkit-transform: scale(1.5);
+                                -moz-transform: scale(1.5);
+                                -ms-transform: scale(1.5);
+                                -o-transform: scale(1.5);
                             }
                         }
                     }
@@ -60,16 +77,16 @@
         }
     }
 }
-.popup-content{
-    padding: 0!important;
-    border: none!important;
+.popup-content {
+    padding: 0 !important;
+    border: none !important;
 }
-.contentBottomModal{
+.contentBottomModal {
     position: relative;
     margin: auto;
     height: 350px;
     min-width: 280px;
-    .close{
+    .close {
         cursor: pointer;
         position: absolute;
         display: block;
@@ -86,32 +103,32 @@
         padding: 0;
         height: 350px;
         overflow: hidden;
-        img{
+        img {
             width: 100%;
             height: 100%;
         }
     }
-    .content__modalImageLeaderShip{
+    .content__modalImageLeaderShip {
         background-color: $white;
         padding: 0;
         display: inline-block;
         height: 350px;
         overflow-y: auto;
-        .content__modalLeaderShip{
+        .content__modalLeaderShip {
             margin: $pd-3 $pd-2;
-            .title__LeaderShip{
+            .title__LeaderShip {
                 @include text($fs-2, $fw-2, $pink);
             }
-            .position__LeaderShip{
+            .position__LeaderShip {
                 @include text($fs-1, $fw-2, $grey);
                 margin-bottom: 0;
             }
-            .bio__LeaderShip{
+            .bio__LeaderShip {
                 @include text($fs-1 - 2, $fw-2, $pink);
                 text-transform: uppercase;
-                &::after{
-                    content: '';
-                    border: 1px solid rgba(0,0,0,0.1);
+                &::after {
+                    content: "";
+                    border: 1px solid rgba(0, 0, 0, 0.1);
                     height: 1px;
                     display: block;
                     margin-top: 5px;
@@ -120,9 +137,9 @@
         }
     }
 }
-@media screen and (max-width: 768px){
-    .contentBottomModal{
-        .modalImgLeaderShip{
+@media screen and (max-width: 768px) {
+    .contentBottomModal {
+        .modalImgLeaderShip {
             display: none;
         }
     }
