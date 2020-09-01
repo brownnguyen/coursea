@@ -23,22 +23,6 @@ export default class Headers extends Component {
             })
         }
     }
-    renderSignUp = () => {
-        return (
-            <Popup className="mx-auto signUp__Form"
-                modal trigger={<li className="nav-item"><button className="nav-link" > SignUp </button></li>} > {
-                    close => (<>
-                        <SignUp />
-                        <p className="text-center" > Already have account ? <span onClick={() => this.renderSignIn()}
-                            className="SignInSignUp"
-                            style={
-                                { cursor: "pointer" }
-                            } > Sign In </span></p>
-                    </>
-                    )
-                } </Popup>
-        )
-    }
     render() {
         return (
             <header className="header">
