@@ -12,10 +12,11 @@ const SignupSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Email is required')
 })
 class SignUp extends Component {
-    
+
     render() {
+        const { show } = this.props;
         return (
-            <div className="signUp-block">
+            <div className="signUp-block active">
                 <Formik initialValues={{
                     taiKhoan: '',
                     matKhau: '',

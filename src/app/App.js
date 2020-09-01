@@ -1,27 +1,27 @@
 import React, { Component } from 'react';
-import Header from './Layout/Header/Header.js';
-import Home from './Pages/Home.js';
-import Footer from './Layout/Footer/Footer.js';
-import Course from './Pages/Course.js'
+import Header from '../Layout/Header/Header.js';
+import Home from '../Pages/Home.js';
+import Footer from '../Layout/Footer/Footer.js';
+import Course from '../Pages/Course.js'
 import { BrowserRouter, Route } from 'react-router-dom';
 import ScrollToTop from 'react-router-scroll-top';
 import { connect } from 'react-redux';
-import About from './Pages/About.js';
-import ShoppingCart from './Pages/ShoppingCart/ShoppingCart.js';
-import CourseDetailPage from './Pages/CourseDetailPage/CourseDetailPage.js';
-import Login from './Layout/Login/Login.js';
-import SignUp from './Layout/SignUp/SignUp.js';
-import { local } from './Services/LocalStorage.js';
+import About from '../Pages/About.js';
+import ShoppingCart from '../Pages/ShoppingCart/ShoppingCart.js';
+import CourseDetailPage from '../Pages/CourseDetailPage/CourseDetailPage.js';
+import Login from '../Layout/Login/Login.js';
+import SignUp from '../Layout/SignUp/SignUp.js';
+import { local } from '../Services/LocalStorage.js';
 import BackToTop from 'react-back-to-top-button';
-import Headers from './Layout/Headers/Headers.js';
+import Headers from '../Layout/Headers/Headers.js';
+import './App.scss';
 class App extends Component {
   render() {
     return (
       <div>
         <BrowserRouter>
           <Headers />
-          <SignUp />
-          {/* <ScrollToTop>
+          <ScrollToTop>
             <Route path="/course/:courseId" exact component={Course} />
           </ScrollToTop>
           <Route path="/" exact component={Home} />
@@ -37,7 +37,7 @@ class App extends Component {
           >
             <span style={{ color: "#ef2368", fontSize: "40px" }}><i class="fa fa-feather-alt"></i></span>
           </BackToTop>
-          <Footer /> */}
+          <Footer />
         </BrowserRouter>
       </div>
     );

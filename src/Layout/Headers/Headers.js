@@ -3,12 +3,27 @@ import { NavLink } from 'react-router-dom';
 import Popup from 'reactjs-popup';
 import Login from '../Login/Login.js';
 import SignUp from '../SignUp/SignUp';
+import { constHeader } from '../../constants/Constants';
 import './Headers.scss'
 export default class Headers extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            show: false
+            show: false,
+            stickHeader: false
+        }
+    }
+    scrollHeader = () => {
+        const isTop = window.scrollY < 200;
+        if (isTop) {
+            this.setState({
+                stickHeader: false
+            })
+        }
+        else {
+            this.setState({
+                stickHeader: true
+            })
         }
     }
     showDrawer = () => {
@@ -23,12 +38,30 @@ export default class Headers extends Component {
             })
         }
     }
+    renderHeader = () => {
+        return constHeader.map((item, index) => {
+            return (
+                <li>
+                    <NavLink key={index} to={`/${item}`}
+                        exact
+                        activeClassName="activeClass">
+                        {item.toUpperCase()}
+                    </NavLink>
+                </li>
+            )
+        })
+    }
+    componentDidMount() {
+        window.onscroll = () => {
+            this.scrollHeader()
+        }
+    }
     render() {
         return (
-            <header className="header">
+            <header className={this.state.stickHeader ? " header active" : "header"}>
                 <div className="logo">
                     <h1>
-                        <NavLink to="/" exact>Cour<span className="brand">sea</span></NavLink>
+                        <NavLink to="/" exact>COUR<span className="brand">SEA</span></NavLink>
                     </h1>
                 </div>
                 <NavLink to="/shoppingCart" className="shop__cart">
@@ -36,43 +69,7 @@ export default class Headers extends Component {
                 </NavLink>
                 <div className={this.state.show ? "drawer expand" : "drawer"}>
                     <ul>
-                        <li>
-                            <NavLink to='/'
-                                exact
-                                activeClassName="activeClass">
-                                Home
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to='/'
-                                exact
-                                activeClassName="activeClass">
-                                Course
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to='/'
-                                exact
-                                activeClassName="activeClass">
-                                About
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to='/'
-                                exact
-                                activeClassName="activeClass">
-                                Login
-                            </NavLink>
-                        </li>
-                        <li>
-                            <NavLink to='/'
-                                exact
-                                activeClassName="activeClass"
-                                onClick={this.renderSignUp}
-                            >
-                                SignUp
-                            </NavLink>
-                        </li>
+                        {this.renderHeader()}
                     </ul>
                 </div>
                 <div className="menu-burger" onClick={this.showDrawer}>

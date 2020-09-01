@@ -1,11 +1,30 @@
 @import "../../Scss/Variables.scss";
 .header {
+    position: fixed;
+    top: 0;
     padding: 0 20px;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 80px;
+    z-index: 999;
+    transition: all 0.5s;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -ms-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    h1 {
+        margin-bottom: 0;
+        a {
+            font-weight: 500;
+            color: white;
+            .brand {
+                font-weight: 300;
+                color: $pink;
+            }
+        }
+    }
     .menu-burger {
         cursor: pointer;
         display: none;
@@ -22,85 +41,102 @@
             li {
                 display: inline-block;
                 padding: 0 20px;
+                a {
+                    color: white;
+                    transition: all 0.5s;
+                    -webkit-transition: all 0.5s;
+                    -moz-transition: all 0.5s;
+                    -ms-transition: all 0.5s;
+                    -o-transition: all 0.5s;
+                }
+                &:hover {
+                    a {
+                        color: $pink;
+                    }
+                }
             }
         }
     }
-    .shop__cart{
+    .shop__cart {
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        transition: all .5s;
+        transition: all 0.5s;
         display: flex;
         justify-content: center;
         align-items: center;
         color: transparent;
-        i{
-            color: $black-1;
-            transition: all .5s;
+        i {
+            color: white;
+            transition: all 0.5s;
         }
-        &:hover{
+        &:hover {
             background-color: $black-1;
-            i{
+            i {
                 color: $pink;
             }
         }
     }
 }
-@media screen and (max-width: 768px){
-    .header{
-        .drawer{
+.header.active {
+    background-color: $black;
+    height: 70px;
+}
+@media screen and (max-width: 768px) {
+    .header {
+        .drawer {
             position: absolute;
             top: 0;
             left: 0;
             height: 0;
             width: 100%;
             overflow: hidden;
-            transition: all .5s;
+            transition: all 0.5s;
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: $black-1;
-            ul{
-                li{
+            ul {
+                li {
                     padding: 10px;
                     text-align: center;
                     display: block;
-                    a{
+                    a {
                         color: white;
                     }
                 }
             }
         }
-        .drawer.expand{
+        .drawer.expand {
             height: 100vh;
         }
-        .menu-burger{
+        .menu-burger {
             display: block;
-            .menu{
+            .menu {
                 width: 30px;
                 height: 30px;
                 position: relative;
-                span{
+                span {
                     position: absolute;
                     top: 50%;
                     z-index: 9999;
                     width: 100%;
                     height: 2px;
                     background-color: $pink;
-                    transition: all .5s ease-in-out;
+                    transition: all 0.5s ease-in-out;
                 }
-                span:first-of-type{
+                span:first-of-type {
                     transform: translateY(-12px);
                 }
-                span:last-of-type{
+                span:last-of-type {
                     transform: translateY(12px);
                 }
             }
-            .menu.active{
-                span{
+            .menu.active {
+                span {
                     transform: rotate(495deg) translateY(0);
                 }
-                span:first-of-type{
+                span:first-of-type {
                     transform: rotate(405deg);
                 }
             }
