@@ -1,0 +1,109 @@
+@import "../../Scss/Variables.scss";
+.header {
+    padding: 0 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px;
+    .menu-burger {
+        cursor: pointer;
+        display: none;
+    }
+    .drawer {
+        display: flex;
+        justify-content: flex-end;
+        z-index: 888;
+        width: 60%;
+        ul {
+            margin-bottom: 0;
+            padding-left: 0;
+            list-style: none;
+            li {
+                display: inline-block;
+                padding: 0 20px;
+            }
+        }
+    }
+    .shop__cart{
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        transition: all .5s;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: transparent;
+        i{
+            color: $black-1;
+            transition: all .5s;
+        }
+        &:hover{
+            background-color: $black-1;
+            i{
+                color: $pink;
+            }
+        }
+    }
+}
+@media screen and (max-width: 768px){
+    .header{
+        .drawer{
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 0;
+            width: 100%;
+            overflow: hidden;
+            transition: all .5s;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: $black-1;
+            ul{
+                li{
+                    padding: 10px;
+                    text-align: center;
+                    display: block;
+                    a{
+                        color: white;
+                    }
+                }
+            }
+        }
+        .drawer.expand{
+            height: 100vh;
+        }
+        .menu-burger{
+            display: block;
+            .menu{
+                width: 30px;
+                height: 30px;
+                position: relative;
+                span{
+                    position: absolute;
+                    top: 50%;
+                    z-index: 9999;
+                    width: 100%;
+                    height: 2px;
+                    background-color: $pink;
+                    transition: all .5s ease-in-out;
+                }
+                span:first-of-type{
+                    transform: translateY(-12px);
+                }
+                span:last-of-type{
+                    transform: translateY(12px);
+                }
+            }
+            .menu.active{
+                span{
+                    transform: rotate(495deg) translateY(0);
+                }
+                span:first-of-type{
+                    transform: rotate(405deg);
+                }
+            }
+        }
+    }
+}

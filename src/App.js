@@ -13,13 +13,15 @@ import Login from './Layout/Login/Login.js';
 import SignUp from './Layout/SignUp/SignUp.js';
 import { local } from './Services/LocalStorage.js';
 import BackToTop from 'react-back-to-top-button';
+import Headers from './Layout/Headers/Headers.js';
 class App extends Component {
   render() {
     return (
       <div>
         <BrowserRouter>
-          <Header />
-          <ScrollToTop>
+          <Headers />
+          <SignUp />
+          {/* <ScrollToTop>
             <Route path="/course/:courseId" exact component={Course} />
           </ScrollToTop>
           <Route path="/" exact component={Home} />
@@ -35,7 +37,7 @@ class App extends Component {
           >
             <span style={{ color: "#ef2368", fontSize: "40px" }}><i class="fa fa-feather-alt"></i></span>
           </BackToTop>
-          <Footer />
+          <Footer /> */}
         </BrowserRouter>
       </div>
     );

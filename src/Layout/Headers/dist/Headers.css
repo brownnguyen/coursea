@@ -1,0 +1,17 @@
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+}
+.header .menu-burger {
+  display: none;
+}
+.header .drawer {
+  display: flex;
+  justify-content: space-between;
+}
+.header .drawer ul {
+  list-style: none;
+}
