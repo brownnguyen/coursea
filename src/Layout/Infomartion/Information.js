@@ -5,7 +5,7 @@ class Information extends Component {
     renderInfo = () => {
         return data.news.map((item, index) => {
             return (
-                <div className="col-6 py-3" key={index}>
+                <div className="col-md-6 col-sm-12 py-3" key={index}>
                     <div className="card">
                         <h4 className="title"><i className="fa fa-angle-double-right"></i> {item.title}</h4>
                         <div className="card-body px-0 py-2">

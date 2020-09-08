@@ -37,7 +37,7 @@ class App extends Component {
             speed={3000}
             easing="easeInOutQuint"
           >
-            <span style={{ color: "#ef2368", fontSize: "40px" }}><i class="fa fa-feather-alt"></i></span>
+            <span style={{ color: "#ef2368", fontSize: "40px" }}><i className="fa fa-feather-alt"></i></span>
           </BackToTop>
           <Footer />
         </BrowserRouter>

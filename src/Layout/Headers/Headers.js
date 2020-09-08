@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom';
-import Popup from 'reactjs-popup';
-import Login from '../Login/Login.js';
-import SignUp from '../SignUp/SignUp';
 import { constHeader } from '../../constants/Constants';
-import './Headers.scss'
-export default class Headers extends Component {
+import './Headers.scss';
+import { connect } from 'react-redux';
+import { createAction } from '../../Action/createAction';
+import { KIND } from '../../Action/Type';
+class Headers extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -13,10 +13,13 @@ export default class Headers extends Component {
             stickHeader: false
         }
     }
-    navigatePage = () => {
+    navigatePage = (item) => {
         this.setState({
             show: false
         })
+        if (item == "course") {
+            this.props.dispatch(createAction(KIND, "all"))
+        }
     }
     scrollHeader = () => {
         const isTop = window.scrollY < 200;
@@ -46,10 +49,10 @@ export default class Headers extends Component {
     renderHeader = () => {
         return constHeader.map((item, index) => {
             return (
-                <li>
+                <li key={index}>
                     <NavLink key={index} to={`/${item}`}
                         exact
-                        onClick={this.navigatePage}
+                        onClick={() => this.navigatePage(item)}
                         activeClassName="activeClass">
                         {item.toUpperCase()}
                     </NavLink>
@@ -72,6 +75,7 @@ export default class Headers extends Component {
                 </div>
                 <NavLink to="/shoppingCart" className="shop__cart">
                     <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+                    <span className="cart_item">{this.props.cart.length}</span>
                 </NavLink>
                 <div className={this.state.show ? "drawer expand" : "drawer"}>
                     <ul>
@@ -89,3 +93,7 @@ export default class Headers extends Component {
         )
     }
 }
+const mapStateToProps = (state) => ({
+    cart: state.CartReducer.cart
+})
+export default connect(mapStateToProps, null)(Headers);

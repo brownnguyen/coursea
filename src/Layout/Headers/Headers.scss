@@ -1,145 +1,157 @@
 @import "../../Scss/Variables.scss";
 .header {
-    position: fixed;
-    top: 0;
-    padding: 0 20px;
-    width: 100%;
+  position: fixed;
+  top: 0;
+  padding: 0 20px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px;
+  z-index: 999;
+  transition: all 0.5s;
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -ms-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  h1 {
+    margin-bottom: 0;
+    a {
+      font-weight: 500;
+      color: white;
+      .brand {
+        font-weight: 300;
+        color: $pink;
+      }
+    }
+  }
+  .menu-burger {
+    cursor: pointer;
+    display: none;
+  }
+  .drawer {
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    height: 80px;
-    z-index: 999;
-    transition: all 0.5s;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -ms-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    h1 {
-        margin-bottom: 0;
+    justify-content: flex-end;
+    z-index: 888;
+    width: 60%;
+    ul {
+      margin-bottom: 0;
+      padding-left: 0;
+      list-style: none;
+      li {
+        display: inline-block;
+        padding: 0 20px;
         a {
-            font-weight: 500;
-            color: white;
-            .brand {
-                font-weight: 300;
-                color: $pink;
-            }
+          color: white;
+          transition: all 0.5s;
+          -webkit-transition: all 0.5s;
+          -moz-transition: all 0.5s;
+          -ms-transition: all 0.5s;
+          -o-transition: all 0.5s;
         }
-    }
-    .menu-burger {
-        cursor: pointer;
-        display: none;
-    }
-    .drawer {
-        display: flex;
-        justify-content: flex-end;
-        z-index: 888;
-        width: 60%;
-        ul {
-            margin-bottom: 0;
-            padding-left: 0;
-            list-style: none;
-            li {
-                display: inline-block;
-                padding: 0 20px;
-                a {
-                    color: white;
-                    transition: all 0.5s;
-                    -webkit-transition: all 0.5s;
-                    -moz-transition: all 0.5s;
-                    -ms-transition: all 0.5s;
-                    -o-transition: all 0.5s;
-                }
-                &:hover {
-                    a {
-                        color: $pink;
-                    }
-                }
-            }
-        }
-    }
-    .shop__cart {
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        transition: all 0.5s;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        color: transparent;
-        i {
-            color: white;
-            transition: all 0.5s;
+        a.activeClass {
+          color: $pink;
         }
         &:hover {
-            background-color: $black-1;
-            i {
-                color: $pink;
-            }
+          a {
+            opacity: 0.8;
+          }
         }
+      }
     }
+  }
+  .shop__cart {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    transition: all 0.5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: transparent;
+    position: relative;
+    i {
+      color: white;
+      transition: all 0.5s;
+    }
+    .cart_item {
+      top: 4px;
+      right: 8px;
+      position: absolute;
+      color: $pink;
+      font-weight: bold;
+      font-size: 12px;
+    }
+    &:hover {
+      background-color: $black-1;
+      i {
+        color: $pink;
+      }
+    }
+  }
 }
 .header.active {
-    background-color: $black;
-    height: 70px;
+  background-color: $black;
+  height: 70px;
 }
-@media screen and (max-width: 768px) {
-    .header {
-        .drawer {
-            position: absolute;
-            top: 0;
-            left: 0;
-            height: 0;
-            width: 100%;
-            overflow: hidden;
-            transition: all 0.5s;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: $black-1;
-            ul {
-                li {
-                    padding: 10px;
-                    text-align: center;
-                    display: block;
-                    a {
-                        color: white;
-                    }
-                }
-            }
+@media screen and (max-width: 818px) {
+  .header {
+    .drawer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      height: 0;
+      width: 100%;
+      overflow: hidden;
+      transition: all 0.5s;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: $black-1;
+      ul {
+        li {
+          padding: 10px;
+          text-align: center;
+          display: block;
+          a {
+            color: white;
+          }
         }
-        .drawer.expand {
-            height: 100vh;
-        }
-        .menu-burger {
-            display: block;
-            .menu {
-                width: 30px;
-                height: 30px;
-                position: relative;
-                span {
-                    position: absolute;
-                    top: 50%;
-                    z-index: 9999;
-                    width: 100%;
-                    height: 2px;
-                    background-color: $pink;
-                    transition: all 0.5s ease-in-out;
-                }
-                span:first-of-type {
-                    transform: translateY(-12px);
-                }
-                span:last-of-type {
-                    transform: translateY(12px);
-                }
-            }
-            .menu.active {
-                span {
-                    transform: rotate(495deg) translateY(0);
-                }
-                span:first-of-type {
-                    transform: rotate(405deg);
-                }
-            }
-        }
+      }
     }
+    .drawer.expand {
+      height: 100vh;
+    }
+    .menu-burger {
+      display: block;
+      .menu {
+        width: 30px;
+        height: 30px;
+        position: relative;
+        span {
+          position: absolute;
+          top: 50%;
+          z-index: 9999;
+          width: 100%;
+          height: 2px;
+          background-color: $pink;
+          transition: all 0.5s ease-in-out;
+        }
+        span:first-of-type {
+          transform: translateY(-12px);
+        }
+        span:last-of-type {
+          transform: translateY(12px);
+        }
+      }
+      .menu.active {
+        span {
+          transform: rotate(495deg) translateY(0);
+        }
+        span:first-of-type {
+          transform: rotate(405deg);
+        }
+      }
+    }
+  }
 }

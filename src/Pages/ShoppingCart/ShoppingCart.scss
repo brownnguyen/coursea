@@ -1,85 +1,88 @@
-@import '../../Scss/Variables.scss';
-@import '../../Scss/Mixin.scss';
-.shoppingCart{
-    padding: 0;
-    .shopping__title{
-        background-color: $black-1;
-        padding: $pd-3 * 4 0 $pd-3 * 3 0;
-        @include text($fs-2, $fw-1, $white);
-        .title{
-            margin: 0 auto;
-            width: 75%;
-        }
+@import "../../Scss/Variables.scss";
+@import "../../Scss/Mixin.scss";
+.shoppingCart {
+  padding: 0;
+  .shopping__title {
+    background-color: $black-1;
+    padding: $pd-3 * 4 0 $pd-3 * 3 0;
+    @include text($fs-2, $fw-1, $white);
+    .title {
+      margin: 0 auto;
+      width: 75%;
     }
-    .cart__content{
-        margin: $mg-3 * 2 auto;
-        .countCourse{
-            .count__title{
-                @include text($fs-1, $fw-2, $pink);
+  }
+  .cart__content {
+    margin: $mg-3 * 2 auto;
+    .countCourse {
+      .count__title {
+        @include text($fs-1, $fw-2, $pink);
+      }
+      .shopping__item {
+        margin-top: -1px;
+        border: 1px solid #dedfe0;
+        text-decoration: none;
+        transition: all 0.5s;
+        .shopping__details {
+          text-decoration: none;
+          .detailShop {
+            .image {
+              margin: auto;
+              padding-left: 7px;
+              img {
+                margin: $mg-1 - 3 0;
+                width: 100%;
+              }
             }
-            .shopping__item{
-                margin-top: -1px;
-                border: 1px solid #dedfe0;
-                text-decoration: none;
-                .shopping__details{
-                    text-decoration: none;
-                    .detailShop{
-                        .image{
-                            margin: auto;
-                            padding-left: 7px;
-                            img{
-                                margin: $mg-1 - 3 0;
-                                width: 100%;
-                            }
-                        }
-                        .content{
-                            margin: $mg-1 auto;
-                            color: $black-1;
-                            h5{
-                                margin-bottom: 0;
-                            }
-                            p{
-                                margin-bottom: 0;
-                                span{
-                                    color: $pink;
-                                }
-                            }
-                        }
-                    }
+            .content {
+              margin: $mg-1 auto;
+              color: $black-1;
+              h5 {
+                margin-bottom: 0;
+              }
+              p {
+                margin-bottom: 0;
+                span {
+                  color: $pink;
                 }
-                .remove__Course{
-                    background-color: $black-1;
-                    border-radius: 0;
-                    color: $white;
-                    font-size: $fs-1 - 2;
-                    &:hover{
-                        color: $pink;
-                    }
-                }
-                ._price{
-                    color: $pink;
-                }
-                &:hover{
-                    box-shadow: 0px 3px 1px -2px rgba(0,0,0,0.2), 0px 2px 2px 0px rgba(0,0,0,0.14), 0px 1px 5px 0px rgba(0,0,0,0.12);
-                }
+              }
             }
+          }
         }
+        .remove__Course {
+          background-color: $black-1;
+          border-radius: 0;
+          color: $white;
+          font-size: $fs-1 - 2;
+          &:hover {
+            color: $pink;
+          }
+        }
+        ._price {
+          color: $pink;
+        }
+        &:hover {
+          box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2),
+            0px 2px 2px 0px rgba(0, 0, 0, 0.14),
+            0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+        }
+      }
     }
-    .shopping__total{
-        padding: $pd-3;
-        padding-top: 0;
-        .total__title{
-            @include text($fs-2, $fw-2, $pink);
-        }
-        .price{
-            @include text($fs-4, $fw-2, $black-1);
-        }
-        .checkOut__button{
-            width: 100%;
-            padding: $pd-1 + 5 0;
-            background-color: $pink;
-            color: $white;
-            border-radius: 0;
-        }
+  }
+  .shopping__total {
+    padding: $pd-3;
+    padding-top: 0;
+    .total__title {
+      @include text($fs-2, $fw-2, $pink);
     }
+    .price {
+      @include text($fs-4, $fw-2, $black-1);
+    }
+    .checkOut__button {
+      width: 100%;
+      padding: $pd-1 + 5 0;
+      background-color: $pink;
+      color: $white;
+      border-radius: 0;
+    }
+  }
 }
