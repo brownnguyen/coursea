@@ -41,9 +41,11 @@ class CourseDetail extends Component {
                         onClick={() => this.props.addCourseDetail(course)}>
                         <div className="card courseDetail">
                             <i className="fa fa-bookmark"></i>
+                            <span></span>
                             <div className="card__img">
                                 <img className="card-img-top image" src={course.image} alt={course.courseName} />
                                 <div className="layer"></div>
+
                             </div>
                             <div className="card-body">
 

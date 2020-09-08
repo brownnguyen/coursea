@@ -1,27 +1,51 @@
-@import '../../Scss/Variables.scss';
-@import '../../Scss/Mixin.scss';
-.course__detail{
-    text-decoration: none!important;
+@import "../../Scss/Variables.scss";
+@import "../../Scss/Mixin.scss";
+.course__detail {
+    text-decoration: none !important;
     cursor: pointer;
-    .courseDetail{
+    .courseDetail {
         border-radius: 0;
         position: relative;
-            i{
-                z-index: 2;
-                position: absolute;
-                top: 10px;
-                right: -2px;
-                font-size: 25px;
-                color: $pink;
-                transform: rotate(90deg);
-            }
-        .card__img{
+        z-index: 5;
+        i {
+            z-index: 3;
+            position: absolute;
+            top: 10px;
+            right: -5px;
+            font-size: 25px;
+            color: $pink;
+            transform: rotate(90deg);
+        }
+        span {
+            width: 10px;
+            height: 10px;
+            content: "";
+            background-color: #0f0f0f;
+            display: block;
+            position: absolute;
+            top: 26px;
+            right: -5px;
+            z-index: -2;
+            transform: rotate(45deg);
+            -webkit-transform: rotate(45deg);
+            -moz-transform: rotate(45deg);
+            -ms-transform: rotate(45deg);
+            -o-transform: rotate(45deg);
+        }
+        .card__img {
             position: relative;
             border-radius: 0;
-            img{
+            z-index: 2;
+            overflow: hidden;
+            img {
                 border-radius: 0;
+                transition: all 3s;
+                -webkit-transition: all 3s;
+                -moz-transition: all 3s;
+                -ms-transition: all 3s;
+                -o-transition: all 3s;
             }
-            .layer{
+            .layer {
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -31,38 +55,53 @@
                 border: 1px solid transparent;
             }
         }
-        .card-body{
-            h5{
+        .card-body {
+            h5 {
                 @include text($fs-1 + 3, $fw-2, $black);
                 text-transform: uppercase;
             }
-            .card-text{
+            .card-text {
                 @include text($fs-1 - 2, $fw-2, $grey);
-                margin-bottom: 0
+                margin-bottom: 0;
             }
-            .price{
+            .price {
                 @include text($fs-1, $fs-3, $grey);
                 margin-bottom: 0;
             }
-            .content__course{
+            .content__course {
                 @include text($fs-1, $fw-3, $black);
             }
         }
-        &:hover{
-            .layer{
-                background-color: rgba(0,0,0,0.7);
-                transition: all .5s;
-            }
-            .card-title, .card-text, .price
-            {
+        &:hover {
+            .layer {
+                background-color: rgba(0, 0, 0, 0.7);
+                transition: all 3s;
+                -webkit-transition: all 3s;
+                -moz-transition: all 3s;
+                -ms-transition: all 3s;
+                -o-transition: all 3s;
+}
+            .card-title,
+            .card-text,
+            .price {
                 color: $pink;
             }
-            box-shadow: 0 1px 2px -2px rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12), 0 5px 12px 4px rgba(0, 0, 0, 0.09);
-            transition: all .3s;
+            box-shadow: 0 1px 2px -2px rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12),
+                0 5px 12px 4px rgba(0, 0, 0, 0.09);
+            transition: all 0.3s;
+            .card__img {
+                img {
+                    transform: scale(1.2);
+                    -webkit-transform: scale(1.2);
+                    -moz-transform: scale(1.2);
+                    -ms-transform: scale(1.2);
+                    -o-transform: scale(1.2);
+                }
+            }
         }
     }
 }
-.content__modal{
+.content__modal {
     position: absolute;
     background-color: $black-1;
     width: 60%;
@@ -70,9 +109,9 @@
     z-index: 10;
     left: 46%;
     padding: $pd-1;
-    box-shadow: 0 0 1px 1px rgba(20,23,28,.1), 0 3px 1px 0 rgba(20,23,28,.1);
-    &:before{
-        content: '';
+    box-shadow: 0 0 1px 1px rgba(20, 23, 28, 0.1), 0 3px 1px 0 rgba(20, 23, 28, 0.1);
+    &:before {
+        content: "";
         display: block;
         position: absolute;
         top: 40%;
@@ -82,30 +121,30 @@
         background-color: $black-1;
         transform: rotate(45deg);
     }
-    .modal__course{
-        .modal__content{
-            p{
+    .modal__course {
+        .modal__content {
+            p {
                 margin-bottom: 0;
             }
         }
     }
-    .add__course{
+    .add__course {
         width: 100%;
         border-radius: 0;
         background-color: $pink;
         color: $white;
-        &:hover{
+        &:hover {
             color: $pink;
             background-color: black;
         }
     }
-    .goToCart{
+    .goToCart {
         width: 100%;
         border: 1px solid rgb(0, 115, 119);
         border-radius: 0;
         background-color: $white;
         color: rgb(0, 115, 119);
-        &:hover{
+        &:hover {
             color: $white;
             background-color: #006151;
         }

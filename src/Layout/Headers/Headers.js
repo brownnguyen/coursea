@@ -13,6 +13,11 @@ export default class Headers extends Component {
             stickHeader: false
         }
     }
+    navigatePage = () => {
+        this.setState({
+            show: false
+        })
+    }
     scrollHeader = () => {
         const isTop = window.scrollY < 200;
         if (isTop) {
@@ -44,6 +49,7 @@ export default class Headers extends Component {
                 <li>
                     <NavLink key={index} to={`/${item}`}
                         exact
+                        onClick={this.navigatePage}
                         activeClassName="activeClass">
                         {item.toUpperCase()}
                     </NavLink>
@@ -61,7 +67,7 @@ export default class Headers extends Component {
             <header className={this.state.stickHeader ? " header active" : "header"}>
                 <div className="logo">
                     <h1>
-                        <NavLink to="/" exact>COUR<span className="brand">SEA</span></NavLink>
+                        <NavLink to="/home" exact>COUR<span className="brand">SEA</span></NavLink>
                     </h1>
                 </div>
                 <NavLink to="/shoppingCart" className="shop__cart">

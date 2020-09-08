@@ -168,6 +168,18 @@
 
 }
 @media screen and (max-width: 576px){
+    .courseList{
+        .top{
+            .content{
+                h3{
+                    font-size: 60px;
+                }
+                p{
+                    letter-spacing: 20px;
+                }
+            }
+        }
+    }
     .courseDetail{
         .itemCourse{
             padding: $pd-2 $pd-3 + $pd-2!important;
