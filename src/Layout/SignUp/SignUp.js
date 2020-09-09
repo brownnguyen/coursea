@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import './SignUp.scss';
 import { connect } from 'react-redux';
 import { signUp } from '../../Action/User';
+import { NavLink } from 'react-router-dom';
 const SignupSchema = Yup.object().shape({
     taiKhoan: Yup.string().required('Username is required!'),
     matKhau: Yup.string().required('Password is required!'),
@@ -14,7 +15,6 @@ const SignupSchema = Yup.object().shape({
 class SignUp extends Component {
 
     render() {
-        const { show } = this.props;
         return (
             <div className="signUp-block active">
                 <Formik initialValues={{
@@ -63,6 +63,12 @@ class SignUp extends Component {
                 )
                     }
                 </Formik >
+                <div className="moveSignIn">
+                    <span>
+                        Already has an account?
+                    </span>
+                    <NavLink className="btn-sign" to="/login">Sign In</NavLink>
+                </div>
             </div>
         )
     }

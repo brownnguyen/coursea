@@ -81,11 +81,15 @@
       color: $pink;
       font-weight: bold;
       font-size: 12px;
+      transition: all 0.5s;
     }
     &:hover {
       background-color: $black-1;
       i {
         color: $pink;
+      }
+      .cart_item {
+        color: white;
       }
     }
   }

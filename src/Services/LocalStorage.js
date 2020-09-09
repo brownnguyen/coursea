@@ -31,13 +31,5 @@ class Local {
             }
         }
     }
-    // getTotal = () => {
-    //     return dispatch => {
-    //         const total = localStorage.getItem('total');
-    //         if(total){
-    //             return
-    //         }
-    //     }
-    // }
 }
 export const local = new Local();

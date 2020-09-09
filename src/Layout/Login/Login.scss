@@ -1,29 +1,38 @@
-@import '../../Scss/Variables.scss';
-@import '../../Scss/Mixin.scss';
-.login__form{
-    .login{
-        margin-top: $mg-2;
-        text-transform: uppercase;
-        color: $pink;
+@import "../../Scss/Variables.scss";
+@import "../../Scss/Mixin.scss";
+.login__form {
+  .login {
+    margin-top: $mg-2;
+    text-transform: uppercase;
+    color: $pink;
+  }
+  label {
+    @include text($fs-1, $fw-2, $pink);
+  }
+  input {
+    border-radius: 0;
+    &:focus {
+      border: 1px solid $black-1;
     }
-    label{
-        @include text($fs-1, $fw-2, $pink)
+  }
+  .login__button {
+    background-color: $black-1;
+    border-radius: 0;
+    color: $white;
+    &:focus {
+      outline: none;
+      box-shadow: none;
+      background-color: $pink;
+      border: 1px solid transparent;
     }
-    input{
-        border-radius: 0;
-        &:focus{
-            border: 1px solid $black-1;
-        }
-    }
-    .login__button{
-        background-color: $black-1;
-        border-radius: 0;
-        color: $white;
-        &:focus{
-            outline: none;
-            box-shadow: none;
-            background-color: $pink;
-            border: 1px solid transparent;
-        }
-    }
+  }
+}
+.moveSignUp {
+  text-align: center;
+  span {
+    margin-right: 10px;
+  }
+  .btn-sign {
+    color: $pink;
+  }
 }

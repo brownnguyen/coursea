@@ -17,7 +17,7 @@ class Headers extends Component {
         this.setState({
             show: false
         })
-        if (item == "course") {
+        if (item === "course") {
             this.props.dispatch(createAction(KIND, "all"))
         }
     }
@@ -75,7 +75,7 @@ class Headers extends Component {
                 </div>
                 <NavLink to="/shoppingCart" className="shop__cart">
                     <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-                    <span className="cart_item">{this.props.cart.length}</span>
+                    <span className="cart_item">{this.props.cart.length > 0 ? this.props.cart.length : ""}</span>
                 </NavLink>
                 <div className={this.state.show ? "drawer expand" : "drawer"}>
                     <ul>

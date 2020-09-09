@@ -1,69 +1,71 @@
-@import '../../Scss/Variables.scss';
-@import '../../Scss/Mixin.scss';
-.footer{
+@import "../../Scss/Variables.scss";
+@import "../../Scss/Mixin.scss";
+.footer {
+  width: 100%;
+  background-color: $black;
+  padding: $pd-3 0;
+  .footer__content {
     width: 100%;
-    background-color: $black;
-    padding: $pd-3 0;
-    .footer__content{
-        width: 100%;
-        display: flex;
-        justify-content: space-around;
-        .logo{
-            a{
-                @include text( $fs-5, $fw-3, $white);
-                text-transform: uppercase;
-                text-decoration: none;
-                span{
-                    font-weight: $fw-1;
-                }
-                &:hover{
-                    transition: all .5s;
-                    color: $pink;
-                    span{
-                        color: $pink;
-                        transition: all .5s;
-                    }
-                }
-            }
+    display: flex;
+    justify-content: space-around;
+    padding: 0 20px;
+    margin: 0;
+    .logo {
+      a {
+        @include text($fs-5, $fw-3, $white);
+        text-transform: uppercase;
+        text-decoration: none;
+        span {
+          font-weight: $fw-1;
         }
-        .about{
-            p{
-                @include text($fs-1, $fw-1, $grey);
-                margin-bottom: 0;
-            }
-            margin: auto 0;
+        &:hover {
+          transition: all 0.5s;
+          color: $pink;
+          span {
+            color: $pink;
+            transition: all 0.5s;
+          }
         }
-        .connect{
-            margin: auto 0;
-            a{
-                margin: auto $mg-1;
-                display: inline-block;
-                width: 40px;
-                height: 40px;
-                line-height: 46px;
-                border-radius: 7px;
-                text-align: center;
-                text-decoration: none;
-                background-color: black;
-                i{
-                    color: white;
-                    font-size: $fs-2;
-                }
-                &:hover{
-                    .git__icon{
-                        color: #e65328;
-                        transition: all .5s;
-                    }
-                    .face__icon{
-                        color:#385898;
-                        transition: all .5s;
-                        }
-                    .twitter__icon{
-                        color: rgba(29,161,242,1.00);
-                        transition: all .5s;
-                    }
-                }
-            }
-        }
+      }
     }
+    .about {
+      p {
+        @include text($fs-1, $fw-1, $grey);
+        margin-bottom: 0;
+      }
+      margin: auto 0;
+    }
+    .connect {
+      margin: auto 0;
+      a {
+        margin: auto $mg-1;
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        line-height: 46px;
+        border-radius: 7px;
+        text-align: center;
+        text-decoration: none;
+        background-color: black;
+        i {
+          color: white;
+          font-size: $fs-2;
+        }
+        &:hover {
+          .git__icon {
+            color: #e65328;
+            transition: all 0.5s;
+          }
+          .face__icon {
+            color: #385898;
+            transition: all 0.5s;
+          }
+          .twitter__icon {
+            color: rgba(29, 161, 242, 1);
+            transition: all 0.5s;
+          }
+        }
+      }
+    }
+  }
 }
