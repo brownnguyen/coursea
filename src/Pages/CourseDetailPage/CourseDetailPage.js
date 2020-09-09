@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import './CourseDetailPage.scss';
 import { createAction } from '../../Action/createAction';
 import { ADD_CART } from '../../Action/Type';
-import { infoCourse } from '../../constants/Constants';
+import { aimCourse2, aimCourse1 } from '../../constants/Constants';
 class CourseDetailPage extends Component {
     renderButton = () => {
         let { cart, addCart, courseDetail } = this.props;
@@ -20,77 +20,49 @@ class CourseDetailPage extends Component {
             )
         }
     }
-    render() {
-        let { courseDetail } = this.props;
+
+    renderInfoCourse = (item) => {
         return (
-            <>
-                <div className="container-fluid courseDetailPage p-0">
-                    <div className="layer__detail"></div>
-                    <div className="layer__detail2"></div>
-                    <div className="row content__courseDetail">
-                        <div className="col-md-8 courseDetailPage__title">
-                            <h4>{courseDetail.courseName}</h4>
-                            <p>{courseDetail.mentor}</p>
-                            <span>Course code:  {courseDetail.id}</span>
-                        </div>
-                        <div className="col-md-4 courseDetail__img">
-                            <div className="img__details">
-                                <img src={courseDetail.image} alt={courseDetail.kind} />
+            <ul>
+                {item.map((text, index) => {
+                    return (
+                        <li key={index}>
+                            {text}
+                        </li>
+                    )
+                })}
+
+            </ul>
+        )
+    }
+    // <i className="fa fa-anchor"></i>
+    // <i className="fab fa-airbnb"></i>
+    render() {
+        const icon = <i className="fa fa-anchor"></i>
+        let { kind, image, price } = this.props.courseDetail;
+        return (
+            <section className="courseDetailPage">
+                <div className="content-page">
+                    <div className="block">
+                        <h2 className="title">What you will learn</h2>
+                        <div className="detail-block">
+                            <div>
+                                {this.renderInfoCourse(aimCourse1)}
                             </div>
-                            <div className="price__details">
-                                <p className="price">Price: $ {courseDetail.price}</p>
-                            </div>
-                            {this.renderButton()}
-                            <h5>This course include: </h5>
-                            <ul className="courseDetail__info">
-                                {infoCourse.map((item, index) => {
-                                    return (
-                                        <li key={index}>
-                                            <i className="fab fa-airbnb"></i>
-                                            {item}
-                                        </li>
-                                    )
-                                })}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div className="container mb-5">
-                    <div className="row course__reach mx-auto">
-                        <div className="col-md-8 content__details__reach">
-                            <h5>What you'll learn</h5>
-                            <div className="content__reach row">
-                                <div className="col-sm-6 p-0">
-                                    <ul className="ul__reach">
-                                        <li><i className="fa fa-anchor"></i>
-                                        Become a Master in Leadership</li>
-                                        <li><i className="fa fa-anchor"></i>
-                                        Delegate effectively to empower their team</li>
-                                        <li><i className="fa fa-anchor"></i>
-                                        Understand academic theories surrounding leadership styles and techniques</li>
-                                        <li><i className="fa fa-anchor"></i>
-                                        Know the difference between delegating styles and which one is appropriate for each situation</li>
-                                        <li><i className="fa fa-anchor"></i>
-                                        Spend more time developing plans and ideas for the future</li>
-                                    </ul>
-                                </div>
-                                <div className="col-sm-6 p-0">
-                                    <ul className="ul__reach">
-                                        <li><i className="fa fa-anchor"></i>
-                                        Be a better boss, and run a highly effective team</li>
-                                        <li><i className="fa fa-anchor"></i>
-Have a healthy work life balance, with a happy environment</li>
-                                        <li><i className="fa fa-anchor"></i>
-                                        Build a vast array of practical tools to be a fantastic leader</li>
-                                        <li><i className="fa fa-anchor"></i>
-                                        Feel confident enough to involve employees in decision making and planning</li>
-                                    </ul>
-                                </div>
+                            <div>
+                                {this.renderInfoCourse(aimCourse2)}
                             </div>
                         </div>
                     </div>
+                    <div className="block">
+                        <img src={image} alt={kind} />
+                        <p>{price} $</p>
+                        {this.renderButton()}
+                        <h4>This course include: </h4>
+                        {this.renderInfoCourse(aimCourse1)}
+                    </div>
                 </div>
-            </>
+            </section>
         );
     }
 }
