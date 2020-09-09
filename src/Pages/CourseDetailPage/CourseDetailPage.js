@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import './CourseDetailPage.scss';
 import { createAction } from '../../Action/createAction';
 import { ADD_CART } from '../../Action/Type';
+import { infoCourse } from '../../constants/Constants';
 class CourseDetailPage extends Component {
     renderButton = () => {
         let { cart, addCart, courseDetail } = this.props;
@@ -42,12 +43,14 @@ class CourseDetailPage extends Component {
                             {this.renderButton()}
                             <h5>This course include: </h5>
                             <ul className="courseDetail__info">
-                                <li><i className="fab fa-airbnb"></i>9 hours on-demand video</li>
-                                <li><i className="fab fa-airbnb"></i>15 articles</li>
-                                <li><i className="fab fa-airbnb"></i>6 downloadable resources</li>
-                                <li><i className="fab fa-airbnb"></i>Full lifetime access</li>
-                                <li><i className="fab fa-airbnb"></i>Access on mobile and TV</li>
-                                <li><i className="fab fa-airbnb"></i>Certificate of Completion</li>
+                                {infoCourse.map((item, index) => {
+                                    return (
+                                        <li key={index}>
+                                            <i className="fab fa-airbnb"></i>
+                                            {item}
+                                        </li>
+                                    )
+                                })}
                             </ul>
                         </div>
                     </div>
@@ -76,7 +79,6 @@ class CourseDetailPage extends Component {
                                         <li><i className="fa fa-anchor"></i>
                                         Be a better boss, and run a highly effective team</li>
                                         <li><i className="fa fa-anchor"></i>
-
 Have a healthy work life balance, with a happy environment</li>
                                         <li><i className="fa fa-anchor"></i>
                                         Build a vast array of practical tools to be a fantastic leader</li>
