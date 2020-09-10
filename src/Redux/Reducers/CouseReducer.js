@@ -1,4 +1,4 @@
-import { FETCH_COURSEDETAIL, TOTAL_ITEM, KIND, ACTIVE_PAGE, STATE } from "../Action/Type";
+import { FETCH_COURSEDETAIL, TOTAL_ITEM, KIND, ACTIVE_PAGE, STATE, COURSE_NAME } from "../Action/Type";
 const initialState = {
     course: [],
     totalItem: 0,
@@ -47,6 +47,8 @@ export const CourseReducer = (state = initialState, action) => {
                 localStorage.setItem('state', JSON.stringify(state))
                 return { ...state }
             }
+        case COURSE_NAME:{
+        }
         default:
             return state;
     }

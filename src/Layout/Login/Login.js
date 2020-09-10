@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import './Login.scss';
 import { Form, Formik, Field } from 'formik';
 import { connect } from 'react-redux';
-import { login } from '../../Action/User.js';
+import { login } from '../../Redux/Action/User';
 import { NavLink } from 'react-router-dom';
 class Login extends Component {
     render() {

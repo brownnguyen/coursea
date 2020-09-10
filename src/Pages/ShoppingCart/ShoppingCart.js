@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { REMOVE__COURSE, COURSE__DETAIL } from '../../Action/Type.js';
-import { createAction } from '../../Action/createAction.js';
+import { REMOVE__COURSE, COURSE__DETAIL } from '../../Redux/Action/Type';
+import { createAction } from '../../Redux/Action/createAction.js';
 import './ShoppingCart.scss';
 import { Link } from 'react-router-dom';
 class ShoppingCart extends Component {

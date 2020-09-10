@@ -14,3 +14,10 @@ export const aimCourse2 = [
     "Build a vast array of practical tools to be a fantastic leader",
     "Feel confident enough to involve employees in decision making and planning"
 ]
+export const includeCourse = [
+    "hours on-demand video",
+    "downloadable resources",
+    "Full lifetime access",
+    "Access on mobile and TV",
+    "Certificate of completion"
+]

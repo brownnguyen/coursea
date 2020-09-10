@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './CourseDetail.scss';
 import { connect } from 'react-redux';
-import { ADD_CART, COURSE__DETAIL } from '../../Action/Type';
-import { createAction } from '../../Action/createAction';
+import { ADD_CART, COURSE__DETAIL, COURSE_NAME } from '../../Redux/Action/Type';
+import { createAction } from '../../Redux/Action/createAction';
 import { Link } from 'react-router-dom';
 import ModalCourse from '../ModalCourse/ModalCourse';
 class CourseDetail extends Component {
@@ -31,8 +31,19 @@ class CourseDetail extends Component {
             )
         }
     }
+    fixTitle = (str) => {
+        let splitStr = str.toLowerCase().split(' ');
+        let joinStr = " ";
+        splitStr.map((item) => {
+            item = item.charAt(0).toUpperCase() + item.substring(1);
+            joinStr += item + " "
+        })
+        return joinStr;
+    }
+
     render() {
         let { course } = this.props;
+        let courseName = this.fixTitle(course.courseName);
         return (
             <>
                 <div onMouseEnter={() => this.handleMouseHover(true)}
@@ -44,12 +55,11 @@ class CourseDetail extends Component {
                             <span></span>
                             <div className="card__img">
                                 <img className="card-img-top image" src={course.image} alt={course.courseName} />
-                                <div className="layer"></div>
 
                             </div>
                             <div className="card-body">
 
-                                <h5 className="card-title">{course.courseName}</h5>
+                                <h5 className="card-title">{courseName.length < 40 ? courseName : courseName.substr(0, 40) + ". . ."}</h5>
                                 <p className="card-text">{course.mentor}</p>
                                 <p className="price text-right">{course.price} $</p>
                                 <p className="content__course">{course.content.length > 50 ? course.content.substr(0, 50) + ". . ." : course.content}</p>

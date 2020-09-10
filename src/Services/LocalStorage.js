@@ -1,5 +1,5 @@
-import { createAction } from "../Action/createAction";
-import { CART, STATE, DETAIL } from "../Action/Type";
+import { createAction } from "../Redux/Action/createAction";
+import { CART, STATE, DETAIL } from "../Redux/Action/Type";
 
 class Local {
     getCart = () => {

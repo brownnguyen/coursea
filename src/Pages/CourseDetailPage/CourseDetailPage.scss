@@ -1,31 +1,126 @@
 @import "../../Scss/Variables.scss";
 @import "../../Scss/Mixin.scss";
+
+.top-title-page {
+  background-color: #333333;
+  padding-top: 100px;
+  .top-title-content {
+    max-width: 1120px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    .content {
+      width: 60%;
+      padding: 20px;
+      background-color: #333333;
+      transform: translateY(50px);
+      border-bottom-left-radius: 10px;
+      h4 {
+        font-size: 20px;
+        span {
+          font-size: 40px;
+          color: $pink;
+          font-style: italic;
+          font-weight: 300;
+        }
+      }
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
 .content-page {
   max-width: 1120px;
   width: 100%;
   margin: auto;
   display: flex;
   justify-content: space-between;
-  .block {
-    width: 40%;
+  .title {
+    text-align: center;
+    color: $pink;
+    font-size: 25px;
   }
-  .block:first-of-type {
-    width: 60%;
-    .detail-block {
-      display: flex;
-      justify-content: space-between;
+  .block {
+    background-color: white;
+    width: 40%;
+    img {
+      width: 100%;
     }
     ul {
       list-style: none;
       padding-left: 0;
       li {
+        margin: 15px 0;
         &:before {
           content: "\f260";
           font-family: "FontAweSome";
           color: $pink;
-          padding-right: 20px;
+          padding-right: 10px;
         }
       }
     }
+    h4 {
+      font-size: 25px;
+      color: $pink;
+    }
+  }
+  .block:first-of-type {
+    padding-top: 70px;
+    width: 60%;
+    .detail-block {
+      display: flex;
+      justify-content: space-between;
+      .detail-block-main {
+        width: 50%;
+        padding-right: 15px;
+      }
+    }
+  }
+  .block:last-of-type {
+    transform: translateY(-30px);
+    border: 1px solid #d8d8d8;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 5px 6px 18px 0px rgba(0,0,0,0.87);
+    .content-course {
+      padding: 20px;
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+}
+.LinkToCart {
+  width: 100%;
+  border: 1px solid #006151;
+  background-color: white;
+  color: #006151;
+  border-radius: 0;
+  margin-bottom: 20px;
+  padding: 8px 0;
+  &:hover {
+    color: white;
+    background-color: #006151;
+  }
+}
+.add__course {
+  width: 100%;
+  background-color: $pink;
+  color: white;
+  border-radius: 0;
+  margin-bottom: 20px;
+  padding: 8px 0;
+  &:hover {
+    background-color: black;
+    color: $pink;
+  }
+}
+.description {
+  width: 100%;
+  p {
+    line-height: 30px;
   }
 }

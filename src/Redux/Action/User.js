@@ -1,6 +1,6 @@
-import { userServices } from "../Services"
-import { USER__LOGIN } from "./Type"
-import { createAction } from './createAction.js';
+import { userServices } from "../../Services"
+import { USER__LOGIN } from "../Action/Type"
+import { createAction } from '../Action/createAction';
 export const login = (user) => {
     return dispatch => {
         userServices.Login(user).then(res => {

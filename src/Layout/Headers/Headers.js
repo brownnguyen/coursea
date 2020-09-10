@@ -3,8 +3,8 @@ import { NavLink } from 'react-router-dom';
 import { constHeader } from '../../constants/Constants';
 import './Headers.scss';
 import { connect } from 'react-redux';
-import { createAction } from '../../Action/createAction';
-import { KIND } from '../../Action/Type';
+import { createAction } from '../../Redux/Action/createAction';
+import { KIND } from '../../Redux/Action/Type';
 class Headers extends Component {
     constructor(props) {
         super(props);

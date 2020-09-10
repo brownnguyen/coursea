@@ -91,22 +91,22 @@
             "image": "/img/lohp-category-it-and-software.jpg"
         },
         {
-            "id": "Personal",
+            "id": "personal",
             "title": "Personal Development",
             "image": "/img/lohp-category-personal-development.jpg"
         },
         {
-            "id": "Business",
+            "id": "business",
             "title": "Business",
             "image": "/img/lohp-category-business.jpg"
         },
         {
-            "id": "Photography",
+            "id": "photography",
             "title": "Photography",
             "image": "/img/lohp-category-photography.jpg"
         },
         {
-            "id": "Music",
+            "id": "music",
             "title": "Music",
             "image": "/img/lohp-category-music.jpg"
         }

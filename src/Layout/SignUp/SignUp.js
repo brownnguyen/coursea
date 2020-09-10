@@ -3,7 +3,7 @@ import { Form, Field, Formik, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import './SignUp.scss';
 import { connect } from 'react-redux';
-import { signUp } from '../../Action/User';
+import { signUp } from '../../Redux/Action/User';
 import { NavLink } from 'react-router-dom';
 const SignupSchema = Yup.object().shape({
     taiKhoan: Yup.string().required('Username is required!'),

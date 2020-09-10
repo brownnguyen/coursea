@@ -10,3 +10,4 @@ export const REMOVE__COURSE = "REMOVE__COURSE";
 export const COURSE__DETAIL = "COURSE__DETAIL";
 export const USER__LOGIN = "USER__LOGIN";
 export const TOTAL = "TOTAL";
+export const COURSE_NAME = "COURSE_NAME";

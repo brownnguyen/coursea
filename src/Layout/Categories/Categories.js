@@ -3,8 +3,8 @@ import data from '../../JSON/database.json';
 import './Categories.scss';
 import {Link} from 'react-router-dom';
 import { connect } from 'react-redux';
-import { createAction } from '../../Action/createAction';
-import { KIND } from '../../Action/Type';
+import { createAction } from '../../Redux/Action/createAction';
+import { KIND } from '../../Redux/Action/Type';
 class Categories extends Component {
     getKind = (id) => {
         this.props.dispatch(createAction(KIND,id))
