@@ -38,7 +38,6 @@ class CourseDetailPage extends Component {
         let joinStr = " ";
         if (str) {
             let splitStr = str?.toLowerCase().split(' ');
-
             splitStr.map((item) => {
                 item = item.charAt(0).toUpperCase() + item.substring(1);
                 joinStr += item + " ";

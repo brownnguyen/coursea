@@ -51,6 +51,6 @@ export const CourseReducer = (state = initialState, action) => {
         case COURSE_NAME: {
         }
         default:
-            return state;
+            return {...state};
     }
 }

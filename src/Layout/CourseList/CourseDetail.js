@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './CourseDetail.scss';
 import { connect } from 'react-redux';
-import { ADD_CART, COURSE__DETAIL, COURSE_NAME } from '../../Redux/Action/Type';
+import { ADD_CART, COURSE__DETAIL } from '../../Redux/Action/Type';
 import { createAction } from '../../Redux/Action/createAction';
 import { Link } from 'react-router-dom';
 class CourseDetail extends Component {
@@ -26,7 +26,7 @@ class CourseDetail extends Component {
                 return (
                     <>
                         <Link to="/shoppingCart" className="btn goToCart">Go to cart</Link>
-                        <Link to={`/detailPage/${id}`} exact className="btn go_details">Detail course</Link>
+                        <Link to={`/detailPage/${id}`} className="btn go_details">Detail course</Link>
                     </>
                 )
             } else {
@@ -44,7 +44,7 @@ class CourseDetail extends Component {
     }
 
     render() {
-        let { courseName, image, price, content, mentor, id } = this.props.course;
+        let { courseName, image, price, mentor, id } = this.props.course;
         return (
             <>
                 <div onMouseEnter={() => this.handleMouseHover(true)}
