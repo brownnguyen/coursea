@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import './CourseList.scss';
-import data from '../../JSON/course.json';
 import database from '../../JSON/database.json';
 import CourseDetail from './CourseDetail';
 import { connect } from 'react-redux';
@@ -27,7 +26,7 @@ class CourseList extends Component {
             }
         }`
         if (kind === "all") {
-            return data.course.map((item, index) => {
+            return course.map((item, index) => {
                 return (
                     <div className="col-lg-3 col-md-4 col-sm-6 itemCourse" key={index} style={{animation: `aniChangeList${Date.now()} 1s`}}>
                         <style>{keyFrame}</style>
@@ -37,7 +36,8 @@ class CourseList extends Component {
             }).slice(start, end);
         }
         else {
-            let newarray = course.filter(item => item.kind === kind);
+            let newarray = course.filter(item => item.kind.toLowerCase() === kind);
+
             return newarray.map((item, index) => {
                 return (
                     <div className="col-lg-3 col-md-4 col-sm-6 itemCourse" key={index} style={{animation: `aniChangeList${Date.now()} 1s`}}>
@@ -72,6 +72,7 @@ class CourseList extends Component {
         this.props.dispatch(createAction(KIND, value));
     }
     render() {
+        console.log(this.props.course)
         return (
             <div className="container-fluid courseList">
                 <div className="top">

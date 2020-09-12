@@ -7,6 +7,7 @@ import { createAction } from '../../Redux/Action/createAction';
 import { KIND } from '../../Redux/Action/Type';
 class Categories extends Component {
     getKind = (id) => {
+        console.log(id)
         this.props.dispatch(createAction(KIND,id))
     }
     renderCategories = () => {

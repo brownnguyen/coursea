@@ -23,7 +23,7 @@ class ShoppingCart extends Component {
     let { cart, removeCourse } = this.props;
     return cart.map((item, index) => {
       return (
-        <div className="row shopping__item"  key={index}>
+        <div className="row shopping__item" key={index}>
           <Link to={`/detailPage/${item.id}`} onClick={() => this.props.addCourseDetail(item)} className="col-10 row shopping__details" style={{ cursor: 'pointer' }}>
             <div className="col-10">
               <div className="row detailShop">
@@ -32,7 +32,8 @@ class ShoppingCart extends Component {
                 </div>
                 <div className="content col-8">
                   <h5>{item.courseName}</h5>
-                  <p> <span>Id course:</span> {item.id}</p>
+                  <p> <span>Mentor: </span>{item.mentor}</p>
+                  <p><span>Subject: </span>{item.kind}</p>
                 </div>
               </div>
             </div>

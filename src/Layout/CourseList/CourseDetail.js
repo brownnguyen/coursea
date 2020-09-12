@@ -4,7 +4,6 @@ import { connect } from 'react-redux';
 import { ADD_CART, COURSE__DETAIL, COURSE_NAME } from '../../Redux/Action/Type';
 import { createAction } from '../../Redux/Action/createAction';
 import { Link } from 'react-router-dom';
-import ModalCourse from '../ModalCourse/ModalCourse';
 class CourseDetail extends Component {
     constructor(props) {
         super(props);
@@ -20,59 +19,55 @@ class CourseDetail extends Component {
     }
     renderButton = () => {
         let { course, addCart, cart } = this.props;
+        let { content, id } = this.props.course;
         let item = cart.find(item => item.id === course.id);
-        if (item) {
-            return (
-                <Link to="/shoppingCart" className="btn goToCart">Go to cart</Link>
-            )
-        } else {
-            return (
-                <button className="btn add__course" onClick={() => addCart(course)}>Add to cart</button>
-            )
+        if (this.state.isHovering) {
+            if (item) {
+                return (
+                    <>
+                        <Link to="/shoppingCart" className="btn goToCart">Go to cart</Link>
+                        <Link to={`/detailPage/${id}`} exact className="btn go_details">Detail course</Link>
+                    </>
+                )
+            } else {
+                return (
+                    <>
+                        <button className="btn add__course" onClick={() => addCart(course)}>Add to cart</button>
+                        <Link to={`/detailPage/${id}`} className="btn go_details">Detail course</Link>
+                    </>
+                )
+            }
         }
-    }
-    fixTitle = (str) => {
-        let splitStr = str.toLowerCase().split(' ');
-        let joinStr = " ";
-        splitStr.map((item) => {
-            item = item.charAt(0).toUpperCase() + item.substring(1);
-            joinStr += item + " "
-        })
-        return joinStr;
+        else {
+            return <p className="content__course">{content.length > 75 ? content.substr(0, 75) + ". . ." : content}</p>
+        }
     }
 
     render() {
-        let { course } = this.props;
-        let courseName = this.fixTitle(course.courseName);
+        let { courseName, image, price, content, mentor, id } = this.props.course;
         return (
             <>
                 <div onMouseEnter={() => this.handleMouseHover(true)}
                     onMouseLeave={() => this.handleMouseHover(false)}>
-                    <Link to={`/detailPage/${course.id}`} className="course__detail"
-                        onClick={() => this.props.addCourseDetail(course)}>
-                        <div className="card courseDetail">
+                    <div className="course__detail card">
+                        <Link className="courseDetail" to={`/detailPage/${id}`}
+                            onClick={() => this.props.addCourseDetail(this.props.course)}>
                             <i className="fa fa-bookmark"></i>
                             <span></span>
                             <div className="card__img">
-                                <img className="card-img-top image" src={course.image} alt={course.courseName} />
+                                <img className="card-img-top image" src={image} alt={courseName} />
 
                             </div>
                             <div className="card-body">
-
-                                <h5 className="card-title">{courseName.length < 40 ? courseName : courseName.substr(0, 40) + ". . ."}</h5>
-                                <p className="card-text">{course.mentor}</p>
-                                <p className="price text-right">{course.price} $</p>
-                                <p className="content__course">{course.content.length > 50 ? course.content.substr(0, 50) + ". . ." : course.content}</p>
+                                <h5 className="card-title">{courseName.length < 35 ? courseName : courseName.substr(0, 35) + ". . ."}</h5>
+                                <p className="card-text">{mentor}</p>
+                                <p className="price text-right">{price} $</p>
                             </div>
-                        </div>
-                    </Link>
-                    {
-                        this.state.isHovering &&
-                        <div className="content__modal">
-                            <ModalCourse course={course} />
+                        </Link>
+                        <div className="render-button-details">
                             {this.renderButton()}
                         </div>
-                    }
+                    </div>
                 </div>
             </>
         );

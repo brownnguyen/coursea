@@ -73,7 +73,6 @@ class CourseDetailPage extends Component {
     render() {
 
         let { kind, image, price, courseName, mentor, includes, content } = this.props.courseDetail;
-        console.log(this.props.course)
         return (
             <section className="courseDetailPage">
                 <div className="top-title-page">

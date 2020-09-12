@@ -1,4 +1,4 @@
-import { FETCH_COURSEDETAIL, TOTAL_ITEM, KIND, ACTIVE_PAGE, STATE, COURSE_NAME } from "../Action/Type";
+import { FETCH_COURSE, TOTAL_ITEM, KIND, ACTIVE_PAGE, STATE, COURSE_NAME } from "../Action/Type";
 const initialState = {
     course: [],
     totalItem: 0,
@@ -19,7 +19,7 @@ export const CourseReducer = (state = initialState, action) => {
                 localStorage.setItem('state', JSON.stringify(state))
                 return { ...state }
             }
-        case FETCH_COURSEDETAIL:
+        case FETCH_COURSE:
             {
                 state.course = payload;
                 localStorage.setItem('state', JSON.stringify(state))
@@ -40,14 +40,15 @@ export const CourseReducer = (state = initialState, action) => {
                     state.totalItem = state.course.length;
                 }
                 else {
-                    let length = state.course.filter(item => item.kind === payload).length;
+                    let length = state.course.filter(item => item.kind.toLowerCase() === payload).length;
+                    console.log(length)
                     state.totalItem = length;
                 }
                 state.kind = updateKind;
                 localStorage.setItem('state', JSON.stringify(state))
                 return { ...state }
             }
-        case COURSE_NAME:{
+        case COURSE_NAME: {
         }
         default:
             return state;

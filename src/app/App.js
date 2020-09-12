@@ -25,10 +25,7 @@ class App extends Component {
               exact
               component={Course} />
           </ScrollToTop>
-          <HomeTemplate
-            path="/course"
-            exact
-            component={Course} />
+          <HomeTemplate path="/course" exact component={Course} />
           <HomeTemplate path="/home" exact component={Home} />
           <HomeTemplate path="/about" exact component={About} />
           <HomeTemplate path="/shoppingCart" exact component={ShoppingCart} />

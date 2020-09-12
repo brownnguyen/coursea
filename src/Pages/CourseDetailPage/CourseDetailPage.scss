@@ -28,6 +28,7 @@
       }
       p {
         margin-bottom: 0;
+        float: right;
       }
     }
   }
@@ -84,7 +85,7 @@
     border: 1px solid #d8d8d8;
     border-radius: 10px;
     overflow: hidden;
-    box-shadow: 5px 6px 18px 0px rgba(0,0,0,0.87);
+    box-shadow: 5px 6px 18px 0px rgba(0, 0, 0, 0.87);
     .content-course {
       padding: 20px;
       p {
