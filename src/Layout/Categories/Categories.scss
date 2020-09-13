@@ -69,3 +69,11 @@
     }
   }
 }
+@media screen and (max-width:576px){
+  .categories-content{
+    .categories__content{
+      width: 100%;
+      margin: 10px auto;
+    }
+  }
+}

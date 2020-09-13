@@ -1,100 +1,69 @@
 @import "../../Scss/Variables.scss";
 @import "../../Scss/Mixin.scss";
-.background__instructor {
+.instructor {
   margin-bottom: $mg-3 * 3;
   position: relative;
-
   .grey__background {
     position: absolute;
-    top: 15%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: -1;
     left: 0;
     height: 70%;
     background-color: $grey-1;
     width: 100%;
   }
-  .main__instructor {
-    .instructor {
+}
+.main__instructor {
+  .instructor-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .img__instructor {
+      max-width: 400px;
       width: 100%;
+      img {
+        width: 100%;
+        border-radius: 10px;
+        box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2), 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+      }
+    }
+    .instructor__content {
+      padding-left: 20px;
+      text-align: center;
       margin: auto;
-      padding: $pd-3;
-      img {
-        width: 80%;
-        border-radius: 5px;
-        box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
-          0px 4px 5px 0px rgba(0, 0, 0, 0.14),
-          0px 1px 10px 0px rgba(0, 0, 0, 0.12);
+      .text {
+        max-width: 550px;
+        width: 100%;
       }
-      .instructor__content {
-        padding-right: 0;
-        h3 {
-          @include text($fs-3 - 1, $fw-3, $black);
-          &:hover {
-            color: $pink;
-            transition: all 0.3s;
-          }
-        }
-        p {
-          @include text($fs-1, $fw-2, $grey);
-          .SignInSignUp {
-            color: $pink;
-          }
-        }
-        .button__instructor {
-          text-align: center;
-          .button-start {
-            padding: $pd-1 + 3 $pd-1;
-            background-color: black;
-            border: 1px solid transparent;
-            @include text($fs-1, $fw-1, $white);
-            text-transform: uppercase;
-            &:hover {
-              color: $pink;
-              transition: all 0.5s;
-              box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2),
-                0px 4px 5px 0px rgba(0, 0, 0, 0.14),
-                0px 1px 10px 0px rgba(0, 0, 0, 0.12) !important;
-            }
-          }
-          .popup-content {
-            width: 350px !important;
-          }
+      .button-start {
+        display: inline-block;
+        background-color: black;
+        padding: 15px;
+        color: white;
+        text-transform: uppercase;
+        font-weight: 300;
+        transition: $eo;
+        &:hover {
+          color: $pink;
         }
       }
     }
   }
 }
-.signUp__Button {
-  button {
-    line-height: 14px;
-    height: 45px;
+@media screen and (max-width: 576px) {
+  .instructor {
+    .grey__background {
+      height: 90%;
+    }
   }
-}
-@media screen and (max-width: 1200px) {
   .main__instructor {
-    .instructor {
-      img {
-        width: 80% !important;
-      }
-    }
-  }
-}
-@media screen and (max-width: 992px) {
-  .img__instructor {
-    display: none;
-  }
-  .grey__background {
-    height: 100% !important;
-    top: 0 !important;
-  }
-  .instructor__content {
-    padding-left: 0 !important;
-  }
-}
-@media screen and (max-width: 768px) {
-  .background__instructor {
-    .main__instructor {
-      .instructor {
-        padding: 20px 0;
+    .instructor-content {
+      flex-wrap: wrap;
+      .img__instructor,
+      .instructor__content {
+        margin: 5px auto;
+        width: 100%;
       }
     }
   }

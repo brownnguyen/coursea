@@ -13,7 +13,7 @@ class Login extends Component {
                     matKhau: ''
                 }}
                     onSubmit={(value) => {
-                        this.props.dispatch(login(value))
+                        this.props.dispatch(login(value, this.props))
                     }} >{({ handleChange }) => (
                         <Form className="row mx-auto login__form" style={{ width: "300px" }}>
                             <h4 className="login mx-auto">Login</h4>

@@ -26,7 +26,7 @@ class SignUp extends Component {
                     maNhom: "GP01"
                 }}
                     onSubmit={(values) => {
-                        this.props.dispatch(signUp(values));
+                        this.props.dispatch(signUp(values, this.props));
                     }}
                     validationSchema={SignupSchema}
                 >{({ handleChange }) => (

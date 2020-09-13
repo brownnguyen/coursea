@@ -44,29 +44,32 @@ class CourseDetail extends Component {
     }
 
     render() {
-        let { courseName, image, price, mentor, id } = this.props.course;
+        let { courseName, image, price, mentor, id, kind } = this.props.course;
+        console.log(kind)
         return (
             <>
-                <div onMouseEnter={() => this.handleMouseHover(true)}
+                <div className="course__detail"
+                    onMouseEnter={() => this.handleMouseHover(true)}
                     onMouseLeave={() => this.handleMouseHover(false)}>
-                    <div className="course__detail card">
-                        <Link className="courseDetail" to={`/detailPage/${id}`}
-                            onClick={() => this.props.addCourseDetail(this.props.course)}>
-                            <i className="fa fa-bookmark"></i>
-                            <span></span>
-                            <div className="card__img">
-                                <img className="card-img-top image" src={image} alt={courseName} />
+                    <Link className="courseDetail" to={`/detailPage/${id}`}
+                        onClick={() => this.props.addCourseDetail(this.props.course)}>
+                        <i className="fa fa-bookmark"></i>
+                        <span className="icon"></span>
+                        <div className="card__img">
+                            <img className="card-imgTop image" src={image} alt={courseName} />
 
-                            </div>
-                            <div className="card-body">
-                                <h5 className="card-title">{courseName.length < 35 ? courseName : courseName.substr(0, 35) + ". . ."}</h5>
-                                <p className="card-text">{mentor}</p>
+                        </div>
+                        <div className="card-body">
+                            <h5 className="card-title">{courseName.length < 35 ? courseName : courseName.substr(0, 35) + ". . ."}</h5>
+                            <p className="card-text">{mentor}</p>
+                            <div className="kind-price">
+                                <span className="kind">{kind}</span>
                                 <p className="price text-right">{price} $</p>
                             </div>
-                        </Link>
-                        <div className="render-button-details">
-                            {this.renderButton()}
                         </div>
+                    </Link>
+                    <div className="render-button-details">
+                        {this.renderButton()}
                     </div>
                 </div>
             </>

@@ -1,5 +1,5 @@
 import { createAction } from "../Redux/Action/createAction";
-import { CART, STATE, DETAIL } from "../Redux/Action/Type";
+import { CART, STATE, DETAIL, USER__LOGIN } from "../Redux/Action/Type";
 
 class Local {
     getCart = () => {
@@ -28,6 +28,15 @@ class Local {
             if (detailStr) {
                 return dispatch(createAction(DETAIL, JSON.parse(detailStr))
                 );
+            }
+        }
+    }
+    getUserLogin = () => {
+        return dispatch => {
+            const userStr = localStorage.getItem('user');
+            console.log(userStr)
+            if (userStr) {
+                return dispatch(createAction(USER__LOGIN, JSON.parse(userStr)))
             }
         }
     }

@@ -20,25 +20,25 @@ class App extends Component {
       <div>
         <BrowserRouter>
           <ScrollToTop>
-            <HomeTemplate
-              path="/course/:courseId"
-              exact
-              component={Course} />
+            <HomeTemplate path="/course/:courseId" exact component={Course} />
+            <HomeTemplate path="/course" exact component={Course} />
+            <HomeTemplate path="/home" exact component={Home} />
+            <HomeTemplate path="/about" exact component={About} />
+            <HomeTemplate path="/shoppingCart" exact component={ShoppingCart} />
+            <HomeTemplate path="/detailPage/:detailId" exact component={CourseDetailPage} />
+            <HomeTemplate path="/" exact component={Home} />
+            <UserTemplate path="/login" exact component={Login} />
+            <UserTemplate path="/signup" exact component={SignUp} />
           </ScrollToTop>
-          <HomeTemplate path="/course" exact component={Course} />
-          <HomeTemplate path="/home" exact component={Home} />
-          <HomeTemplate path="/about" exact component={About} />
-          <HomeTemplate path="/shoppingCart" exact component={ShoppingCart} />
-          <HomeTemplate path="/detailPage/:detailId" exact component={CourseDetailPage} />
-          <HomeTemplate path="/" exact component={Home} />
-          <UserTemplate path="/login" exact component={Login} />
-          <UserTemplate path="/signup" exact component={SignUp} />
           <BackToTop
             showAt={100}
             speed={3000}
             easing="easeInOutQuint"
+            style={{ zIndex: "999", margin: 10 }}
           >
-            <span style={{ color: "#ef2368", fontSize: "40px" }}><i className="fa fa-feather-alt"></i></span>
+            <span style={{ color: "#ef2368", fontSize: "40px" }}>
+              <i className="fa fa-angle-double-up" aria-hidden="true"></i>
+            </span>
           </BackToTop>
 
         </BrowserRouter>
@@ -49,6 +49,7 @@ class App extends Component {
     this.props.dispatch(local.getState());
     this.props.dispatch(local.getCart());
     this.props.dispatch(local.getCourseDetail());
+    this.props.dispatch(local.getUserLogin());
   }
 }
 

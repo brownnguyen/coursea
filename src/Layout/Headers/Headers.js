@@ -4,7 +4,7 @@ import { constHeader } from '../../constants/Constants';
 import './Headers.scss';
 import { connect } from 'react-redux';
 import { createAction } from '../../Redux/Action/createAction';
-import { KIND } from '../../Redux/Action/Type';
+import { KIND, USER__LOGIN } from '../../Redux/Action/Type';
 class Headers extends Component {
     constructor(props) {
         super(props);
@@ -47,18 +47,51 @@ class Headers extends Component {
         }
     }
     renderHeader = () => {
-        return constHeader.map((item, index) => {
+        if (this.props.user) {
             return (
-                <li key={index}>
-                    <NavLink key={index} to={`/${item}`}
-                        exact
-                        onClick={() => this.navigatePage(item)}
-                        activeClassName="activeClass">
-                        {item.toUpperCase()}
-                    </NavLink>
-                </li>
+                <>
+                    {
+                        constHeader.slice(0, 3).map((item, index) => {
+                            return (
+                                <li key={index}>
+                                    <NavLink key={index} to={`/${item}`}
+                                        exact
+                                        onClick={() => this.navigatePage(item)}
+                                        activeClassName="activeClass">
+                                        {item.toUpperCase()}
+                                    </NavLink>
+                                </li>
+                            )
+                        })
+                    }
+                    <li className="userName-li">
+                        <span class="user-name">
+                            {this.props.user.hoTen}
+                        </span>
+                        <span
+                            onClick={() => {
+                                localStorage.removeItem('user');
+                                this.props.dispatch(createAction(USER__LOGIN, null))
+                            }}
+                            className="signout">Sign out</span>
+                    </li>
+                </>
             )
-        })
+        }
+        else {
+            return constHeader.map((item, index) => {
+                return (
+                    <li key={index}>
+                        <NavLink key={index} to={`/${item}`}
+                            exact
+                            onClick={() => this.navigatePage(item)}
+                            activeClassName="activeClass">
+                            {item.toUpperCase()}
+                        </NavLink>
+                    </li>
+                )
+            })
+        }
     }
     componentDidMount() {
         window.onscroll = () => {
@@ -67,26 +100,29 @@ class Headers extends Component {
     }
     render() {
         return (
+
             <header className={this.state.stickHeader ? " header active" : "header"}>
-                <div className="logo">
-                    <h1>
-                        <NavLink to="/home" exact>COUR<span className="brand">SEA</span></NavLink>
-                    </h1>
-                </div>
-                <NavLink to="/shoppingCart" className="shop__cart">
-                    <i className="fa fa-shopping-cart" aria-hidden="true"></i>
-                    <span className="cart_item">{this.props.cart.length > 0 ? this.props.cart.length : ""}</span>
-                </NavLink>
-                <div className={this.state.show ? "drawer expand" : "drawer"}>
-                    <ul>
-                        {this.renderHeader()}
-                    </ul>
-                </div>
-                <div className="menu-burger" onClick={this.showDrawer}>
-                    <div className={this.state.show ? "menu active" : "menu"}>
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                <div className="header-content">
+                    <div className="logo">
+                        <h1>
+                            <NavLink to="/home" exact>COUR<span className="brand">SEA</span></NavLink>
+                        </h1>
+                    </div>
+                    <NavLink to="/shoppingCart" className="shop__cart">
+                        <i className="fa fa-shopping-cart" aria-hidden="true"></i>
+                        <span className="cart_item">{this.props.cart.length > 0 ? this.props.cart.length : ""}</span>
+                    </NavLink>
+                    <div className={this.state.show ? "drawer expand" : "drawer"}>
+                        <ul>
+                            {this.renderHeader()}
+                        </ul>
+                    </div>
+                    <div className="menu-burger" onClick={this.showDrawer}>
+                        <div className={this.state.show ? "menu active" : "menu"}>
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                     </div>
                 </div>
             </header>
@@ -94,6 +130,7 @@ class Headers extends Component {
     }
 }
 const mapStateToProps = (state) => ({
-    cart: state.CartReducer.cart
+    cart: state.CartReducer.cart,
+    user: state.UserReducer.user
 })
 export default connect(mapStateToProps, null)(Headers);

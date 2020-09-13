@@ -35,7 +35,7 @@
         }
     }
 }
-@media screen and (max-width: 769px) {
+@media screen and (max-width: 768px) {
     .information {
         .information-content {
             padding: 30px 20px;
@@ -44,6 +44,19 @@
             .bot__info {
                 width: 100%;
                 .bot-card-content {
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 576px) {
+    .information {
+        .information-content {
+            .bot__info {
+                .bot-card-content {
+                    .info-card {
+                        width: 100%;
+                    }
                 }
             }
         }

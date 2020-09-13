@@ -1,19 +1,28 @@
 @import "../../Scss/Variables.scss";
 .header {
   position: fixed;
-  top: 0;
-  padding: 0 20px;
-  width: 100%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  height: 80px;
+  top: 0;
+  width: 100%;
   z-index: 999;
   transition: all 0.5s;
   -webkit-transition: all 0.5s;
   -moz-transition: all 0.5s;
   -ms-transition: all 0.5s;
   -o-transition: all 0.5s;
+  background-image: linear-gradient(to bottom, $black, transparent);
+  .header-content {
+    transition: 0.5s ease-in-out;
+    height: 80px;
+    max-width: 1300px;
+    width: 100%;
+    margin: auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
   h1 {
     margin-bottom: 0;
     a {
@@ -49,13 +58,39 @@
           -ms-transition: all 0.5s;
           -o-transition: all 0.5s;
         }
+        .user-name {
+          color: white;
+          cursor: pointer;
+        }
         a.activeClass {
           color: $pink;
         }
-        &:hover {
+        span &:hover {
           a {
             opacity: 0.8;
           }
+        }
+      }
+      .userName-li {
+        position: relative;
+        padding: 10px 20px;
+        &:hover {
+          .signout {
+            display: block;
+          }
+        }
+        .signout {
+          cursor: pointer;
+          position: absolute;
+          background-color: rgb(46, 46, 46);
+          bottom: -25px;
+          left: 0;
+          width: 100%;
+          color: $pink;
+          display: none;
+          padding: 5px;
+          text-align: center;
+          border-radius: 5px;
         }
       }
     }
@@ -96,7 +131,9 @@
 }
 .header.active {
   background-color: $black;
-  height: 70px;
+  .header-content {
+    height: 70px;
+  }
 }
 @media screen and (max-width: 818px) {
   .header {

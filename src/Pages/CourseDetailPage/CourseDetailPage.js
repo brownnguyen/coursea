@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Slider from 'react-slick';
+import CourseDetail from "../../Layout/CourseList/CourseDetail";
+import "../../../node_modules/slick-carousel/slick/slick.css";
+import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import './CourseDetailPage.scss';
 import { createAction } from '../../Redux/Action/createAction';
 import { ADD_CART } from '../../Redux/Action/Type';
@@ -19,6 +23,42 @@ class CourseDetailPage extends Component {
                 <button className="btn add__course" onClick={() => addCart(courseDetail)}>Add to cart</button>
             )
         }
+    }
+    renderCarousel = (kind) => {
+        let { course } = this.props;
+        const settings = {
+            autoplay: true,
+            autoplaySpeed: 3000,
+            dots: false,
+            arrows: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 4,
+            slidesToScroll: 2,
+            responsive: [
+                {
+                    breakpoint: 768,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1
+                    }
+
+                }
+            ]
+        };
+        return (
+            <Slider {...settings}>
+                {
+                    course.filter(item => item.kind === kind).map((itemDetail, index) => {
+                        return (
+                            <div className="slick-content" key={index}>
+                                <CourseDetail course={itemDetail} />
+                            </div>
+                        )
+                    })}
+            </Slider>
+        )
+
     }
     renderInfoCourse = (item) => {
         return (
@@ -48,7 +88,6 @@ class CourseDetailPage extends Component {
     renderCourseInclude = (includes) => {
         return (
             includes?.map((item, index) => {
-                console.log(item)
                 return (
                     <li key={index}>
                         {item.item} {includeCourse[index]}
@@ -86,36 +125,41 @@ class CourseDetailPage extends Component {
                         </div>
                     </div>
                 </div>
-                <div className="content-page">
-                    <div className="block">
-                        <h2 className="title">What you will achieve</h2>
-                        <div className="detail-block">
-                            <div className="detail-block-main">
-                                {this.renderInfoCourse(aimCourse1)}
+                <div className="container">
+                    <div className="content-page">
+                        <div className="block">
+                            <h2 className="title">What you will achieve</h2>
+                            <div className="detail-block">
+                                <div className="detail-block-main">
+                                    {this.renderInfoCourse(aimCourse1)}
+                                </div>
+                                <div className="detail-block-main">
+                                    {this.renderInfoCourse(aimCourse2)}
+                                </div>
                             </div>
-                            <div className="detail-block-main">
-                                {this.renderInfoCourse(aimCourse2)}
+                            <div className="description">
+                                <h4>Description</h4>
+                                <p>{content}</p>
                             </div>
                         </div>
-                        <div className="description">
-                            <h4>Description</h4>
-                            <p>{content}</p>
-                        </div>
-                    </div>
-                    <div className="block">
-                        <img src={image} alt={kind} />
-                        <div className="content-course">
-                            <p>{price} $</p>
-                            {this.renderButton()}
-                            <h4>This course includes: </h4>
-                            <ul className="courseInclude">
-                                {this.renderCourseInclude(includes)}
-                                {this.renderCourseIncludeDemand()}
-                            </ul>
+                        <div className="block">
+                            <img src={image} alt={kind} />
+                            <div className="content-course">
+                                <p>{price} $</p>
+                                {this.renderButton()}
+                                <h4>This course includes: </h4>
+                                <ul className="courseInclude">
+                                    {this.renderCourseInclude(includes)}
+                                    {this.renderCourseIncludeDemand()}
+                                </ul>
+                            </div>
                         </div>
                     </div>
                 </div>
-
+                <div className="content-carousel">
+                    <h3 className="title">Some related course that might interest you</h3>
+                    {this.renderCarousel(kind)}
+                </div>
             </section>
         );
     }

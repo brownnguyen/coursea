@@ -5,19 +5,17 @@ import { NavLink } from 'react-router-dom';
 export default class Instructor extends Component {
     render() {
         return (
-            <div className="container-fluid background__instructor">
+            <div className="instructor">
                 <div className="grey__background"></div>
-                <div className="container mx-auto main__instructor">
-                    <div className="row instructor">
-                        <div className="col-lg-6 text-right pr-4 img__instructor">
+                <div className="main__instructor container">
+                    <div className="instructor-content">
+                        <div className="img__instructor">
                             <img src={img} width={400} alt="instructor " />
                         </div>
-                        <div className="col-lg-6 col-md-12 my-auto text-center instructor__content pl-4">
+                        <div className="instructor__content">
                             <h3>Discover a universal</h3>
-                            <p>Top instructors from around the world teach millions of students on Udemy. We provide the tools and skills to teach what you love.</p>
-                            <div className="button__instructor py-auto">
-                                <NavLink to="/signup" className="button-start" exact>Start Learning</NavLink>
-                            </div>
+                            <p className="text">Top instructors from around the world teach millions of students on Udemy. We provide the tools and skills to teach what you love.</p>
+                            <NavLink to="/signup" className="button-start" exact>Start Learning</NavLink>
                         </div>
                     </div>
                 </div>

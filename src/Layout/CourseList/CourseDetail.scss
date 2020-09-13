@@ -2,10 +2,16 @@
 @import "../../Scss/Mixin.scss";
 .course__detail {
     text-decoration: none !important;
+    width: 24%;
+    max-width: 300px;
+    position: relative;
+    margin: 15px 0;
     cursor: pointer;
+    border: 1px solid rgba(0, 0, 0, 0.12);
+    transition: 0.5s ease-in-out;
+    border-radius: 5px;
     .courseDetail {
         border-radius: 0;
-        position: relative;
         z-index: 5;
         i {
             z-index: 3;
@@ -16,7 +22,7 @@
             color: $pink;
             transform: rotate(90deg);
         }
-        span {
+        span.icon {
             width: 10px;
             height: 10px;
             content: "";
@@ -38,6 +44,7 @@
             z-index: 2;
             overflow: hidden;
             img {
+                width: 100%;
                 border-radius: 0;
                 transition: all 3s;
                 -webkit-transition: all 3s;
@@ -59,14 +66,24 @@
             padding: 20px 15px 15px 15px;
             h5 {
                 @include text($fs-1 + 3, $fw-2, $black);
+                transition: $eo;
             }
             .card-text {
                 @include text($fs-1 - 2, $fw-2, $grey);
                 margin-bottom: 0;
             }
+            .kind-price {
+                display: flex;
+                justify-content: space-between;
+                .kind {
+                    color: $black;
+                    font-style: italic;
+                }
+            }
             .price {
                 @include text($fs-1, $fs-3, $grey);
                 margin-bottom: 0;
+                transition: $eo;
             }
             .content__course {
                 @include text($fs-1, $fw-3, $black);
@@ -74,14 +91,15 @@
         }
     }
     &:hover {
-        .card-title,
-        .card-text,
-        .price {
-            color: $pink;
+        .card-body {
+            .card-title,
+            .price {
+                color: $pink;
+            }
         }
+
         box-shadow: 0 1px 2px -2px rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12),
             0 5px 12px 4px rgba(0, 0, 0, 0.09);
-        transition: all 0.3s;
         .card__img {
             img {
                 transform: scale(1.2);
@@ -131,5 +149,16 @@
             color: $white;
             background-color: #006151;
         }
+    }
+}
+@media screen and (max-width: 768px) {
+    .course__detail {
+        width: 49%;
+    }
+}
+@media screen and (max-width: 576px) {
+    .course__detail {
+        width: 90%;
+        margin: 20px auto;
     }
 }

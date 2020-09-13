@@ -6,11 +6,11 @@ class UpSkill extends Component {
     render() {
         return (
             <div className="container upskill">
-                <div className="row skill__spread">
-                    <div className="col-6 img__hacking">
+                <div className="skill__spread">
+                    <div className="content img__hacking">
                         <img src={img} width={600} height={500} alt="ethical-hacking" />
                     </div>
-                    <div className="col-6 content">
+                    <div className="content">
                         <p className="top">Up skill</p>
                         <h3>Build for whatever strikes next</h3>
                         <p>Ensure your teams are up to date on the latest best practices and threat mitigation techniques.</p>
