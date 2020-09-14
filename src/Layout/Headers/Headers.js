@@ -71,7 +71,7 @@ class Headers extends Component {
                         <span
                             onClick={() => {
                                 localStorage.removeItem('user');
-                                this.props.dispatch(createAction(USER__LOGIN, null))
+                                this.props.dispatch(createAction(USER__LOGIN, null));
                             }}
                             className="signout">Sign out</span>
                     </li>

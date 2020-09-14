@@ -6,6 +6,7 @@ import CourseDetail from "../../Layout/CourseList/CourseDetail";
 import "../../../node_modules/slick-carousel/slick/slick.css";
 import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import './CourseDetailPage.scss';
+import imgDetailPage from '../../img/img-detail-course.png';
 import { createAction } from '../../Redux/Action/createAction';
 import { ADD_CART } from '../../Redux/Action/Type';
 import { aimCourse1, aimCourse2, includeCourse } from '../../constants/Constants';
@@ -37,9 +38,16 @@ class CourseDetailPage extends Component {
             slidesToScroll: 2,
             responsive: [
                 {
-                    breakpoint: 768,
+                    breakpoint: 769,
                     settings: {
                         slidesToShow: 3,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 2,
                         slidesToScroll: 1
                     }
 
@@ -115,6 +123,9 @@ class CourseDetailPage extends Component {
             <section className="courseDetailPage">
                 <div className="top-title-page">
                     <div className="top-title-content">
+                        <div className="img">
+                            <img src={imgDetailPage} alt="" />
+                        </div>
                         <div className="content">
                             <h4>Concept:
                                 <span>
@@ -146,6 +157,7 @@ class CourseDetailPage extends Component {
                             <img src={image} alt={kind} />
                             <div className="content-course">
                                 <p>{price} $</p>
+                                <a className="btn buyNow" href="#link">Buy Now</a>
                                 {this.renderButton()}
                                 <h4>This course includes: </h4>
                                 <ul className="courseInclude">
