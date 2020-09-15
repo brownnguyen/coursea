@@ -1,37 +1,45 @@
-@import '../../Scss/Variables.scss';
-@import '../../Scss/Mixin.scss';
-.glance{
-    margin-bottom: $mg-3 * 2;
-    .glance__img{
-        background-image: url('../../img/image-resImg.jpg');
-        width: 100%;
-        height: 600px;
-        background-position: center;
-        background-size: cover;
-        padding: 0;
-    }
-    .glance__content{
-        background-color: $black-1;
-        display: flex;
-        align-items: center;
-        .background__content{
-            margin-left: $mg-3;
-            .content{
-                
-                h2{
-                   margin-top: $mg-3;
-                    @include text($fs-4, $fw-3, $pink);
-                    text-transform: uppercase;
-                }
-                li{
-                   @include text($fs-2, $fw-3, $pink);
-                   line-height: 80px;
-                   p{
-                    @include text($fs-1 + 3, $fw-2, $white);
-                    line-height: 30px;
-                        }
-                }
-            }
+@import "../../Scss/Variables.scss";
+@import "../../Scss/Mixin.scss";
+.glance {
+  margin-bottom: $mg-3 * 2;
+  .glance__img {
+    background-image: url("../../img/image-resImg.jpg");
+    width: 100%;
+    height: 600px;
+    background-position: center;
+    background-size: cover;
+    padding: 0;
+  }
+  .glance__content {
+    background-color: $black-1;
+    display: flex;
+    align-items: center;
+    .background__content {
+      margin-left: $mg-3;
+      .content {
+        h2 {
+          margin-top: $mg-3;
+          @include text($fs-4, $fw-3, $pink);
+          text-transform: uppercase;
         }
+        li {
+          @include text($fs-2, $fw-3, $pink);
+          line-height: 80px;
+          p {
+            @include text($fs-1 + 3, $fw-2, $white);
+            line-height: 30px;
+          }
+        }
+      }
     }
+  }
+}
+@media screen and (max-width: 576px) {
+  .glance {
+    .glance__content {
+      .background__content {
+        margin-left: 0;
+      }
+    }
+  }
 }

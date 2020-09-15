@@ -1,0 +1,44 @@
+@import "../../Scss/Variables.scss";
+.userlayout {
+  width: 100%;
+  height: calc(100vh - 142px);
+  min-height: 700px;
+  display: flex;
+  justify-content: space-between;
+  .block-user {
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .title {
+      font-size: 80px;
+      color: white;
+      font-weight: 500;
+      text-transform: uppercase;
+      transition: all 0.5s;
+      span {
+        font-weight: 300;
+        color: $pink;
+      }
+    }
+  }
+  .block-user:first-of-type {
+    background-color: #181717;
+    &:hover {
+      .title {
+        color: $pink;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .userlayout {
+    flex-wrap: wrap;
+    .block-user {
+      width: 100%;
+      .title {
+        font-size: 40px;
+      }
+    }
+  }
+}

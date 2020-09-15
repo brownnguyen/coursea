@@ -1,21 +1,21 @@
-@import '../../Scss/Variables.scss';
-@import '../../Scss/Mixin.scss';
-.university{
-    margin: $mg-3 * 3 auto;
-    h2{
+@import "../../Scss/Variables.scss";
+@import "../../Scss/Mixin.scss";
+.university {
+    margin: $mg-3 * 3 auto !important;
+    h2 {
         text-align: center;
-        @include text($fs-3, $fw-3,$pink);
+        @include text($fs-3, $fw-3, $pink);
     }
-    .uni__content{
+    .uni__content {
         margin-top: $mg-3;
-        .uni__item{
-            a{
-                
-                img{
+        .uni__item {
+            a {
+                img {
                     margin: $mg-1 0;
-                    &:hover{
-                        box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12);
-                        transition: all .5s;
+                    transition: 0.5s ease-in-out;
+                    &:hover {
+                        box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.2), 0px 4px 5px 0px rgba(0, 0, 0, 0.14),
+                            0px 1px 10px 0px rgba(0, 0, 0, 0.12);
                         border-radius: 20px;
                     }
                 }

@@ -1,11 +1,10 @@
 import React, { Component } from 'react';
 import './CourseList.scss';
-import data from '../../JSON/course.json';
 import database from '../../JSON/database.json';
 import CourseDetail from './CourseDetail';
 import { connect } from 'react-redux';
-import { KIND, ACTIVE_PAGE } from '../../Action/Type.js';
-import { createAction } from '../../Action/createAction.js';
+import { KIND, ACTIVE_PAGE } from '../../Redux/Action/Type.js';
+import { createAction } from '../../Redux/Action/createAction.js';
 import Pagination from 'react-js-pagination';
 import { Link } from 'react-router-dom';
 import Particles from 'react-particles-js';
@@ -18,49 +17,32 @@ class CourseList extends Component {
         let { course, kind, activePage } = this.props;
         let start = (activePage - 1) * 20;
         let end = (activePage - 1) * 20 + 20;
-        const keyFrame = `@keyframes aniChangeList${Date.now()}{
-            from{
-                transform : translateY(20px);
-            }
-            to{
-                transform: translateY(0px);
-            }
-        }`
         if (kind === "all") {
-            return data.course.map((item, index) => {
+            return course.map((item, index) => {
                 return (
-                    <div className="col-lg-3 col-md-4 col-sm-6 itemCourse" key={index} style={{animation: `aniChangeList${Date.now()} 1s`}}>
-                        <style>{keyFrame}</style>
-                        <CourseDetail course={item} />
-                    </div>
+                    <CourseDetail course={item} key={index} />
                 )
             }).slice(start, end);
         }
         else {
-            let newarray = course.filter(item => item.kind === kind);
+            let newarray = course.filter(item => item.kind.toLowerCase() === kind);
+
             return newarray.map((item, index) => {
                 return (
-                    <div className="col-lg-3 col-md-4 col-sm-6 itemCourse" key={index} style={{animation: `aniChangeList${Date.now()} 1s`}}>
-                        <style>{keyFrame}</style>
-                        <CourseDetail course={item} />
-                    </div>
+                    <CourseDetail course={item} key={index} />
                 )
             }).slice(start, end);
         }
     }
-    renderTitleCategoriesDiv = () => {
-        return database.categories.map((item, index) => {
-            return (
-                <div className="medium__course" key={index}>
-                    <Link className="mediumScreenCourse" id={item.id} to={`/course/${item.id}`} onClick={() => this.getKind(`${item.id}`)} key={index}>{item.title}</Link>
-                </div>
-            )
-        })
-    }
     renderTitleCategories = () => {
         return database.categories.map((item, index) => {
             return (
-                <Link className="course__categories" id={item.id} to={`/course/${item.id}`} onClick={() => this.getKind(`${item.id}`)} key={index}>{item.title}</Link>
+                <Link
+                    className="course__categories"
+                    id={item.id}
+                    to={`/course/${item.id}`}
+                    onClick={() => this.getKind(`${item.id}`)}
+                    key={index}>{item.title}</Link>
             )
         })
     }
@@ -73,20 +55,20 @@ class CourseList extends Component {
     }
     render() {
         return (
-            <div className="container-fluid courseList">
+            <div className="courseList">
                 <div className="top">
-                <Particles style={{ position: "absolute", zIndex: 1}}
-                height={350}
-                    params={{
-                        "particles": {
-                            "number": {
-                                "value": 30
-                            },
-                            "size": {
-                                "value": 1
+                    <Particles style={{ position: "absolute", zIndex: 1 }}
+                        height={350}
+                        params={{
+                            "particles": {
+                                "number": {
+                                    "value": 30
+                                },
+                                "size": {
+                                    "value": 1
+                                }
                             }
-                        }
-                    }} />
+                        }} />
                     <div className="layer"></div>
                     <div className="content">
                         <h3>Cour<span>sea</span></h3>
@@ -95,23 +77,16 @@ class CourseList extends Component {
                 </div>
                 <div className="courseDetail">
                     <div className="title">
-                        <h2 className="title__categories">All categories</h2>
+                        <h2 className="title__categories">Categories</h2>
                     </div>
                     <div className="list__course">
-                        <div className="course__categories__screen row">
-                            {this.renderTitleCategories().slice(1, 9)}
-                        </div>
-                        <div className="row mediumCategories">
-                            <div className="medium__content__categories ">
-                                {this.renderTitleCategoriesDiv().slice(1, 9)}
+                        <div className="container">
+                            <div className="course__categories__screen">
+                                {this.renderTitleCategories()}
                             </div>
-
-                        </div>
-                    </div>
-                    <div className="container">
-                        
-                        <div className="row">
-                            {this.renderCategories()}
+                            <div className="course-content">
+                                {this.renderCategories()}
+                            </div>
                         </div>
                     </div>
                 </div>

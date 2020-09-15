@@ -1,5 +1,5 @@
-import { createAction } from "../Action/createAction";
-import { CART, STATE, DETAIL } from "../Action/Type";
+import { createAction } from "../Redux/Action/createAction";
+import { CART, STATE, DETAIL, USER__LOGIN } from "../Redux/Action/Type";
 
 class Local {
     getCart = () => {
@@ -17,7 +17,8 @@ class Local {
         return dispatch => {
             const stateStr = localStorage.getItem('state');
             if (stateStr) {
-                return dispatch(createAction(STATE, JSON.parse(stateStr)));
+                return dispatch(createAction(STATE, JSON.parse(stateStr))
+                );
             }
         }
     }
@@ -30,13 +31,13 @@ class Local {
             }
         }
     }
-    // getTotal = () => {
-    //     return dispatch => {
-    //         const total = localStorage.getItem('total');
-    //         if(total){
-    //             return
-    //         }
-    //     }
-    // }
+    getUserLogin = () => {
+        return dispatch => {
+            const userStr = localStorage.getItem('user');
+            if (userStr) {
+                return dispatch(createAction(USER__LOGIN, JSON.parse(userStr)))
+            }
+        }
+    }
 }
 export const local = new Local();

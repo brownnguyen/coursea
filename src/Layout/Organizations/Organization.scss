@@ -1,61 +1,86 @@
-@import '../../Scss/Variables.scss';
-@import '../../Scss/Mixin.scss';
+@import "../../Scss/Variables.scss";
+@import "../../Scss/Mixin.scss";
 
-.organization{
-    margin: $mg-3 * 2 auto;
+.organization {
+    margin: $mg-3 * 2 auto !important;
     position: relative;
-    .organization__content{
-        .title{
+    .organization-main {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    .organization__content {
+        width: 50%;
+        padding-right: 20px;
+        .title {
             margin-bottom: $mg-3 + $mg-1;
             @include text($fs-2 + 5, $fw-2, $pink);
         }
-        .organization__details{
+        .organization__details {
             margin: $mg-2 auto;
             border: 5px solid $grey-1;
             width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            .img {
+                width: 33%;
+                img {
+                    width: 100%;
+                }
+            }
         }
     }
-    .organization__comment{
-        .organization__carousel{
+    .organization__comment {
+        width: 50%;
+        .organization__carousel {
+            background: linear-gradient(110deg, #f15b2a, #ec008c);
             width: 100%;
-            .card{
-                background: linear-gradient(110deg, #F15B2A , #EC008C);
+            .card-organization {
                 text-align: left;
-                padding: $pd-3;
+                background-color: transparent;
                 border: none;
+                padding: 30px;
                 border-radius: 0;
-                .card-title, .card-author, .card-position{
+                .card-title,
+                .card-author,
+                .card-position {
                     @include text($fs-1 + 3, $fw-2, $white);
                     line-height: 40px;
                 }
-                .card-author{
+                .card-author {
                     font-weight: $fw-3;
                 }
             }
         }
     }
 }
-.carousel{
-    .control-arrow{
-        &:hover{
-            background: transparent!important;
+.carousel {
+    .control-arrow {
+        &:hover {
+            background: transparent !important;
         }
     }
-    .control-dots{
-        .dot{
+    .slide {
+        background: transparent;
+    }
+    .control-dots {
+        .dot {
             box-shadow: none;
-            &:focus{
+            &:focus {
                 outline: none;
             }
         }
     }
-    .carousel-status{
+    .carousel-status {
         display: none;
     }
 }
-@media screen and (max-width: 1200px){
-    .organization__details{
-        img{
+@media screen and (max-width: 768px) {
+    .organization {
+        .organization__content,
+        .organization__comment {
+            padding: 0;
             width: 100%;
         }
     }

@@ -1,35 +1,62 @@
-@import '../../Scss/Variables.scss';
-@import '../../Scss/Mixin.scss';
+@import "../../Scss/Variables.scss";
+@import "../../Scss/Mixin.scss";
 .information {
-    padding: $pd-3 + $pd-3 0;
-    margin-bottom: 50px;
-    .top__info {
+    .information-content {
+        padding: 30px 0;
+        max-width: 1120px;
+        width: 100%;
         margin: auto;
-        padding: $pd-2;
-        h2{
-            @include text($fs-3, $fw-2,$pink);
-            margin-bottom: $mg-2;
+        display: flex;
+        justify-content: space-between;
+        .top__info {
+            padding: 10px;
+            width: 40%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            h2.title {
+                color: $pink;
+            }
         }
-        p{
-            @include text($fs-1, $fw-2, $grey);
-        }
-    }
-    .bot__info {
-        .card{
-            border: none;
-            .title{
-                @include text($fs-1 + 5,$fw-2, $black);
-                margin-bottom: 0;
-                i{
-                    margin-right: $mg-1;
-                    font-size: $fs-2 + 5;
-                    color: $pink;
+        .bot__info {
+            width: 60%;
+            .bot-card-content {
+                display: flex;
+                justify-content: space-between;
+                flex-wrap: wrap;
+                .info-card {
+                    padding: 10px;
+                    width: 50%;
+                    h4.title {
+                        color: $pink;
+                    }
                 }
             }
-            .card-body{
-                .card-text{
-                    line-height: 25px;
-                    @include text($fs-1 - 1, $fw-2, $grey);
+        }
+    }
+}
+@media screen and (max-width: 768px) {
+    .information {
+        .information-content {
+            padding: 30px 20px;
+            flex-wrap: wrap;
+            .top__info,
+            .bot__info {
+                width: 100%;
+                .bot-card-content {
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width: 576px) {
+    .information {
+        .information-content {
+            .bot__info {
+                .bot-card-content {
+                    .info-card {
+                        width: 100%;
+                    }
                 }
             }
         }

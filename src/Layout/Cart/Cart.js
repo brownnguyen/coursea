@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux';
 import './Cart.scss';
-import { COURSE__DETAIL } from '../../Action/Type';
+import { COURSE__DETAIL } from '../../Redux/Action/Type';
 import { Link } from 'react-router-dom';
-import { createAction } from '../../Action/createAction';
+import { createAction } from '../../Redux/Action/createAction';
 
 class Cart extends Component {
     renderCart = () => {

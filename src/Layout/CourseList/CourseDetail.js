@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import './CourseDetail.scss';
 import { connect } from 'react-redux';
-import { ADD_CART, COURSE__DETAIL } from '../../Action/Type';
-import { createAction } from '../../Action/createAction';
+import { ADD_CART, COURSE__DETAIL } from '../../Redux/Action/Type';
+import { createAction } from '../../Redux/Action/createAction';
 import { Link } from 'react-router-dom';
-import ModalCourse from '../ModalCourse/ModalCourse';
 class CourseDetail extends Component {
     constructor(props) {
         super(props);
@@ -20,47 +19,58 @@ class CourseDetail extends Component {
     }
     renderButton = () => {
         let { course, addCart, cart } = this.props;
+        let { content, id } = this.props.course;
         let item = cart.find(item => item.id === course.id);
-        if (item) {
-            return (
-                <Link to="/shoppingCart" className="btn goToCart">Go to cart</Link>
-            )
-        } else {
-            return (
-                <button className="btn add__course" onClick={() => addCart(course)}>Add to cart</button>
-            )
+        if (this.state.isHovering) {
+            if (item) {
+                return (
+                    <>
+                        <Link to="/shoppingCart" className="btn goToCart">Go to cart</Link>
+                        <Link to={`/detailPage/${id}`} className="btn go_details">Detail course</Link>
+                    </>
+                )
+            } else {
+                return (
+                    <>
+                        <button className="btn add__course" onClick={() => addCart(course)}>Add to cart</button>
+                        <Link to={`/detailPage/${id}`} className="btn go_details">Detail course</Link>
+                    </>
+                )
+            }
+        }
+        else {
+            return <p className="content__course">{content.length > 75 ? content.substr(0, 75) + ". . ." : content}</p>
         }
     }
+
     render() {
-        let { course } = this.props;
+        let { courseName, image, price, mentor, id, kind } = this.props.course;
+        console.log(kind)
         return (
             <>
-                <div onMouseEnter={() => this.handleMouseHover(true)}
+                <div className="course__detail"
+                    onMouseEnter={() => this.handleMouseHover(true)}
                     onMouseLeave={() => this.handleMouseHover(false)}>
-                    <Link to={`/detailPage/${course.id}`} className="course__detail"
-                        onClick={() => this.props.addCourseDetail(course)}>
-                        <div className="card courseDetail">
-                            <i className="fa fa-bookmark"></i>
-                            <div className="card__img">
-                                <img className="card-img-top image" src={course.image} alt={course.courseName} />
-                                <div className="layer"></div>
-                            </div>
-                            <div className="card-body">
+                    <Link className="courseDetail" to={`/detailPage/${id}`}
+                        onClick={() => this.props.addCourseDetail(this.props.course)}>
+                        <i className="fa fa-bookmark"></i>
+                        <span className="icon"></span>
+                        <div className="card__img">
+                            <img className="card-imgTop image" src={image} alt={courseName} />
 
-                                <h5 className="card-title">{course.courseName}</h5>
-                                <p className="card-text">{course.mentor}</p>
-                                <p className="price text-right">{course.price} $</p>
-                                <p className="content__course">{course.content.length > 50 ? course.content.substr(0, 50) + ". . ." : course.content}</p>
+                        </div>
+                        <div className="card-body">
+                            <h5 className="card-title">{courseName.length < 35 ? courseName : courseName.substr(0, 35) + ". . ."}</h5>
+                            <p className="card-text">{mentor}</p>
+                            <div className="kind-price">
+                                <span className="kind">{kind}</span>
+                                <p className="price text-right">{price} $</p>
                             </div>
                         </div>
                     </Link>
-                    {
-                        this.state.isHovering &&
-                        <div className="content__modal">
-                            <ModalCourse course={course} />
-                            {this.renderButton()}
-                        </div>
-                    }
+                    <div className="render-button-details">
+                        {this.renderButton()}
+                    </div>
                 </div>
             </>
         );

@@ -1,7 +1,7 @@
 import { combineReducers } from 'redux';
-import { CourseReducer } from './CouseReducer.js';
-import { CartReducer } from './CartReducer.js';
-import { UserReducer } from './UserReducer.js';
+import { CourseReducer } from './Reducers/CouseReducer';
+import { CartReducer } from './Reducers/CartReducer.js';
+import { UserReducer } from './Reducers/UserReducer.js';
 export const rootReducer = combineReducers({
     CourseReducer, CartReducer, UserReducer
 })

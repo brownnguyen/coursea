@@ -1,38 +1,46 @@
-@import '../../Scss/Variables.scss';
-@import '../../Scss/Mixin.scss';
-.upskill{
-    margin: $mg-3 * 3 auto;
-    .skill__spread{
-        .img__hacking{
+@import "../../Scss/Variables.scss";
+@import "../../Scss/Mixin.scss";
+.upskill {
+    margin: $mg-3 * 3 auto !important;
+    .skill__spread {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        .content {
+            width: 50%;
             img {
-                padding-right: $pd-3;
+                width: 100%;
+                max-width: 600px;
+                margin: auto;
+                height: unset;
             }
-        }
-        .content{
-            padding-left: $pd-3 * 2;   
-            .top{
-                @include text( $fs-2, $fw-3, $pink);
+            .top {
+                color: $pink;
                 text-transform: uppercase;
-                line-height: 1px;
-                padding-left: $pd-2;
-                margin-bottom: $mg-3;
+                font-size: 25px;
             }
-            h3{
-                @include text($fs-5, $fw-3, $black);
-            }
-            p{
-                @include text($fs-1, $fw-2, $grey);
-            }
-            ul{
-                li{
-                    @include text($fs-1, $fw-2, $grey);
+            ul {
+                list-style: none;
+                li {
+                    margin: 10px 0;
+                    &:before {
+                        content: "\f0e7";
+                        font-family: "FontAwesome";
+                        color: $pink;
+                        margin-right: 10px;
+                    }
                 }
             }
         }
     }
 }
-@media screen and (max-width: 1200px) {
-    .upskill{
-        display: none;
+@media screen and (max-width: 768px) {
+    .upskill {
+        .skill__spread {
+            .content {
+                width: 100%;
+            }
+        }
     }
 }

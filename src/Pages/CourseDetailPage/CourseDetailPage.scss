@@ -1,132 +1,261 @@
-@import '../../Scss/Variables.scss';
-@import '../../Scss/Mixin.scss';
-.courseDetailPage{
-    .layer__detail{
-        padding: $pd-3 * 2 0;
+@import "../../Scss/Variables.scss";
+@import "../../Scss/Mixin.scss";
+
+.top-title-page {
+  background-color: #333333;
+  padding-top: 150px;
+  .top-title-content {
+    max-width: 1120px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    color: white;
+    position: relative;
+    .img {
+      position: absolute;
+      bottom: 0;
+      right: 5%;
+      max-width: 30%;
+      width: 100%;
+      img {
         width: 100%;
+      }
+    }
+    .content {
+      width: 60%;
+      padding: 20px;
+      background-color: #333333;
+      transform: translateY(50px);
+      border-bottom-left-radius: 10px;
+      h4 {
+        font-size: 20px;
+        span {
+          font-size: 40px;
+          color: $pink;
+          font-style: italic;
+          font-weight: 300;
+        }
+      }
+      p {
+        margin-bottom: 0;
+        float: right;
+      }
+    }
+  }
+}
+.content-page {
+  max-width: 1120px;
+  width: 100%;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  .title {
+    text-align: center;
+    color: $pink;
+    font-size: 25px;
+  }
+  .block {
+    background-color: white;
+    width: 40%;
+    img {
+      width: 100%;
+    }
+    ul {
+      list-style: none;
+      padding-left: 0;
+      li {
+        margin: 15px 0;
+        &:before {
+          content: "\f260";
+          font-family: "FontAweSome";
+          color: $pink;
+          padding-right: 10px;
+        }
+      }
+    }
+    h4 {
+      font-size: 25px;
+      color: $pink;
+    }
+  }
+  .block:first-of-type {
+    padding-top: 70px;
+    width: 60%;
+    .detail-block {
+      display: flex;
+      justify-content: space-between;
+      .detail-block-main {
+        width: 50%;
+        padding-right: 15px;
+      }
+    }
+  }
+  .block:last-of-type {
+    transform: translateY(-30px);
+    border: 1px solid #d8d8d8;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 5px 6px 18px 0px rgba(0, 0, 0, 0.87);
+    .content-course {
+      padding: 20px;
+      p {
+        font-size: 20px;
+      }
+    }
+  }
+}
+.LinkToCart {
+  width: 100%;
+  border: 1px solid #006151;
+  background-color: white;
+  color: #006151;
+  border-radius: 0;
+  margin-bottom: 20px;
+  padding: 8px 0;
+  &:hover {
+    color: white;
+    background-color: #006151;
+  }
+}
+.buyNow {
+  width: 100%;
+  color: $pink;
+  border-radius: 0;
+  margin-bottom: 20px;
+  padding: 8px 0;
+  display: block;
+  text-align: center;
+  background-color: black;
+  position: relative;
+  transition: 0.5s ease-in-out;
+  &:before {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    background-color: $pink;
+    transition: 0.5s ease-in-out;
+    z-index: -1;
+    content: "";
+  }
+  &:hover {
+    color: white;
+    border-color: $pink;
+    background-color: transparent;
+    &:before {
+      width: 100%;
+    }
+  }
+}
+.add__course {
+  width: 100%;
+  background-color: $pink;
+  color: white;
+  border-radius: 0;
+  margin-bottom: 20px;
+  padding: 8px 0;
+  &:hover {
+    background-color: black;
+    color: $pink;
+  }
+}
+.description {
+  width: 100%;
+  padding-right: 20px;
+  p {
+    line-height: 30px;
+  }
+}
+.content-carousel {
+  max-width: 1200px;
+  width: 100%;
+  margin: 100px auto;
+  h3.title {
+    font-size: 20px;
+    color: $pink;
+    margin-bottom: 30px;
+    padding-left: 20px;
+  }
+  .slick-content {
+    padding-bottom: 20px;
+    .course__detail {
+      margin: auto;
+      width: 95%;
+      .render-button-details {
+        display: none;
+      }
+    }
+  }
+  .slick-slider {
+    width: 95%;
+    margin: auto;
+    .slick-prev,
+    .slick-next {
+      z-index: 10;
+      &:before {
+        opacity: 1;
+        display: flex;
+        content: "\f053";
+        font-family: "FontAwesome";
+        color: $pink;
+        width: 50px;
+        height: 50px;
         background-color: $black;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+      }
     }
-    .layer__detail2{
-        padding: $pd-3 0;
+    .slick-next {
+      right: 10px;
+      &:before {
+        content: "\f054";
+        padding-left: 5px;
+      }
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .top-title-page {
+    .top-title-content {
+      .img {
+        z-index: 2;
+      }
+      .content {
         width: 100%;
-        background-color: $white;
+        h4 {
+          width: 60%;
+          span {
+            font-size: 25px;
+            font-weight: 500;
+          }
+        }
+      }
     }
-    background-color: $black-1;
-    .content__courseDetail{
-        position: relative;
-        width: 80%;
-        margin: 0 auto;
-        padding: $pd-3 * 1 0;
-        .courseDetailPage__title{
-            max-width: 56%;
-            margin-left: 5%;
-            h4{
-                @include text($fs-3, $fw-2, $pink);
-            }
-            p{
-                @include text($fs-2, $fw-2, $white);
-                margin-bottom: 0;
-            }
-            span{
-                text-align: right;
-                display: block;
-                @include text($fs-1, $fw-2, $white);
-            }
-        }
+  }
+  .content-page {
+    flex-wrap: wrap;
+    .block {
+      width: 100% !important;
     }
-    .courseDetail__img{
-        border: 1px solid #dcd7d7;
-        position: absolute;
-        top: $pd-3 * 2;
-        right: 0;
-        background-color: $white;
-        padding: $pd-1;
-        .img__details{
-            img{
-                width: 100%;
-            }
+    .block:first-of-type {
+      .detail-block {
+        flex-wrap: wrap;
+        .detail-block-main {
+          width: 100%;
         }
-        .LinkToCart{
-            text-decoration: none;
-            width: 100%;
-            padding: $pd-1 0;
-            background-color: $white;
-            border: 1px solid rgb(0, 155, 121);
-            color: rgb(0, 155, 121);
-            border-radius: 0;
-            &:hover{
-                background-color: #006151;
-                color: $white;
-            }
-        }
-        .add__course{
-            text-decoration: none;
-            width: 100%;
-            padding: $pd-1 0;
-            background-color: $pink;
-            color: $white;
-            border-radius: 0;
-            &:hover{
-                background-color: #a71647;
-            }
-        }
-        .price__details{
-            margin: $mg-2;
-            .price{
-                @include text($fs-2, $fw-2, $black-1);
-            }
-        }
-        h5{
-            margin: $mg-1;
-            @include text($fs-2, $fw-2, $black-1);
-        }
-        .courseDetail__info{
-            list-style: none;
-            i{
-                padding-right: $pd-1;
-                color: $pink;
-            }
-        }
+      }
     }
-}
-.course__reach{
-    margin: $mg-3 0;
-    .content__details__reach{
-        border: 1px solid #dcd7d7;
-        background-color: #f9f9f9;
-        h5{
-            margin: $mg-3 0 $mg-1 $mg-3;
-            @include text($fs-2, $fw-2, $pink);
-        }
-        .content__reach{
-            padding: $pd-3;
-            padding-top: 0;
-            .ul__reach{
-                padding: 0;
-                padding-right: $pd-2;
-                li{
-                    padding-bottom: $pd-1;
-                    list-style: none;
-                    i{
-                        padding-right: $pd-1;
-                        color: $pink;
-                    }
-                }
-            }
-        }
+    .block:last-of-type {
+      transform: translateY(0);
     }
-}
-@media screen and (max-width: 768px){
-    .courseDetailPage{
-        .content__courseDetail{
-            .courseDetailPage__title{
-                max-width: 100%;
-                margin-left: 0;
-                margin-bottom: $mg-2;
-            }
-        }
-        .courseDetail__img{
-            position: static;
-        }
-    }
+  }
+  .description {
+    padding-right: 0;
+  }
+  .content-carousel {
+    width: 90%;
+  }
 }

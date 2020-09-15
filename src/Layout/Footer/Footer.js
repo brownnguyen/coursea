@@ -13,13 +13,13 @@ export default class Footer extends Component {
                     </div>
                     <div className="connect">
                         <a href="https://github.com/brownnguyen/coursea">
-                        <i className="fab fa-gitlab git__icon"></i>
+                            <i className="fa fa-gitlab git__icon" aria-hidden="true"></i>
                         </a>
                         <a href="https://www.facebook.com/nguyenduchung2608">
-                            <i className="fab fa-facebook-f face__icon"></i>
+                            <i className="fa fa-facebook face__icon" aria-hidden="true"></i>
                         </a>
                         <a href="https://twitter.com/?lang=vi">
-                            <i className="fab fa-twitter twitter__icon"></i>
+                            <i className="fa fa-twitter twitter__icon" aria-hidden="true"></i>
                         </a>
                     </div>
                 </div>

@@ -1,9 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import Slider from 'react-slick';
+import CourseDetail from "../../Layout/CourseList/CourseDetail";
+import "../../../node_modules/slick-carousel/slick/slick.css";
+import "../../../node_modules/slick-carousel/slick/slick-theme.css";
 import './CourseDetailPage.scss';
-import { createAction } from '../../Action/createAction';
-import { ADD_CART } from '../../Action/Type';
+import imgDetailPage from '../../img/img-detail-course.png';
+import { createAction } from '../../Redux/Action/createAction';
+import { ADD_CART } from '../../Redux/Action/Type';
+import { aimCourse1, aimCourse2, includeCourse } from '../../constants/Constants';
 class CourseDetailPage extends Component {
     renderButton = () => {
         let { cart, addCart, courseDetail } = this.props;
@@ -19,82 +25,161 @@ class CourseDetailPage extends Component {
             )
         }
     }
-    render() {
-        let { courseDetail } = this.props;
-        return (
-            <>
-                <div className="container-fluid courseDetailPage p-0">
-                    <div className="layer__detail"></div>
-                    <div className="layer__detail2"></div>
-                    <div className="row content__courseDetail">
-                        <div className="col-md-8 courseDetailPage__title">
-                            <h4>{courseDetail.courseName}</h4>
-                            <p>{courseDetail.mentor}</p>
-                            <span>Course code:  {courseDetail.id}</span>
-                        </div>
-                        <div className="col-md-4 courseDetail__img">
-                            <div className="img__details">
-                                <img src={courseDetail.image} alt={courseDetail.kind} />
-                            </div>
-                            <div className="price__details">
-                                <p className="price">Price: $ {courseDetail.price}</p>
-                            </div>
-                            {this.renderButton()}
-                            <h5>This course include: </h5>
-                            <ul className="courseDetail__info">
-                                <li><i className="fab fa-airbnb"></i>9 hours on-demand video</li>
-                                <li><i className="fab fa-airbnb"></i>15 articles</li>
-                                <li><i className="fab fa-airbnb"></i>6 downloadable resources</li>
-                                <li><i className="fab fa-airbnb"></i>Full lifetime access</li>
-                                <li><i className="fab fa-airbnb"></i>Access on mobile and TV</li>
-                                <li><i className="fab fa-airbnb"></i>Certificate of Completion</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                <div className="container mb-5">
-                    <div className="row course__reach mx-auto">
-                        <div className="col-md-8 content__details__reach">
-                            <h5>What you'll learn</h5>
-                            <div className="content__reach row">
-                                <div className="col-sm-6 p-0">
-                                    <ul className="ul__reach">
-                                        <li><i className="fa fa-anchor"></i>
-                                        Become a Master in Leadership</li>
-                                        <li><i className="fa fa-anchor"></i>
-                                        Delegate effectively to empower their team</li>
-                                        <li><i className="fa fa-anchor"></i>
-                                        Understand academic theories surrounding leadership styles and techniques</li>
-                                        <li><i className="fa fa-anchor"></i>
-                                        Know the difference between delegating styles and which one is appropriate for each situation</li>
-                                        <li><i className="fa fa-anchor"></i>
-                                        Spend more time developing plans and ideas for the future</li>
-                                    </ul>
-                                </div>
-                                <div className="col-sm-6 p-0">
-                                    <ul className="ul__reach">
-                                        <li><i className="fa fa-anchor"></i>
-                                        Be a better boss, and run a highly effective team</li>
-                                        <li><i className="fa fa-anchor"></i>
+    renderCarousel = (kind) => {
+        let { course } = this.props;
+        const settings = {
+            autoplay: true,
+            autoplaySpeed: 3000,
+            dots: false,
+            arrows: true,
+            infinite: true,
+            speed: 500,
+            slidesToShow: 4,
+            slidesToScroll: 2,
+            responsive: [
+                {
+                    breakpoint: 769,
+                    settings: {
+                        slidesToShow: 3,
+                        slidesToScroll: 1
+                    }
+                },
+                {
+                    breakpoint: 576,
+                    settings: {
+                        slidesToShow: 2,
+                        slidesToScroll: 1
+                    }
 
-Have a healthy work life balance, with a happy environment</li>
-                                        <li><i className="fa fa-anchor"></i>
-                                        Build a vast array of practical tools to be a fantastic leader</li>
-                                        <li><i className="fa fa-anchor"></i>
-                                        Feel confident enough to involve employees in decision making and planning</li>
-                                    </ul>
+                }
+            ]
+        };
+        return (
+            <Slider {...settings}>
+                {
+                    course.filter(item => item.kind === kind).map((itemDetail, index) => {
+                        return (
+                            <div className="slick-content" key={index}>
+                                <CourseDetail course={itemDetail} />
+                            </div>
+                        )
+                    })}
+            </Slider>
+        )
+
+    }
+    renderInfoCourse = (item) => {
+        return (
+            <ul>
+                {item.map((text, index) => {
+                    return (
+                        <li key={index}>
+                            {text}
+                        </li>
+                    )
+                })}
+            </ul>
+        )
+    }
+
+    fixTitle = (str) => {
+        let joinStr = " ";
+        if (str) {
+            let splitStr = str?.toLowerCase().split(' ');
+            splitStr.map((item) => {
+                item = item.charAt(0).toUpperCase() + item.substring(1);
+                joinStr += item + " ";
+            })
+            return joinStr;
+        }
+    }
+    renderCourseInclude = (includes) => {
+        return (
+            includes?.map((item, index) => {
+                return (
+                    <li key={index}>
+                        {item.item} {includeCourse[index]}
+                    </li>
+                )
+            })
+        )
+    }
+    renderCourseIncludeDemand = () => {
+        const newArr = includeCourse.filter((item, index) => index > 1);
+        return (
+            newArr.map((item, index) => {
+                return (
+                    <li key={index}>
+                        {item}
+                    </li>
+                )
+            })
+        )
+    }
+    render() {
+
+        let { kind, image, price, courseName, mentor, includes, content } = this.props.courseDetail;
+        return (
+            <section className="courseDetailPage">
+                <div className="top-title-page">
+                    <div className="top-title-content">
+                        <div className="img">
+                            <img src={imgDetailPage} alt="" />
+                        </div>
+                        <div className="content">
+                            <h4>Concept:
+                                <span>
+                                    {this.fixTitle(courseName)}
+                                </span>
+                            </h4>
+                            <p>Mentor: {mentor}</p>
+                        </div>
+                    </div>
+                </div>
+                <div className="container">
+                    <div className="content-page">
+                        <div className="block">
+                            <h2 className="title">What you will achieve</h2>
+                            <div className="detail-block">
+                                <div className="detail-block-main">
+                                    {this.renderInfoCourse(aimCourse1)}
                                 </div>
+                                <div className="detail-block-main">
+                                    {this.renderInfoCourse(aimCourse2)}
+                                </div>
+                            </div>
+                            <div className="description">
+                                <h4>Description</h4>
+                                <p>{content}</p>
+                            </div>
+                        </div>
+                        <div className="block">
+                            <img src={image} alt={kind} />
+                            <div className="content-course">
+                                <p>{price} $</p>
+                                <a className="btn buyNow" href="#link">Buy Now</a>
+                                {this.renderButton()}
+                                <h4>This course includes: </h4>
+                                <ul className="courseInclude">
+                                    {this.renderCourseInclude(includes)}
+                                    {this.renderCourseIncludeDemand()}
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-            </>
+                <div className="content-carousel">
+                    <h3 className="title">Some related course that might interest you</h3>
+                    {this.renderCarousel(kind)}
+                </div>
+            </section>
         );
     }
 }
 const mapStateTopProps = state => ({
     courseDetail: state.CartReducer.courseDetail,
-    cart: state.CartReducer.cart
+    cart: state.CartReducer.cart,
+    course: state.CourseReducer.course
 })
 const mapDispatchToProps = dispatch => {
     return {

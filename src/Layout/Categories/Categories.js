@@ -1,38 +1,40 @@
 import React, { Component } from 'react';
 import data from '../../JSON/database.json';
 import './Categories.scss';
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { createAction } from '../../Action/createAction';
-import { KIND } from '../../Action/Type';
+import { createAction } from '../../Redux/Action/createAction';
+import { KIND } from '../../Redux/Action/Type';
 class Categories extends Component {
     getKind = (id) => {
-        this.props.dispatch(createAction(KIND,id))
+        console.log(id)
+        this.props.dispatch(createAction(KIND, id))
     }
     renderCategories = () => {
         return data.categories.map((item, index) => {
             return (
-                <Link to={`/course/${item.id}`} href="google.com" onClick={()=> this.getKind(item.id)} id={item.id}
-                 className="col-lg-3 col-md-4 col-sm-6 categories__content" key={index}>
-                    <div className="card">
+                <Link to={`/course/${item.id}`} onClick={() => this.getKind(item.id)} id={item.id}
+                    className="categories__content" key={index}>
+                    <div className="card-categories">
                         <div className="card__img">
-                        <img className="card-img-top" src={item.image} width={270} height={312} alt={item.title} />
-                        <div className="card__categories"></div>
+                            <img className="card-imgTop" src={item.image} width={270} height={312} alt={item.title} />
                         </div>
-                        <div className="card-body">
-                            <h4 className="card-title">{item.title}</h4>
+                        <div className="card-body-categories">
+                            <h4 className="card-title-categories">{item.title}</h4>
                         </div>
                     </div>
                 </Link>
             )
-        }).slice(1,9)
+        }).slice(1, 9)
     }
     render() {
         return (
-            <div className="container categories">
-                <h3>Top categories</h3>
-                <div className="row categoriesRow">
-                    {this.renderCategories()}
+            <div className="categories">
+                <h3 className="title-categories">Top categories</h3>
+                <div className="container">
+                    <div className="categories-content">
+                        {this.renderCategories()}
+                    </div>
                 </div>
             </div>
         );

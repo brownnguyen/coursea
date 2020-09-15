@@ -1,25 +1,40 @@
- @import '../../Scss/Variables.scss';
-@import '../../Scss/Mixin.scss';
+@import "../../Scss/Variables.scss";
+@import "../../Scss/Mixin.scss";
+
 .signUpForm {
-    h4{
-        margin-top: $mg-1;
-        color: $pink;
+  max-width: 600px;
+  width: 100%;
+  margin: auto;
+  background-color: white;
+  padding: 20px;
+  h4 {
+    margin-top: $mg-1;
+    color: $pink;
+  }
+  .signUpForm__content {
+    margin-top: $mg-2;
+    input {
+      border-radius: 0;
+      &:focus {
+        border: 1px solid $black-1;
+      }
     }
-    .signUpForm__content{
-        margin-top: $mg-2;
-        input{
-            border-radius: 0;
-            &:focus{
-                border: 1px solid $black-1;
-            }
-        }
-        .signUp__Button{
-            button{
-                border-radius: 0;
-                background-color: $black-1;
-                border: 1px solid transparent;
-                color: $white;
-            }
-        }
+    .signUp__Button {
+      button {
+        border-radius: 0;
+        background-color: $black-1;
+        border: 1px solid transparent;
+        color: $white;
+      }
     }
+  }
+}
+.moveSignIn {
+  text-align: center;
+  span {
+    margin-right: 10px;
+  }
+  .btn-sign {
+    color: $pink;
+  }
 }
