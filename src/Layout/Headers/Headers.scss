@@ -28,6 +28,9 @@
     a {
       font-weight: 500;
       color: white;
+      .logo-img {
+        width: 110px;
+      }
       .brand {
         font-weight: 300;
         color: $pink;

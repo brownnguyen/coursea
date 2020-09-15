@@ -5,6 +5,7 @@ import './Headers.scss';
 import { connect } from 'react-redux';
 import { createAction } from '../../Redux/Action/createAction';
 import { KIND, USER__LOGIN } from '../../Redux/Action/Type';
+import logo from '../../img/img-logo-transparent.png';
 class Headers extends Component {
     constructor(props) {
         super(props);
@@ -105,7 +106,10 @@ class Headers extends Component {
                 <div className="header-content">
                     <div className="logo">
                         <h1>
-                            <NavLink to="/home" exact>COUR<span className="brand">SEA</span></NavLink>
+                            <NavLink to="/home" exact>
+                                <img className="logo-img" src={logo} alt="Coursea" />
+                                {/* COUR<span className="brand">SEA</span> */}
+                            </NavLink>
                         </h1>
                     </div>
                     <NavLink to="/shoppingCart" className="shop__cart">

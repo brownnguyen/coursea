@@ -1,12 +1,16 @@
 import React, { Component } from 'react';
 import './Footer.scss';
+import logo from '../../img/img-logo-transparent.png';
 export default class Footer extends Component {
     render() {
         return (
             <div className="container-fuild footer">
                 <div className="row footer__content">
                     <div className="logo">
-                        <a href="https://github.com/brownnguyen/coursea">Cour<span>sea</span></a>
+                        <a href="https://github.com/brownnguyen/coursea">
+                            <img className="logo-footer" src={logo} alt="Coursea" />
+                            {/* Cour<span>sea</span> */}
+                        </a>
                     </div>
                     <div className="about">
                         <p>© 2020 Copyright NNN coporation </p>
