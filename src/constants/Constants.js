@@ -20,4 +20,126 @@ export const includeCourse = [
     "Full lifetime access",
     "Access on mobile and TV",
     "Certificate of completion"
+];
+export const footerContent = [
+    {
+        title: "platform",
+        content: [
+            {
+                text: "Browse Library",
+                link: "browselibrary"
+            },
+            {
+                text: "Role IQ",
+                link: "roleiq"
+            },
+            {
+                text: "Skill IQ",
+                link: "skilliq"
+            },
+            {
+                text: "Iris",
+                link: "iris"
+            },
+            {
+                text: "Authors",
+                link: "authors"
+            },
+            {
+                text: "Professional Services",
+                link: "professionalservices"
+            },
+            {
+                text: "Technology Index",
+                link: "technologyindex"
+            }
+        ]
+    },
+    {
+        title: "company",
+        content: [
+            {
+                text: "About us",
+                link: "about"
+            },
+            {
+                text: "Customer stories",
+                link: "customerstories"
+            },
+            {
+                text: "Investor",
+                link: "investor"
+            },
+            {
+                text: "Careers",
+                link: "careers"
+            },
+            {
+                text: "Blog",
+                link: "blog"
+            },
+            {
+                text: "Newsroom",
+                link: "newsroom"
+            },
+            {
+                text: "Resource center",
+                link: "resourcecenter"
+            },
+            {
+                text: "Guides",
+                link: "guides"
+            }
+        ]
+    },
+    {
+        title: "resources",
+        content: [
+            {
+                text: "Download Coursea",
+                link: "downloadcoure"
+            },
+            {
+                text: "Event",
+                link: "event"
+            },
+            {
+                text: "Teach",
+                link: "teach"
+            },
+            {
+                text: "Partners",
+                link: "partners"
+            },
+            {
+                text: "Affiliate programs",
+                link: "affiliateprograms"
+            },
+            {
+                text: "Subscribe",
+                link: "subscribe"
+            }
+        ]
+    },
+    {
+        title: "support",
+        content: [
+            {
+                text: "Contact",
+                link: "contact"
+            },
+            {
+                text: "Help center",
+                link: "helpcenter"
+            },
+            {
+                text: "IP whitelist",
+                link: "ipwhitelist"
+            },
+            {
+                text: "Sitemap",
+                link: "sitemap"
+            }
+        ]
+    }
 ]

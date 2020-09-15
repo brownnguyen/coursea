@@ -4,6 +4,31 @@
   width: 100%;
   background-color: $black;
   padding: $pd-3 0;
+  .footer-list {
+    max-width: 1120px;
+    width: 100%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    .title-footer {
+      text-transform: uppercase;
+      color: $pink;
+    }
+    .ul-list-footer {
+      list-style: none;
+      .link-footer {
+        color: white;
+        padding: 5px 0;
+        display: block;
+        transition: 0.5s ease-in-out;
+        font-weight: 300;
+        font-size: 14px;
+        &:hover {
+          color: $pink;
+        }
+      }
+    }
+  }
   .footer__content {
     width: 100%;
     display: flex;

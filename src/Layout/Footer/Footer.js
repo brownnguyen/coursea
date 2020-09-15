@@ -1,10 +1,37 @@
 import React, { Component } from 'react';
 import './Footer.scss';
 import logo from '../../img/img-logo-transparent.png';
+import { footerContent } from '../../constants/Constants';
+import { Link } from 'react-router-dom';
 export default class Footer extends Component {
+    renderFooterContent = () => {
+        return footerContent.map((item, index) => {
+            return (
+                <div className="content" key={index + "x"}>
+                    <h4 key={index} className="title-footer">
+                        {item.title}
+                    </h4>
+                    <ul key={item.title} className="ul-list-footer">
+                        {
+                            item.content.map((link, index) => {
+                                return (
+                                    <li key={link.text}>
+                                        <Link className="link-footer" to={`/${link.link}`}>{link.text}</Link>
+                                    </li>
+                                )
+                            })
+                        }
+                    </ul>
+                </div>
+            )
+        })
+    }
     render() {
         return (
-            <div className="container-fuild footer">
+            <div className="footer">
+                <div className="footer-list">
+                    {this.renderFooterContent()}
+                </div>
                 <div className="row footer__content">
                     <div className="logo">
                         <a href="https://github.com/brownnguyen/coursea">
