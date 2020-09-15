@@ -34,6 +34,10 @@ class Local {
     getUserLogin = () => {
         return dispatch => {
             const userStr = localStorage.getItem('user');
+<<<<<<< HEAD
+=======
+            console.log(userStr)
+>>>>>>> d80654b755c50444a0ca64d32473d12e5a3281bb
             if (userStr) {
                 return dispatch(createAction(USER__LOGIN, JSON.parse(userStr)))
             }
