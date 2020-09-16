@@ -32,7 +32,7 @@ class CourseDetail extends Component {
             } else {
                 return (
                     <>
-                        <button className="btn add__course" onClick={() => addCart(course)}>Add to cart</button>
+                        <button className="btn btn-course add__course" onClick={() => addCart(course)}>Add to cart</button>
                         <Link to={`/detailPage/${id}`} className="btn go_details">Detail course</Link>
                     </>
                 )
@@ -45,7 +45,6 @@ class CourseDetail extends Component {
 
     render() {
         let { courseName, image, price, mentor, id, kind } = this.props.course;
-        console.log(kind)
         return (
             <>
                 <div className="course__detail"

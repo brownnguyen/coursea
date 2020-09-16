@@ -2,168 +2,174 @@
 @import "../../Scss/Mixin.scss";
 
 .courseList {
-    padding: 0;
-    .top {
-        background-image: url(../../img/cabin_demo_74.jpg);
-        background-position: center;
-        background-size: cover;
-        background-attachment: fixed;
-        position: relative;
-        z-index: -2;
-        .layer {
-            position: absolute;
-            z-index: -1;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-        }
-        .content {
-            padding: 150px 0;
-            top: 15%;
-            left: 50%;
-            h3 {
-                text-transform: uppercase;
-                text-align: center;
-                margin-bottom: 0;
-                @include text($fs-6 + $fs-6, $fw-3, $white);
-                span {
-                    color: $pink;
-                    font-weight: $fw-1;
-                }
-            }
-            p {
-                text-align: center;
-                @include text($fs-4, $fw-2, $grey-1);
-                text-transform: uppercase;
-                margin-top: -20px;
-                letter-spacing: 40px;
-            }
-        }
+  padding: 0;
+  .top {
+    background-image: url(../../img/cabin_demo_74.jpg);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+    z-index: -2;
+    .layer {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.8);
     }
-    .courseDetail {
-        .link__courseDetail {
-            text-decoration: none;
-            cursor: pointer;
-            margin: $mg-3 $mg-3 * 8;
-            padding: $pd-1;
-            text-align: left;
-            @include text($fs-2, $fw-3, $white);
-            text-transform: uppercase;
-            background-color: $pink;
-            display: inline-block;
-            border-radius: 10px;
-            &:hover {
-                background-color: $black;
-                transition: all 0.5s;
-            }
+    .content {
+      padding: 150px 0;
+      top: 15%;
+      left: 50%;
+      h3 {
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 0;
+        @include text($fs-6 + $fs-6, $fw-3, $white);
+        span {
+          color: $pink;
+          font-weight: $fw-1;
         }
-        .list__course {
-            display: flex;
-            justify-content: center;
-            padding-left: 0;
-            .course__categories {
-                cursor: pointer;
-                list-style: none;
-                text-decoration: none;
-                @include text($fs-1, $fw-2, $white);
-                padding: 10px 0;
-                background-color: $black-1;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                text-align: center;
-                width: 20%;
-                position: relative;
-                transition: 0.5s ease-in-out;
-                z-index: 0;
-                &:before {
-                    content: "";
-                    width: 0;
-                    height: 100%;
-                    background-color: $pink;
-                    top: 0;
-                    left: 0;
-                    position: absolute;
-                    z-index: -1;
-                    transition: 0.5s ease-in-out;
-                }
-                &:hover {
-                    // background-color: transparent;
-                    &:before {
-                        width: 100%;
-                    }
-                }
-            }
-            .course__categories__screen {
-                margin: 0 auto;
-                display: flex;
-                justify-content: space-between;
-            }
-            .course-content {
-                margin: 20px 0;
-                display: flex;
-                flex-wrap: wrap;
-                justify-content: space-between;
-            }
-        }
-        .title {
-            margin: $mg-1;
-            margin-left: 15%;
-            .title__categories {
-                text-decoration: none;
-                @include text($fs-3, $fw-2, $pink);
-            }
-        }
+      }
+      p {
+        text-align: center;
+        @include text($fs-4, $fw-2, $grey-1);
+        text-transform: uppercase;
+        margin-top: -20px;
+        letter-spacing: 40px;
+      }
     }
-    .pagination__course {
+  }
+  .courseDetail {
+    .link__courseDetail {
+      text-decoration: none;
+      cursor: pointer;
+      margin: $mg-3 $mg-3 * 8;
+      padding: $pd-1;
+      text-align: left;
+      @include text($fs-2, $fw-3, $white);
+      text-transform: uppercase;
+      background-color: $pink;
+      display: inline-block;
+      border-radius: 10px;
+      &:hover {
+        background-color: $black;
+        transition: all 0.5s;
+      }
+    }
+    .list__course {
+      display: flex;
+      justify-content: center;
+      padding-left: 0;
+      .course__categories {
+        cursor: pointer;
+        list-style: none;
+        text-decoration: none;
+        @include text($fs-1, $fw-2, $white);
+        padding: 10px 0;
+        // background-color: $black-1;
         display: flex;
         justify-content: center;
-        color: $pink;
-        .pagination {
-            .page-link {
-                border: 1px solid rgba(0, 0, 0, 0.125);
-                color: black;
-                &:focus {
-                    box-shadow: none;
-                }
-            }
-            .page-item.active .page-link {
-                z-index: 1;
-                color: #fff;
-                background-color: $pink;
-                border-color: $pink;
-            }
+        align-items: center;
+        text-align: center;
+        width: 20%;
+        position: relative;
+        transition: 0.5s ease-in-out;
+        &:before {
+          background-color: black;
         }
+        &:after {
+          background-color: $pink;
+        }
+        // z-index: 0;
+        // &:before {
+        //     content: "";
+        //     width: 0;
+        //     height: 100%;
+        //     background-color: $pink;
+        //     top: 0;
+        //     left: 0;
+        //     position: absolute;
+        //     z-index: -1;
+        //     transition: 0.5s ease-in-out;
+        // }
+        // &:hover {
+        //   // background-color: transparent;
+        //   &:before {
+        //     width: 100%;
+        //   }
+        // }
+      }
+      .course__categories__screen {
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+      }
+      .course-content {
+        margin: 20px 0;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+      }
     }
+    .title {
+      margin: $mg-1;
+      margin-left: 15%;
+      .title__categories {
+        text-decoration: none;
+        @include text($fs-3, $fw-2, $pink);
+      }
+    }
+  }
+  .pagination__course {
+    display: flex;
+    justify-content: center;
+    color: $pink;
+    .pagination {
+      .page-link {
+        border: 1px solid rgba(0, 0, 0, 0.125);
+        color: black;
+        &:focus {
+          box-shadow: none;
+        }
+      }
+      .page-item.active .page-link {
+        z-index: 1;
+        color: #fff;
+        background-color: $pink;
+        border-color: $pink;
+      }
+    }
+  }
 }
 @media screen and (max-width: 768px) {
-    .courseList {
-        .top{
-            .content{
-                h3{
-                    font-size: 50px;
-                }
-                p{
-                    font-size: 20px;
-                    margin-top: 0;
-                    letter-spacing: 5px;
-                }
-            }
+  .courseList {
+    .top {
+      .content {
+        h3 {
+          font-size: 50px;
         }
-        .courseDetail {
-            .list__course {
-                .course__categories__screen {
-                    flex-wrap: wrap;
-                    justify-content: flex-start;
-                    .course__categories {
-                        padding: 10px;
-                        margin: 10px;
-                        width: unset;
-                    }
-                }
-            }
+        p {
+          font-size: 20px;
+          margin-top: 0;
+          letter-spacing: 5px;
         }
+      }
     }
+    .courseDetail {
+      .list__course {
+        .course__categories__screen {
+          flex-wrap: wrap;
+          justify-content: flex-start;
+          .course__categories {
+            padding: 10px;
+            margin: 10px;
+            width: unset;
+          }
+        }
+      }
+    }
+  }
 }

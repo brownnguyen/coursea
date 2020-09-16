@@ -2,7 +2,21 @@ import React, { Component } from 'react';
 import img from '../../img/instructor.jpg';
 import './Instructor.scss';
 import { NavLink } from 'react-router-dom';
-export default class Instructor extends Component {
+import { connect } from 'react-redux';
+class Instructor extends Component {
+    checkUser = () => {
+        const user = this.props.user;
+        if (user) {
+            return (
+                <NavLink to="/course" className="button-start btn-course" exact>Start Learning</NavLink>
+            )
+        }
+        else {
+            return (
+                <NavLink to="/signup" className="button-start btn-course" exact>Start Learning</NavLink>
+            )
+        }
+    }
     render() {
         return (
             <div className="instructor">
@@ -15,7 +29,7 @@ export default class Instructor extends Component {
                         <div className="instructor__content">
                             <h3>Discover a universal</h3>
                             <p className="text">Top instructors from around the world teach millions of students on Udemy. We provide the tools and skills to teach what you love.</p>
-                            <NavLink to="/signup" className="button-start" exact>Start Learning</NavLink>
+                            {this.checkUser()}
                         </div>
                     </div>
                 </div>
@@ -23,3 +37,7 @@ export default class Instructor extends Component {
         )
     }
 }
+const mapStateToProps = (state) => ({
+    user: state.UserReducer.user
+})
+export default connect(mapStateToProps, null)(Instructor);

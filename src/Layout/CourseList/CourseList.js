@@ -38,7 +38,7 @@ class CourseList extends Component {
         return database.categories.map((item, index) => {
             return (
                 <Link
-                    className="course__categories"
+                    className="course__categories btn-course"
                     id={item.id}
                     to={`/course/${item.id}`}
                     onClick={() => this.getKind(`${item.id}`)}

@@ -25,6 +25,34 @@ body {
 a {
   text-decoration: none !important;
 }
+.btn-course {
+  position: relative;
+  transition: 0.2s ease-in-out;
+  &:before,
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    transition: 0.2s ease-in-out;
+    z-index: -1;
+    content: "";
+  }
+  &:after {
+    width: 0;
+    transition-delay: 0.2s;
+    z-index: -2;
+  }
+  &:hover {
+    &:before {
+      width: 0;
+    }
+    &:after {
+      width: 100%;
+    }
+  }
+}
 .container {
   max-width: 1120px;
   width: 100%;

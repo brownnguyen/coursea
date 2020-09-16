@@ -55,7 +55,8 @@ class Headers extends Component {
                         constHeader.slice(0, 3).map((item, index) => {
                             return (
                                 <li key={index}>
-                                    <NavLink key={index} to={`/${item}`}
+                                    <NavLink key={index} to={index === 0 ? `/` : `/${item}`}
+                                        // className={item === "home" ? "activeClass" : ""}
                                         exact
                                         onClick={() => this.navigatePage(item)}
                                         activeClassName="activeClass">
@@ -83,7 +84,7 @@ class Headers extends Component {
             return constHeader.map((item, index) => {
                 return (
                     <li key={index}>
-                        <NavLink key={index} to={`/${item}`}
+                        <NavLink key={index} to={index === 0 ? `/` : `/${item}`}
                             exact
                             onClick={() => this.navigatePage(item)}
                             activeClassName="activeClass">
@@ -106,7 +107,7 @@ class Headers extends Component {
                 <div className="header-content">
                     <div className="logo">
                         <h1>
-                            <NavLink to="/home" exact>
+                            <NavLink to="/" exact>
                                 <img className="logo-img" src={logo} alt="Coursea" />
                                 {/* COUR<span className="brand">SEA</span> */}
                             </NavLink>

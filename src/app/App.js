@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Home from '../Pages/Home.js';
 import Course from '../Pages/Course.js'
-import { BrowserRouter } from 'react-router-dom';
+import { BrowserRouter, Redirect, Switch } from 'react-router-dom';
 import ScrollToTop from 'react-router-scroll-top';
 import { connect } from 'react-redux';
 import About from '../Pages/About.js';
@@ -14,21 +14,27 @@ import BackToTop from 'react-back-to-top-button';
 import './App.scss';
 import HomeTemplate from '../Templates/HomeTemplate/HomeTemplate.js';
 import UserTemplate from '../Templates/UserTemplate/UserTemplate.js';
+import Page404 from '../Layout/Page404/Page404.js';
+import PayPage from '../Pages/PayPage/PayPage.js';
 class App extends Component {
   render() {
     return (
       <div>
         <BrowserRouter>
+
           <ScrollToTop>
-            <HomeTemplate path="/course/:courseId" exact component={Course} />
-            <HomeTemplate path="/course" exact component={Course} />
-            <HomeTemplate path="/home" exact component={Home} />
-            <HomeTemplate path="/about" exact component={About} />
-            <HomeTemplate path="/shoppingCart" exact component={ShoppingCart} />
-            <HomeTemplate path="/detailPage/:detailId" exact component={CourseDetailPage} />
-            <HomeTemplate path="/" exact component={Home} />
-            <UserTemplate path="/login" exact component={Login} />
-            <UserTemplate path="/signup" exact component={SignUp} />
+            <Switch>
+              <HomeTemplate path="/course/:courseId" exact component={Course} />
+              <HomeTemplate path="/course" exact component={Course} />
+              <HomeTemplate path="/about" exact component={About} />
+              <HomeTemplate path="/shoppingCart" exact component={ShoppingCart} />
+              <HomeTemplate path="/detailPage/:detailId" exact component={CourseDetailPage} />
+              <HomeTemplate path="/pay" exact component={PayPage} />
+              <UserTemplate path="/login" exact component={Login} />
+              <UserTemplate path="/signup" exact component={SignUp} />
+              <HomeTemplate path="/" exact component={Home} />
+              <HomeTemplate component={Page404} />
+            </Switch>
           </ScrollToTop>
           <BackToTop
             showAt={100}
@@ -42,7 +48,7 @@ class App extends Component {
           </BackToTop>
 
         </BrowserRouter>
-      </div>
+      </div >
     );
   }
   componentDidMount() {

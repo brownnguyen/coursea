@@ -8,7 +8,7 @@ const UserLayout = (props) => {
         <>
             <div className="userlayout">
                 <div className="block-user">
-                    <NavLink className="title" to="/home" exact>
+                    <NavLink className="title" to="/" exact>
                         <img className="logo-user" src={logo} alt="coursea" />
                         {/* Cour<span>sea</span> */}
                     </NavLink>

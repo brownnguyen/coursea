@@ -21,7 +21,7 @@ class CourseDetailPage extends Component {
         }
         else {
             return (
-                <button className="btn add__course" onClick={() => addCart(courseDetail)}>Add to cart</button>
+                <button className="btn btn-course add__course" onClick={() => addCart(courseDetail)}>Add to cart</button>
             )
         }
     }
@@ -157,7 +157,7 @@ class CourseDetailPage extends Component {
                             <img src={image} alt={kind} />
                             <div className="content-course">
                                 <p>{price} $</p>
-                                <a className="btn buyNow" href="#link">Buy Now</a>
+                                <a className="btn btn-course buyNow" href="#link">Buy Now</a>
                                 {this.renderButton()}
                                 <h4>This course includes: </h4>
                                 <ul className="courseInclude">

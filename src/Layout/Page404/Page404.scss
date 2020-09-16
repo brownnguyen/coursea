@@ -1,0 +1,70 @@
+@import "../../Scss/Variables.scss";
+.page404 {
+  background-color: $black;
+  padding: 30px 0;
+  .title404,
+  .text404 {
+    font-size: 20px;
+    color: $pink;
+    text-align: center;
+  }
+  .title404 {
+    padding-top: 100px;
+    font-size: 100px;
+    font-weight: bold;
+  }
+  .text404,
+  .title404 {
+    background: linear-gradient(
+      to right,
+      white,
+      white,
+      white,
+      white,
+      white,
+      white,
+      $pink,
+      $pink,
+      white,
+      white,
+      white,
+      white,
+      white,
+      white
+    );
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .img404 {
+    display: block;
+    margin: auto;
+  }
+}
+.btn-page404 {
+  display: block;
+  width: 150px;
+  margin: 30px auto;
+  text-align: center;
+  padding: 10px 15px;
+  color: white;
+  border: 2px solid $pink;
+  position: relative;
+  z-index: 1;
+  &:after {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    content: "";
+    background-color: $pink;
+    transition: 0.5s ease-in-out;
+  }
+  &:hover {
+    color: white;
+    &::after {
+      width: 100%;
+    }
+  }
+}

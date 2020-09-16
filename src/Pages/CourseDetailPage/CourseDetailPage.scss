@@ -121,44 +121,51 @@
 .buyNow {
   width: 100%;
   color: $pink;
-  border-radius: 0;
   margin-bottom: 20px;
-  padding: 8px 0;
+  padding: 9px 0;
   display: block;
+  border: none;
   text-align: center;
-  background-color: black;
-  position: relative;
-  transition: 0.5s ease-in-out;
   &:before {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
+    background-color: black;
+  }
+  &:after {
     background-color: $pink;
-    transition: 0.5s ease-in-out;
-    z-index: -1;
-    content: "";
   }
   &:hover {
     color: white;
-    border-color: $pink;
     background-color: transparent;
     &:before {
+      width: 0;
+    }
+    &:after {
       width: 100%;
     }
   }
 }
 .add__course {
   width: 100%;
-  background-color: $pink;
   color: white;
-  border-radius: 0;
+  border: none;
   margin-bottom: 20px;
   padding: 8px 0;
-  &:hover {
+  position: relative;
+  transition: 0.2s ease-in-out;
+  &:before {
+    background-color: $pink;
+  }
+  &:after {
     background-color: black;
-    color: $pink;
+  }
+  &:hover {
+    // color: $pink;
+    background-color: transparent;
+    &:before {
+      width: 0;
+    }
+    &:after {
+      width: 100%;
+    }
   }
 }
 .description {

@@ -13,7 +13,7 @@ export default class Footer extends Component {
                     </h4>
                     <ul key={item.title} className="ul-list-footer">
                         {
-                            item.content.map((link, index) => {
+                            item.content.map((link) => {
                                 return (
                                     <li key={link.text}>
                                         <Link className="link-footer" to={`/${link.link}`}>{link.text}</Link>
@@ -29,8 +29,10 @@ export default class Footer extends Component {
     render() {
         return (
             <div className="footer">
-                <div className="footer-list">
-                    {this.renderFooterContent()}
+                <div className="container">
+                    <div className="footer-list">
+                        {this.renderFooterContent()}
+                    </div>
                 </div>
                 <div className="row footer__content">
                     <div className="logo">

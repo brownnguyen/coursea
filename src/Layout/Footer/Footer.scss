@@ -97,3 +97,16 @@
     }
   }
 }
+@media screen and (max-width: 576px) {
+  .footer {
+    .footer-list {
+      flex-wrap: wrap;
+      .content {
+        width: 50%;
+      }
+      .title-footer {
+        font-size: 20px;
+      }
+    }
+  }
+}
