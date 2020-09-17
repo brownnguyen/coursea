@@ -1,61 +1,62 @@
 @import "../../Scss/Variables.scss";
 @import "../../Scss/Mixin.scss";
 .trustSite {
-    padding: 0;
-    position: relative;
-    background-image: url("../../img/bg__pattern--topo-white.png");
-    background-attachment: fixed;
+  padding: 0;
+  position: relative;
+  background-image: url("../../img/bg__pattern--topo-white.png");
+  background-attachment: fixed;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: -1;
+  .trustSite__details {
     background-color: rgba(0, 0, 0, 0.8);
-    z-index: -1;
-    .trustSite__details {
-        background-color: rgba(0, 0, 0, 0.8);
-        padding: 50px 0;
-        .trustSite__content {
-            text-align: center;
-            text-transform: uppercase;
-            .text {
-                padding: 60px 0 30px 0;
-                p {
-                    color: $pink;
-                }
-                .title {
-                    color: white;
-                }
-            }
+    padding: 50px 0;
+    .trustSite__content {
+      text-align: center;
+      text-transform: uppercase;
+      .text {
+        padding: 60px 0 30px 0;
+        p {
+          color: white;
         }
-        .trust__img {
-            padding: 30px 0 60px 0;
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            flex-wrap: wrap;
-            .img__trust {
-                width: 10.7%;
-                img {
-                    width: 100%;
-                    max-width: 120px;
-                }
-            }
+        .title {
+          color: $pink;
+          font-size: 3rem;
         }
+      }
     }
+    .trust__img {
+      padding: 30px 0 60px 0;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      flex-wrap: wrap;
+      .img__trust {
+        width: 10.7%;
+        img {
+          width: 100%;
+          max-width: 120px;
+        }
+      }
+    }
+  }
 }
 @media screen and (max-width: 576px) {
-    .trustSite {
-        .trustSite__details {
-            .trust__img {
-                .img__trust {
-                    width: 40%;
-                    margin: 20px 0;
-                }
-            }
-            .trustSite__content {
-                .text {
-                    padding-bottom: 0;
-                    .title {
-                        font-size: 1.6rem;
-                    }
-                }
-            }
+  .trustSite {
+    .trustSite__details {
+      .trust__img {
+        .img__trust {
+          width: 40%;
+          margin: 20px 0;
         }
+      }
+      .trustSite__content {
+        .text {
+          padding-bottom: 0;
+          .title {
+            font-size: 1.6rem;
+          }
+        }
+      }
     }
+  }
 }

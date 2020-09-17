@@ -11,36 +11,56 @@ class ShoppingCart extends Component {
       return toTal += item.price
     }, 0)
     return (
-      <div>
-        <h4 className="total__title">Total:</h4>
+      <div className="content-price">
+        <h4 className="total__title">Total</h4>
         <p className="price">{toTal} $</p>
-        <button className="btn checkOut__button">Checkout</button>
+        <button className="btn checkOut__button btn-course">Checkout</button>
       </div>
     )
-
+  }
+  renderUserInfo = () => {
+    let html = '';
+    if (this.props.user) {
+      let { hoTen, email, soDT, taiKhoan } = this.props.user;
+      html = (
+        <div className="userInfo">
+          <h4 className="title-user">
+            Account infomation
+          </h4>
+          <p>Username: <span>{taiKhoan}</span></p>
+          <p>Full name: <span>{hoTen}</span></p>
+          <p>Email: <span>{email}</span></p>
+          <p>Phone: <span>{soDT}</span></p>
+          <p>Payment Account: <span>xxxx.xxx.xxx.x</span></p>
+        </div>
+      )
+    }
+    console.log(html)
+    return html;
   }
   renderShoppingCart = () => {
     let { cart, removeCourse } = this.props;
     return cart.map((item, index) => {
       return (
-        <div className="row shopping__item" key={index}>
-          <Link to={`/detailPage/${item.id}`} onClick={() => this.props.addCourseDetail(item)} className="col-10 row shopping__details" style={{ cursor: 'pointer' }}>
-            <div className="col-10">
-              <div className="row detailShop">
-                <div className="image col-4">
-                  <img src={item.image} alt={item.kind} />
-                </div>
-                <div className="content col-8">
-                  <h5>{item.courseName}</h5>
-                  <p> <span>Mentor: </span>{item.mentor}</p>
-                  <p><span>Subject: </span>{item.kind}</p>
-                </div>
+        <div className="shopping__item" key={index}>
+          <Link to={`/detailPage/${item.id}`} onClick={() => this.props.addCourseDetail(item)} className="shopping__details" style={{ cursor: 'pointer' }}>
+            <div className="detailShop">
+              <div className="image">
+                <img src={item.image} alt={item.kind} />
+              </div>
+              <div className="content">
+                <h5>{item.courseName}</h5>
+                <p> <span>Mentor: </span>{item.mentor}</p>
+                <p><span>Subject: </span>{item.kind}</p>
               </div>
             </div>
-            <div className="col-2 text-center pl-0 my-auto _price">{item.price} $</div>
           </Link>
-          <div className=" col-2 text-center pl-0 my-auto">
-            <button className="remove__Course btn" onClick={() => removeCourse(`${item.id}`)}>Remove</button>
+          <div className="btn-remove">
+            <div className="_price">{item.price} $</div>
+            <button className="remove__Course btn" onClick={() => removeCourse(`${item.id}`)}>
+              <span></span>
+              <span></span>
+            </button>
           </div>
         </div>
       )
@@ -49,31 +69,38 @@ class ShoppingCart extends Component {
   render() {
     let { cart } = this.props;
     return (
-      <div className="container-fluid shoppingCart">
-        <div className="shopping__title">
-          <h2 className="title">Shopping Cart</h2>
-        </div>
-        <div className="container cart__content">
-          <div className="row mx-auto">
-            <div className="col-lg-8">
-              <div className="countCourse">
-                <p className="count__title">{cart.length} {cart.length === 1 ? "Course" : "Courses"} In Cart</p>
-                {this.renderShoppingCart()}
-              </div>
-            </div>
-            <div className="col-lg-4 shopping__total">
-              {this.renderPrice()}
+      <>
+        <div className="shoppingCart">
+          <div className="container">
+            <div className="shopping__title">
+              <h2 className="title">
+                Shopping Cart
+              </h2>
             </div>
           </div>
         </div>
-      </div>
+        <div className="container">
+          <div className="shopping-cart-content">
+            <div className="content">
+              {this.renderShoppingCart()}
+            </div>
+            <div className="content">
+              {this.renderPrice()}
+              {this.renderUserInfo()}
+            </div>
+          </div>
+        </div>
+      </>
     );
   }
 }
 const mapDispatchToProps = (dispatch) => {
   return {
     removeCourse: (id) => {
-      dispatch(createAction(REMOVE__COURSE, id));
+      let confirmbox = window.confirm('Are you sure to delete this course?');
+      if (confirmbox) {
+        dispatch(createAction(REMOVE__COURSE, id));
+      }
     },
     addCourseDetail: (item) => {
       dispatch(createAction(COURSE__DETAIL, item));
@@ -83,6 +110,7 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 const mapStateToProps = (state) => ({
-  cart: state.CartReducer.cart
+  cart: state.CartReducer.cart,
+  user: state.UserReducer.user
 })
 export default connect(mapStateToProps, mapDispatchToProps)(ShoppingCart);

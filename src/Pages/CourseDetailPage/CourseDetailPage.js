@@ -66,7 +66,6 @@ class CourseDetailPage extends Component {
                     })}
             </Slider>
         )
-
     }
     renderInfoCourse = (item) => {
         return (

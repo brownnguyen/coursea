@@ -9,7 +9,9 @@ export default class Page404 extends Component {
                 <div className="content-404">
                     <h2 className="title404">Oops!</h2>
                     <p className="text404">The page that you're looking for is out of space</p>
-                    <img className="img404" src={img404} alt="404" />
+                    <div className="img">
+                        <img className="img404" src={img404} alt="404" />
+                    </div>
                     <Link to="/" className="btn-page404">
                         Fly to home
                 </Link>

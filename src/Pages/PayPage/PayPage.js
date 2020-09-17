@@ -6,12 +6,12 @@ class PayPage extends Component {
     renderCartPay = () => {
         return this.props.cart.map((item, index) => {
             return (
-                <label key={index} class="container">
+                <label key={index} className="label-content">
                     <div>
                         {item.courseName}
                     </div>
-                    <input type="checkbox" id={item.id} value={item} onChange={this.handleChange} />
-                    <span class="checkmark"></span>
+                    <input type="checkbox" id={item.id} onChange={this.handleChange} />
+                    <span className="checkmark"></span>
                 </label>
             )
         })
@@ -23,7 +23,9 @@ class PayPage extends Component {
     render() {
         return (
             <div className="paypage">
-                {this.renderCartPay()}
+                <div className="container">
+                    {this.renderCartPay()}
+                </div>
             </div>
         )
     }

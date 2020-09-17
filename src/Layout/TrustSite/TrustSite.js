@@ -18,8 +18,8 @@ class TrustSite extends Component {
                     <div className="container trustSite__bot__details">
                         <div className="trustSite__content">
                             <div className="text">
-                                <p>Industry Standard</p>
-                                <h2 className="title">Trusted by companies big and small to scale their business</h2>
+                                <h2 className="title">Industry Standard</h2>
+                                <p>Trusted by companies big and small to scale their business</p>
                             </div>
                             <div className="trust__img">
                                 {this.renderTrustSite()}

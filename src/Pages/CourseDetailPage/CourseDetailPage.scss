@@ -113,12 +113,14 @@
   border-radius: 0;
   margin-bottom: 20px;
   padding: 8px 0;
+  font-size: 1.6rem;
   &:hover {
     color: white;
     background-color: #006151;
   }
 }
 .buyNow {
+  font-size: 1.6rem;
   width: 100%;
   color: $pink;
   margin-bottom: 20px;
@@ -145,6 +147,7 @@
 }
 .add__course {
   width: 100%;
+  font-size: 1.6rem;
   color: white;
   border: none;
   margin-bottom: 20px;
@@ -158,7 +161,7 @@
     background-color: black;
   }
   &:hover {
-    // color: $pink;
+    color: $pink;
     background-color: transparent;
     &:before {
       width: 0;

@@ -34,8 +34,15 @@
       text-align: center;
       margin: auto;
       .text {
-        max-width: 550px;
+        max-width: 450px;
         width: 100%;
+        font-size: 1.6rem;
+        margin: 20px 0;
+      }
+      h3{
+        font-size: 3rem;
+        text-transform: uppercase;
+        color: $pink;
       }
       .button-start {
         display: inline-block;
@@ -43,6 +50,7 @@
         color: white;
         text-transform: uppercase;
         font-weight: 300;
+        font-size: 1.8rem;
         &:before {
           background-color: black;
         }

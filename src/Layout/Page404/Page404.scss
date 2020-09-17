@@ -35,9 +35,14 @@
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  .img404 {
-    display: block;
+  .img {
+    max-width: 560px;
+    width: 100%;
     margin: auto;
+    padding: 20px;
+  }
+  .img404 {
+    width: 100%;
   }
 }
 .btn-page404 {
@@ -66,5 +71,13 @@
     &::after {
       width: 100%;
     }
+  }
+}
+@media screen and (max-width: 576px) {
+  .title404 {
+    font-size: 5rem !important;
+  }
+  .text404{
+    padding: 0 20px!important;
   }
 }

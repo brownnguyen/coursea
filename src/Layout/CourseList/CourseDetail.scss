@@ -78,6 +78,8 @@
         .kind {
           color: $black;
           font-style: italic;
+          font-size: 1.6rem;
+          color: #006151;
         }
       }
       .price {
@@ -87,6 +89,7 @@
       }
       .content__course {
         @include text($fs-1, $fw-3, $black);
+        font-size: 1.6rem;
       }
     }
   }
@@ -113,6 +116,9 @@
 }
 .render-button-details {
   padding: 0 15px 20px 15px;
+  .content__course {
+    font-size: 1.6rem;
+  }
   .add__course {
     width: 100%;
     padding: 7px 0 !important;
@@ -121,6 +127,7 @@
     background-color: $pink;
     margin-bottom: 0 !important;
     color: $white;
+    font-size: 1.6rem;
     &:before {
       background-color: $pink;
     }
@@ -130,22 +137,26 @@
   }
   .goToCart {
     width: 100%;
+    padding: 5px 0;
     border: 1px solid rgb(0, 115, 119);
     border-radius: 0;
     background-color: $white;
     color: rgb(0, 115, 119);
+    font-size: 1.6rem;
     &:hover {
       color: $white;
       background-color: #006151;
     }
   }
   .go_details {
-    margin-top: 10px;
+    margin-top: 5px;
     width: 100%;
     border: 1px solid rgb(0, 115, 119);
     border-radius: 0;
     background-color: $white;
     color: rgb(0, 115, 119);
+    font-size: 1.6rem;
+    padding: 5px 0;
     &:hover {
       color: $white;
       background-color: #006151;
@@ -153,6 +164,15 @@
   }
 }
 @media screen and (max-width: 768px) {
+  .courseList{
+    .courseDetail{
+      .list__course{
+        .course-content{
+          justify-content: space-around;
+        }
+      }
+    }
+  } 
   .course__detail {
     width: 49%;
   }

@@ -13,6 +13,7 @@
     .title-footer {
       text-transform: uppercase;
       color: $pink;
+      font-size: 2rem;
     }
     .ul-list-footer {
       list-style: none;
@@ -22,7 +23,7 @@
         display: block;
         transition: 0.5s ease-in-out;
         font-weight: 300;
-        font-size: 14px;
+        font-size: 1.4rem;
         &:hover {
           color: $pink;
         }
@@ -106,6 +107,56 @@
       }
       .title-footer {
         font-size: 20px;
+      }
+    }
+    .footer__content {
+      .logo {
+        a {
+          .logo-footer {
+            width: 150px;
+            padding: 10px 0;
+          }
+        }
+      }
+      .about {
+        padding: 10px 0;
+      }
+    }
+  }
+  .footer {
+    padding-top: 0;
+    .container {
+      padding: 0!important;
+    }
+    .footer-list {
+      .content {
+        width: 100%;
+        transition: all 0.5s ease-in-out;
+        .title-footer {
+          border: 1px solid rgba(128, 128, 128, 0.123);
+          cursor: pointer;
+          display: block;
+          width: 100%;
+          margin: auto;
+          padding: 12px 20px;
+          background-color: black;
+          box-shadow: -1px 3px 5px 0px rgba(0, 0, 0, 0.75);
+        }
+        .ul-list-footer {
+          // padding: 10px 20px;
+          height: 0;
+          overflow: hidden;
+          transition: all 0.5s ease-in-out;
+          margin: 0 auto;
+          li {
+            padding: 12px 20px;
+          }
+        }
+      }
+      .content.expand {
+        .ul-list-footer {
+          width: 100%;
+        }
       }
     }
   }

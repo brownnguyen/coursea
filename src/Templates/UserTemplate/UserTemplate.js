@@ -8,17 +8,20 @@ const UserLayout = (props) => {
         <>
             <div className="userlayout">
                 <div className="block-user">
-                    <NavLink className="title" to="/" exact>
-                        <img className="logo-user" src={logo} alt="coursea" />
-                        {/* Cour<span>sea</span> */}
-                    </NavLink>
+                    <div className="content">
+                        <NavLink className="title" to="/" exact>
+                            <img className="logo-user" src={logo} alt="coursea" />
+                            <h4 className="title">
+                                <span>Southeast Asia's</span>leading e-commerce platform
+                                </h4>
+                        </NavLink>
+                    </div>
                 </div>
                 <div className="block-user">
                     {props.children}
                 </div>
             </div>
             <Footer />
-
         </>
     )
 }

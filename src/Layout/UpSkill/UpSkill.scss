@@ -18,12 +18,17 @@
             .top {
                 color: $pink;
                 text-transform: uppercase;
-                font-size: 25px;
+                font-size: 3rem;
+            }
+            h3{
+                font-size: 2.2rem;
             }
             ul {
                 list-style: none;
                 li {
                     margin: 10px 0;
+                    font-size: 1.6rem;
+                    padding-left: 15px;
                     &:before {
                         content: "\f0e7";
                         font-family: "FontAwesome";

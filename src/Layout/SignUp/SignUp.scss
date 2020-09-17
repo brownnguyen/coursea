@@ -8,19 +8,25 @@
   background-color: white;
   padding: 20px;
   h4 {
-    margin-top: $mg-1;
+    margin: $mg-3 0;
     color: $pink;
+    font-size: 3rem;
+    text-transform: uppercase;
   }
   .signUpForm__content {
     margin-top: $mg-2;
     input {
       border-radius: 0;
+      font-size: 1.6rem;
+      height: 40px;
       &:focus {
         border: 1px solid $black-1;
       }
     }
     .signUp__Button {
       button {
+        height: 40px;
+        font-size: 1.6rem;
         border-radius: 0;
         background-color: $black-1;
         border: 1px solid transparent;
