@@ -5,6 +5,7 @@ import './SignUp.scss';
 import { connect } from 'react-redux';
 import { signUp } from '../../Redux/Action/User';
 import { NavLink } from 'react-router-dom';
+import LoadingGlobal from '../LoadingGLobal/LoadingGlobal';
 const SignupSchema = Yup.object().shape({
     taiKhoan: Yup.string().required('Username is required!'),
     matKhau: Yup.string().required('Password is required!'),
@@ -13,10 +14,19 @@ const SignupSchema = Yup.object().shape({
     email: Yup.string().email('Invalid email').required('Email is required')
 })
 class SignUp extends Component {
-
+    state = {
+        showLoading: true
+    }
+    renderMain = () => {
+        if (this.state.showLoading) {
+            return <LoadingGlobal />
+        }
+    }
     render() {
         return (
+
             <div className="signUp-block active">
+                {this.renderMain()}
                 <Formik initialValues={{
                     taiKhoan: '',
                     matKhau: '',
@@ -72,6 +82,15 @@ class SignUp extends Component {
             </div>
         )
     }
-
+    componentDidMount() {
+        let timeOn = setTimeout(() => {
+            this.setState({
+                showLoading: false
+            })
+        }, 1500)
+    }
+    componentWillUnmount() {
+        clearTimeout(this.timeOn)
+    }
 }
 export default connect()(SignUp);

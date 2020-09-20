@@ -21,7 +21,6 @@ class App extends Component {
     return (
       <div>
         <BrowserRouter>
-
           <ScrollToTop>
             <Switch>
               <HomeTemplate path="/course/:courseId" exact component={Course} />
@@ -57,6 +56,7 @@ class App extends Component {
     this.props.dispatch(local.getCourseDetail());
     this.props.dispatch(local.getUserLogin());
   }
+
 }
 
 export default connect()(App);

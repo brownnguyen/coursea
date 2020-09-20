@@ -102,14 +102,12 @@ class Headers extends Component {
     }
     render() {
         return (
-
             <header className={this.state.stickHeader ? " header active" : "header"}>
                 <div className="header-content">
                     <div className="logo">
                         <h1>
                             <NavLink to="/" exact>
                                 <img className="logo-img" src={logo} alt="Coursea" />
-                                {/* COUR<span className="brand">SEA</span> */}
                             </NavLink>
                         </h1>
                     </div>

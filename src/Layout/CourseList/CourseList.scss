@@ -102,6 +102,9 @@
         //   }
         // }
       }
+      .course__categories.active {
+        background-color: $pink;
+      }
       .course__categories__screen {
         margin: 0 auto;
         display: flex;

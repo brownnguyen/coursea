@@ -38,7 +38,8 @@ class CourseList extends Component {
         return database.categories.map((item, index) => {
             return (
                 <Link
-                    className="course__categories btn-course"
+                    className={item.id == this.props.kind ? "course__categories btn-course active" : "course__categories btn-course"}
+                    // className="course__categories btn-course"
                     id={item.id}
                     to={`/course/${item.id}`}
                     onClick={() => this.getKind(`${item.id}`)}

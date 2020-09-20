@@ -11,8 +11,12 @@ import { FETCH_COURSE } from '../Redux/Action/Type';
 import data from '../JSON/course.json';
 import { connect } from 'react-redux';
 import Particles from 'react-particles-js';
+import LoadingGlobal from '../Layout/LoadingGLobal/LoadingGlobal.js';
 let course = data.course;
 class Home extends Component {
+    state = {
+        showLoading: true
+    }
     fixTitle = () => {
         let title = "";
         let newKind = " ";
@@ -28,9 +32,22 @@ class Home extends Component {
             course[index].courseName = title;
         })
     }
+    loading = () => {
+        let xhtml = null;
+        if (this.state.showLoading) {
+            xhtml = (
+                <LoadingGlobal />
+            )
+        }
+        else {
+            xhtml = null;
+        }
+        return xhtml;
+    }
     render() {
         return (
             <>
+                {this.loading()}
                 <Particles style={{ position: "absolute", zIndex: 1 }}
                     params={{
                         "particles": {
@@ -55,6 +72,14 @@ class Home extends Component {
     componentDidMount() {
         this.fixTitle();
         this.props.dispatch(createAction(FETCH_COURSE, course));
+        let timeOn = setTimeout(() => {
+            this.setState({
+                showLoading: false
+            })
+        }, 1500);
+    }
+    componentWillUnmount() {
+        clearTimeout(this.timeOn)
     }
 }
 

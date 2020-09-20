@@ -10,7 +10,11 @@ import imgDetailPage from '../../img/img-detail-course.png';
 import { createAction } from '../../Redux/Action/createAction';
 import { ADD_CART } from '../../Redux/Action/Type';
 import { aimCourse1, aimCourse2, includeCourse } from '../../constants/Constants';
+import LoadingGlobal from '../../Layout/LoadingGLobal/LoadingGlobal';
 class CourseDetailPage extends Component {
+    state = {
+        showLoading: true
+    }
     renderButton = () => {
         let { cart, addCart, courseDetail } = this.props;
         let item = cart.find(item => item.id === courseDetail.id);
@@ -115,11 +119,17 @@ class CourseDetailPage extends Component {
             })
         )
     }
+    renderLoading = () => {
+        if (this.state.showLoading) {
+            return <LoadingGlobal />
+        }
+    }
     render() {
 
         let { kind, image, price, courseName, mentor, includes, content } = this.props.courseDetail;
         return (
             <section className="courseDetailPage">
+                {this.renderLoading()}
                 <div className="top-title-page">
                     <div className="top-title-content">
                         <div className="img">
@@ -173,6 +183,16 @@ class CourseDetailPage extends Component {
                 </div>
             </section>
         );
+    }
+    componentDidMount() {
+        let timeOn = setTimeout(() => {
+            this.setState({
+                showLoading: false
+            })
+        }, 1000)
+    }
+    componentWillUnmount() {
+        clearTimeout(this.timeOn)
     }
 }
 const mapStateTopProps = state => ({

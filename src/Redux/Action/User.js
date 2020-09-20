@@ -1,5 +1,5 @@
 import { userServices } from "../../Services"
-import { USER__LOGIN } from "../Action/Type"
+import { HIDE_ERROR, SHOW_ERROR, USER__LOGIN } from "../Action/Type"
 import { createAction } from '../Action/createAction';
 export const login = (user, props) => {
     return dispatch => {
@@ -9,7 +9,10 @@ export const login = (user, props) => {
             alert("Success");
             props.history.replace('/')
         }).catch(err => {
-            alert("Username or password incorrect!")
+            dispatch(createAction(SHOW_ERROR, true))
+            setTimeout(() => {
+                dispatch(createAction(HIDE_ERROR, false))
+            }, 3000)
         })
     }
 }
@@ -21,7 +24,10 @@ export const signUp = (user, props) => {
             alert(" Success");
             props.history.replace('/')
         }).catch(err => {
-            alert("UserName is already in used!");
+            dispatch(createAction(SHOW_ERROR, true))
+            setTimeout(() => {
+                dispatch(createAction(HIDE_ERROR, false))
+            }, 3000)
         })
     }
 }

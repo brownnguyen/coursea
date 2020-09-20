@@ -47,7 +47,6 @@ export default class Footer extends Component {
                         let height = 0;
                         for (let i = 0; i < contentUl[index].children.length; i++) {
                             height += contentUl[index].children[i].offsetHeight;
-                            console.log(height)
                         }
                         contentUl[index].style.height = height + "px";
                     }

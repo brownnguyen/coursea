@@ -26,10 +26,22 @@
       max-width: 1120px;
       width: 100%;
       text-transform: uppercase;
-      font-size: 3rem;
+      font-size: 4rem;
       color: $pink;
+      padding: 20px 10px;
+      background-image: linear-gradient(to right, black, transparent, transparent, transparent);
+      .cart-span {
+        font-size: 1.7rem;
+        display: block;
+      }
     }
   }
+}
+h3.title-item {
+  color: $pink;
+  font-size: 1.6rem;
+  font-style: italic;
+  margin: 30px;
 }
 .shopping-cart-content {
   display: flex;
@@ -81,7 +93,7 @@
     .shopping__item {
       margin-bottom: 15px;
       // border: 1px solid rgba(128, 128, 128, 0.116);
-      background-color: rgba(242, 242, 242, 0.239);
+      background-color: rgb(242, 242, 242);
       border-top-left-radius: 5px;
       border-bottom-left-radius: 5px;
       overflow: hidden;
@@ -105,7 +117,7 @@
         }
         .content {
           width: 60%;
-          padding-left: 20px;
+          padding: 20px;
           h5 {
             font-size: 1.8rem;
             font-style: italic;
@@ -161,44 +173,84 @@
     }
   }
 }
+.carousel-shopcart {
+  margin-bottom: 30px;
+  .title-carousel {
+    font-style: italic;
+    color: $pink;
+    padding: 50px 0 10px 30px;
+    font-size: 2rem;
+  }
+  .course__detail {
+    width: 95%;
+  }
+  .render-button-details {
+    display: none;
+  }
+}
 @media screen and (max-width: 767px) {
   .shopping-cart-content {
     flex-wrap: wrap-reverse;
     margin-bottom: 100px;
     .content:first-of-type,
     .content:last-of-type {
+      margin-bottom: 50px;
       width: 100%;
+      .shopping__item {
+        .detailShop {
+          .content {
+            margin: auto;
+            overflow: hidden;
+            h5 {
+              white-space: nowrap;
+              position: relative;
+              &:before {
+                content: "...";
+                position: absolute;
+                top: 0;
+                right: 0;
+                background-color: #f2f2f2;
+              }
+            }
+          }
+        }
+      }
     }
   }
 }
 @media screen and (max-width: 576px) {
-  .shopping-cart-content{
-    .content:first-of-type{
-      .shopping__item{
+  .shopping-cart-content {
+    .content:first-of-type {
+      .shopping__item {
         padding: 5px;
         border: 1px solid rgba(242, 242, 242, 0.795);
         background-color: rgba(242, 242, 242, 0.795);
-        .detailShop{
-          .image{
-            display: none;
+        .detailShop {
+          // flex-wrap: wrap;
+          .image {
+            width: 30%;
+            // margin: 10px auto;
+            border-radius: 5px;
+            overflow: hidden;
           }
-          .content{
-            width: 100%;
-            padding-left: 0;
+          .content {
+            width: 70%;
+            // padding-left: 10px;
+            margin: auto;
           }
         }
-        .shopping__details{
+        .shopping__details {
           width: 85%;
         }
-        .btn-remove{
+        .btn-remove {
           position: relative;
           width: 15%;
-          ._price{
+          ._price {
             position: absolute;
             right: 0;
             bottom: 0;
           }
-          .remove__Course{
+          .remove__Course {
             position: absolute;
             top: 10px;
             right: 0;
@@ -206,5 +258,14 @@
         }
       }
     }
+  }
+  .carousel-shopcart {
+    .title-carousel {
+      padding: 0 30px;
+    }
+  }
+  .shopping-cart-content .content:first-of-type,
+  .shopping-cart-content .content:last-of-type {
+    margin-bottom: 0;
   }
 }

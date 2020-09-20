@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { REMOVE__COURSE, COURSE__DETAIL } from '../../Redux/Action/Type';
 import { createAction } from '../../Redux/Action/createAction.js';
+import Slider from "react-slick";
 import './ShoppingCart.scss';
+import CourseDetail from '../../Layout/CourseList/CourseDetail';
 import { Link } from 'react-router-dom';
 class ShoppingCart extends Component {
   renderPrice = () => {
@@ -17,6 +19,56 @@ class ShoppingCart extends Component {
         <button className="btn checkOut__button btn-course">Checkout</button>
       </div>
     )
+  }
+  renderOtherCarousel = () => {
+    const settings = {
+      dots: false,
+      arrows: false,
+      autoplay: true,
+      autoplaySpeed: 3000,
+      infinite: true,
+      speed: 500,
+      slidesToShow: 4,
+      slidesToScroll: 2,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+            slidesToShow: 3,
+            slidesToScroll: 3,
+          }
+        },
+        {
+          breakpoint: 576,
+          settings: {
+            slidesToShow: 2,
+            slidesToScroll: 2
+          }
+        },
+        {
+          breakpoint: 480,
+          settings: {
+            slidesToShow: 1,
+            slidesToScroll: 1
+          }
+        }
+        // You can unslick at a given breakpoint now by adding:
+        // settings: "unslick"
+        // instead of a settings object
+      ]
+    };
+    return (
+      <>
+        <h4 className="title-carousel">Other courses that you might interested in</h4>
+        <Slider {...settings}>
+          {this.props.course.splice(100, 200)?.map((item, index) => {
+            return (
+              <CourseDetail course={item} key={index} />
+            )
+          })}
+        </Slider>
+      </>
+    );
   }
   renderUserInfo = () => {
     let html = '';
@@ -74,12 +126,16 @@ class ShoppingCart extends Component {
           <div className="container">
             <div className="shopping__title">
               <h2 className="title">
-                Shopping Cart
+                Cart
+                <span className="cart-span">Home/Cart</span>
               </h2>
             </div>
           </div>
         </div>
         <div className="container">
+          <h3 className="title-item">
+            Items on cart
+          </h3>
           <div className="shopping-cart-content">
             <div className="content">
               {this.renderShoppingCart()}
@@ -88,6 +144,9 @@ class ShoppingCart extends Component {
               {this.renderPrice()}
               {this.renderUserInfo()}
             </div>
+          </div>
+          <div className="carousel-shopcart">
+            {this.renderOtherCarousel()}
           </div>
         </div>
       </>
@@ -111,6 +170,7 @@ const mapDispatchToProps = (dispatch) => {
 
 const mapStateToProps = (state) => ({
   cart: state.CartReducer.cart,
-  user: state.UserReducer.user
+  user: state.UserReducer.user,
+  course: state.CourseReducer.course
 })
 export default connect(mapStateToProps, mapDispatchToProps)(ShoppingCart);

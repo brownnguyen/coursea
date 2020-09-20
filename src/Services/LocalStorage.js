@@ -17,8 +17,7 @@ class Local {
         return dispatch => {
             const stateStr = localStorage.getItem('state');
             if (stateStr) {
-                return dispatch(createAction(STATE, JSON.parse(stateStr))
-                );
+                dispatch(createAction(STATE, JSON.parse(stateStr)));
             }
         }
     }

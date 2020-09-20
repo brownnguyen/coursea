@@ -1,0 +1,61 @@
+@import "../../Scss/Variables.scss";
+@keyframes bounceInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-2000px) translateX(-50%);
+    }
+
+    10% {
+        opacity: 1;
+        transform: translateY(30px) translateX(-50%);
+    }
+
+    30% {
+        transform: translateY(-10px) translateX(-50%);
+    }
+
+    50% {
+        transform: translateY(0) translateX(-50%);
+    }
+    80% {
+        transform: translateY(0) translateX(-50%);
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-2000px) translateX(-50%);
+        display: none;
+    }
+}
+.error-note {
+    opacity: 0;
+    position: fixed;
+    top: 8%;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    border-radius: 20px;
+    box-shadow: -1px 2px 5px 0px rgba(0, 0, 0, 0.75);
+    width: 280px;
+    z-index: 1030;
+    padding: 10px 20px;
+    animation: bounceInDown 3s;
+    .icon {
+        text-align: center;
+        i {
+            margin: auto;
+            font-size: 8rem;
+            color: $pink;
+        }
+    }
+    .error-title {
+        font-size: 4rem;
+        text-align: center;
+        font-weight: bold;
+        span {
+            display: block;
+            font-size: 1.8rem;
+            color: black;
+        }
+    }
+}

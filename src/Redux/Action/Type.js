@@ -11,3 +11,9 @@ export const COURSE__DETAIL = "COURSE__DETAIL";
 export const USER__LOGIN = "USER__LOGIN";
 export const TOTAL = "TOTAL";
 export const COURSE_NAME = "COURSE_NAME";
+
+export const SHOW_LOADING = "SHOW_LOADING";
+export const HIDE_LOADING = "HIDE_LOADING";
+
+export const SHOW_ERROR = "SHOW_ERROR";
+export const HIDE_ERROR = "HIDE_ERROR";

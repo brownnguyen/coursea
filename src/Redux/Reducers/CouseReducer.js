@@ -22,7 +22,7 @@ export const CourseReducer = (state = initialState, action) => {
         case FETCH_COURSE:
             {
                 state.course = payload;
-                localStorage.setItem('state', JSON.stringify(state))
+                localStorage.setItem('state', JSON.stringify(state));
                 return { ...state }
             }
         case TOTAL_ITEM:
@@ -41,7 +41,6 @@ export const CourseReducer = (state = initialState, action) => {
                 }
                 else {
                     let length = state.course.filter(item => item.kind.toLowerCase() === payload).length;
-                    console.log(length)
                     state.totalItem = length;
                 }
                 state.kind = updateKind;
@@ -51,6 +50,6 @@ export const CourseReducer = (state = initialState, action) => {
         case COURSE_NAME: {
         }
         default:
-            return {...state};
+            return { ...state };
     }
 }
