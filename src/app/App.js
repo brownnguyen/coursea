@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Home from '../Pages/Home.js';
 import Course from '../Pages/Course.js'
-import { BrowserRouter, Redirect, Switch } from 'react-router-dom';
+import { BrowserRouter, Switch } from 'react-router-dom';
 import ScrollToTop from 'react-router-scroll-top';
 import { connect } from 'react-redux';
 import About from '../Pages/About.js';

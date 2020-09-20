@@ -6,7 +6,11 @@ import Slider from "react-slick";
 import './ShoppingCart.scss';
 import CourseDetail from '../../Layout/CourseList/CourseDetail';
 import { Link } from 'react-router-dom';
+import LoadingGlobal from '../../Layout/LoadingGLobal/LoadingGlobal';
 class ShoppingCart extends Component {
+  state = {
+    showLoading: true
+  }
   renderPrice = () => {
     let { cart } = this.props;
     let toTal = cart.reduce((toTal, item) => {
@@ -19,6 +23,11 @@ class ShoppingCart extends Component {
         <button className="btn checkOut__button btn-course">Checkout</button>
       </div>
     )
+  }
+  renderLoading = () => {
+    if (this.state.showLoading) {
+      return <LoadingGlobal />
+    }
   }
   renderOtherCarousel = () => {
     const settings = {
@@ -52,16 +61,13 @@ class ShoppingCart extends Component {
             slidesToScroll: 1
           }
         }
-        // You can unslick at a given breakpoint now by adding:
-        // settings: "unslick"
-        // instead of a settings object
       ]
     };
     return (
       <>
         <h4 className="title-carousel">Other courses that you might interested in</h4>
         <Slider {...settings}>
-          {this.props.course.splice(100, 200)?.map((item, index) => {
+          {this.props.course?.map((item, index) => {
             return (
               <CourseDetail course={item} key={index} />
             )
@@ -119,9 +125,9 @@ class ShoppingCart extends Component {
     })
   }
   render() {
-    let { cart } = this.props;
     return (
       <>
+        {this.renderLoading()}
         <div className="shoppingCart">
           <div className="container">
             <div className="shopping__title">
@@ -151,6 +157,16 @@ class ShoppingCart extends Component {
         </div>
       </>
     );
+  }
+  componentDidMount() {
+    let timeOn = setTimeout(() => {
+      this.setState({
+        showLoading: false
+      })
+    }, 1500)
+  }
+  componentWillUnmount() {
+    clearTimeout(this.timeOn)
   }
 }
 const mapDispatchToProps = (dispatch) => {

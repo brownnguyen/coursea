@@ -12,7 +12,6 @@ class About extends Component {
         showLoading: true
     }
     loading = () => {
-        let xthmt = null;
         if (this.state.showLoading) {
             return (<LoadingGlobal />)
         }

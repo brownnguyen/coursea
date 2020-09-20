@@ -47,8 +47,6 @@ export const CourseReducer = (state = initialState, action) => {
                 localStorage.setItem('state', JSON.stringify(state))
                 return { ...state }
             }
-        case COURSE_NAME: {
-        }
         default:
             return { ...state };
     }
