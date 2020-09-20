@@ -67,7 +67,7 @@ class ShoppingCart extends Component {
       <>
         <h4 className="title-carousel">Other courses that you might interested in</h4>
         <Slider {...settings}>
-          {this.props.course?.map((item, index) => {
+          {this.props.course.splice(10, 20)?.map((item, index) => {
             return (
               <CourseDetail course={item} key={index} />
             )
