@@ -12,7 +12,7 @@ const UserLayout = (props) => {
                         <NavLink className="title" to="/" exact>
                             <img className="logo-user" src={logo} alt="coursea" />
                             <h4 className="title">
-                                <span>Southeast Asia's</span>leading e-commerce platform
+                                <span>Southeast Asia's</span>leading e-learning platform
                                 </h4>
                         </NavLink>
                     </div>
