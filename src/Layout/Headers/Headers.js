@@ -48,7 +48,8 @@ class Headers extends Component {
         }
     }
     renderHeader = () => {
-        if (this.props.user) {
+        let userInfo = JSON.parse(localStorage.getItem('user'));
+        if (userInfo) {
             return (
                 <>
                     {
@@ -56,7 +57,6 @@ class Headers extends Component {
                             return (
                                 <li key={index}>
                                     <NavLink key={index} to={index === 0 ? `/` : `/${item}`}
-                                        // className={item === "home" ? "activeClass" : ""}
                                         exact
                                         onClick={() => this.navigatePage(item)}
                                         activeClassName="activeClass">
@@ -68,7 +68,7 @@ class Headers extends Component {
                     }
                     <li className="userName-li">
                         <span className="user-name">
-                            {this.props.user.hoTen}
+                            {userInfo.hoTen}
                         </span>
                         <span
                             onClick={() => {

@@ -19,8 +19,10 @@ export const login = (user, props) => {
 export const signUp = (user, props) => {
     return dispatch => {
         userServices.SignUp(user).then(res => {
-            dispatch(createAction(USER__LOGIN, JSON.stringify(res.data)));
-            localStorage.setItem('user', res.data)
+            let userRes = JSON.stringify(res.data);
+            dispatch(createAction(USER__LOGIN, userRes));
+            console.log(userRes)
+            localStorage.setItem('user', userRes)
             alert(" Success");
             props.history.replace('/')
         }).catch(err => {
