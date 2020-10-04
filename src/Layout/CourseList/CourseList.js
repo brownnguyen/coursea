@@ -35,6 +35,7 @@ class CourseList extends Component {
         }
     }
     renderTitleCategories = () => {
+        console.log(database)
         return database.categories.map((item, index) => {
             return (
                 <Link

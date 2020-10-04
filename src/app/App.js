@@ -16,7 +16,16 @@ import HomeTemplate from '../Templates/HomeTemplate/HomeTemplate.js';
 import UserTemplate from '../Templates/UserTemplate/UserTemplate.js';
 import Page404 from '../Layout/Page404/Page404.js';
 import PayPage from '../Pages/PayPage/PayPage.js';
+import firebase from 'firebase';
+import { firebaseConfig } from '../firebaseConfig.js';
+import { FETCH_COURSE } from '../Redux/Action/Type.js';
+import { createAction } from '../Redux/Action/createAction.js';
 class App extends Component {
+  constructor(props) {
+    super(props);
+    this.app = firebase.initializeApp(firebaseConfig);
+    this.database = this.app.database().ref();
+  }
   render() {
     return (
       <div>
@@ -51,6 +60,12 @@ class App extends Component {
     );
   }
   componentDidMount() {
+    this.database.on('value', snap => {
+      let course = snap.val().course;
+      if(course){
+        this.props.dispatch(createAction(FETCH_COURSE, course))
+      }
+    })
     this.props.dispatch(local.getState());
     this.props.dispatch(local.getCart());
     this.props.dispatch(local.getCourseDetail());
