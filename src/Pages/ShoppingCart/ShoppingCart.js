@@ -93,7 +93,6 @@ class ShoppingCart extends Component {
         </div>
       )
     }
-    console.log(html)
     return html;
   }
   renderShoppingCart = () => {
