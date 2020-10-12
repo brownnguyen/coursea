@@ -45,6 +45,7 @@ class CourseDetail extends Component {
 
     render() {
         let { courseName, image, price, mentor, id, kind } = this.props.course;
+        console.log(kind)
         return (
             <>
                 <div className="course__detail"
@@ -52,7 +53,7 @@ class CourseDetail extends Component {
                     onMouseLeave={() => this.handleMouseHover(false)}>
                     <Link className="courseDetail" to={`/detailPage/${id}`}
                         onClick={() => this.props.addCourseDetail(this.props.course)}>
-                        <i className="fa fa-bookmark"></i>
+                        <i className={`${kind} fa fa-bookmark`}></i>
                         <span className="icon"></span>
                         <div className="card__img">
                             <img className="card-imgTop image" src={image} alt={courseName} />

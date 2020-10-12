@@ -1,5 +1,21 @@
 @import "../../Scss/Variables.scss";
 @import "../../Scss/Mixin.scss";
+@keyframes showButtonAnimate {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes showTextAnimate {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 .course__detail {
   text-decoration: none !important;
   width: 24%;
@@ -21,6 +37,27 @@
       font-size: 25px;
       color: $pink;
       transform: rotate(90deg);
+    }
+    i.software {
+      color: red;
+    }
+    i.music {
+      color: yellow;
+    }
+    i.business {
+      color: orange;
+    }
+    i.marketing {
+      color: green;
+    }
+    i.development {
+      color: blue;
+    }
+    i.photography {
+      color: brown;
+    }
+    i.design {
+      color: purple;
     }
     span.icon {
       width: 10px;
@@ -101,8 +138,7 @@
       }
     }
 
-    box-shadow: 0 1px 2px -2px rgba(0, 0, 0, 0.16),
-      0 3px 6px 0 rgba(0, 0, 0, 0.12), 0 5px 12px 4px rgba(0, 0, 0, 0.09);
+    box-shadow: 0 1px 2px -2px rgba(0, 0, 0, 0.16), 0 3px 6px 0 rgba(0, 0, 0, 0.12), 0 5px 12px 4px rgba(0, 0, 0, 0.09);
     .card__img {
       img {
         transform: scale(1.2);
@@ -118,6 +154,7 @@
   padding: 0 15px 20px 15px;
   .content__course {
     font-size: 1.6rem;
+    animation: showTextAnimate 1s;
   }
   .add__course {
     width: 100%;
@@ -162,17 +199,20 @@
       background-color: #006151;
     }
   }
+  .btn{
+    animation: showButtonAnimate 2s;
+  }
 }
 @media screen and (max-width: 768px) {
-  .courseList{
-    .courseDetail{
-      .list__course{
-        .course-content{
+  .courseList {
+    .courseDetail {
+      .list__course {
+        .course-content {
           justify-content: space-around;
         }
       }
     }
-  } 
+  }
   .course__detail {
     width: 49%;
   }
